@@ -1,18 +1,20 @@
-// src/lib/adminFirebase.ts
-
 import * as admin from 'firebase-admin';
 import fs from 'fs';
 import path from 'path';
 
-// These two exist whether dev or prod:
+// These two exist whether dev or prod
 const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!;
 const storageBucket = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!;
 
 let serviceAccount: admin.ServiceAccount | null = null;
 
 try {
-  // Load from file in development
-  const credsPath = path.join(process.cwd(), 'firebase-admin-creds.json');
+  // Allow dynamic path via env, fallback to default
+  const credsPath = path.join(
+    process.cwd(),
+    process.env.FIREBASE_ADMIN_CREDENTIALS_PATH || 'firebase-admin-creds.json'
+  );
+
   console.log('🔍 Looking for service account at:', credsPath);
   serviceAccount = JSON.parse(fs.readFileSync(credsPath, 'utf8'));
   console.log('✅ Successfully loaded service account from file');
