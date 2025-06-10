@@ -1,0 +1,9 @@
+/* src/components/icons/Icons.module.css */
+
+.icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;         /* keep it from squishing inside flex containers */
+    /* color is inherited from the parent (e.g. white inside your teal wrapper) */
+  }
+  

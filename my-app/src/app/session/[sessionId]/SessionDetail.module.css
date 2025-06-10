@@ -1,0 +1,126 @@
+/* src/app/session/[sessionId]/SessionDetail.module.css */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text, #1e293b);
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary, #00838f);
+  border-radius: 50%;
+}
+
+.date {
+  font-size: 1rem;
+  color: var(--color-text-muted, #64748b);
+  margin: 0 0 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-surface, #f8fafc);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.transcriptSection,
+.soapSection {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--color-surface, #f8fafc);
+  border-radius: 12px;
+  border: 1px solid var(--color-border, #e2e8f0);
+}
+
+.transcriptSection h2,
+.soapSection h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text, #1e293b);
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.transcriptSection h2::before,
+.soapSection h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary, #00838f);
+  border-radius: 50%;
+}
+
+.transcript {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text, #1e293b);
+  white-space: pre-wrap;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #e2e8f0);
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted, #64748b);
+  font-size: 1.1rem;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  background: #fee2e2;
+  color: #ef4444;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-surface, #f8fafc);
+  border-radius: 12px;
+  color: var(--color-text-muted, #64748b);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted, #64748b);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.backButton:hover {
+  background-color: var(--color-surface, #f8fafc);
+  color: var(--color-text, #1e293b);
+}
+
+.backButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}

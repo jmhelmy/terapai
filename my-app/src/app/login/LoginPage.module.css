@@ -1,0 +1,118 @@
+/* LoginPage.module.css */
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-bg, #f8fafc); /* Use CSS variable, fallback provided */
+    padding: var(--spacing, 1rem); /* Use CSS variable, fallback provided */
+}
+
+.card {
+    background-color: var(--color-card, #FFFFFF); /* Use CSS variable, fallback provided */
+    padding: calc(var(--spacing, 1rem) * 2);
+    border-radius: var(--radius, 0.75rem); /* Use CSS variable, fallback provided */
+    box-shadow: var(--shadow, 0 4px 12px rgba(0, 0, 0, 0.05)); /* Use CSS variable, fallback provided */
+    width: 100%;
+    max-width: 400px; /* Adjust max-width as needed */
+    text-align: center; /* Center content */
+}
+
+.title {
+    font-size: 1.75rem; /* Adjust font size */
+    font-weight: 700;
+    color: var(--text-dark, #1f2937); /* Use CSS variable, fallback provided */
+    margin-bottom: calc(var(--spacing, 1rem) * 1.5);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing, 1rem); /* Space between form elements */
+}
+
+.label {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-medium, #4b5563); /* Use CSS variable, fallback provided */
+    display: flex; /* To make label and input vertical */
+    flex-direction: column;
+    gap: calc(var(--spacing, 1rem) * 0.5); /* Space between label text and input */
+}
+
+.input {
+    padding: var(--spacing, 1rem);
+    border: 1px solid var(--color-border, #e5e7eb); /* Use CSS variable, fallback provided */
+    border-radius: var(--radius, 0.75rem); /* Use CSS variable, fallback provided */
+    font-size: 1rem;
+    color: var(--text-dark, #1f2937); /* Use CSS variable, fallback provided */
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-primary, #00838f); /* Highlight on focus */
+    box-shadow: 0 0 0 2px rgba(0, 131, 143, 0.2); /* Optional focus shadow */
+}
+
+.error {
+    color: red;
+    margin-top: var(--spacing, 1rem);
+    text-align: left;
+}
+
+.submitBtn {
+    background-color: var(--color-primary, #00838f); /* Use CSS variable, fallback provided */
+    color: white;
+    padding: calc(var(--spacing, 1rem) * 0.75) var(--spacing, 1rem);
+    border: none;
+    border-radius: var(--radius, 0.75rem); /* Use CSS variable, fallback provided */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+    background-color: var(--color-primary-dark, #006064); /* Use CSS variable, fallback provided */
+}
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.footer {
+    margin-top: calc(var(--spacing, 1rem) * 1.5);
+    font-size: 0.9rem;
+    color: var(--text-medium, #4b5563); /* Use CSS variable, fallback provided */
+}
+
+.link {
+    color: var(--color-primary, #00838f); /* Use CSS variable, fallback provided */
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.orText {
+    text-align: center;
+    margin: 1rem 0 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+  
+  .homeLink {
+    display: block;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #009DA3;
+    text-decoration: none;
+    margin-bottom: -0.5rem; /* pull it a bit closer to the form */
+  }
+  
+  .homeLink:hover {
+    text-decoration: underline;
+  }

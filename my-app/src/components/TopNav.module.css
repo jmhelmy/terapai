@@ -1,0 +1,81 @@
+/* Main Navigation Container */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This is key for the 3-column layout */
+    padding: 0.75rem 2rem; /* Increased horizontal padding */
+    background-color: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer, more modern shadow */
+  }
+  
+  /* Left: Brand and Logo */
+  .brandContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1; /* Allows this section to grow/shrink */
+  }
+  
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.375rem; /* Made the brand text slightly larger */
+    font-weight: 600; /* A semi-bold weight looks modern */
+    color: #1e293b;
+    text-decoration: none;
+  }
+  
+  /* Center: Menu Links */
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* A small gap between the links themselves */
+  }
+  
+  .link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #425F80;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  }
+  
+  .link:hover {
+    color: #1e293b;
+    background-color: #f1f5f9; /* Subtle background on hover */
+  }
+  
+  /* Style for the currently active link */
+  .link[aria-current='page'] {
+    color: #000000; /* A distinct blue for the active page */
+    font-weight: 600;
+    background-color: #eff6ff;
+  }
+  
+  /* Right: HIPAA Compliance Icon */
+/* Right: HIPAA Compliance Icon */
+.complianceContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .hipaaIcon {
+    width: 60px;
+    height: 28px;
+    /* This property prevents the image from being stretched or squished,
+       which can cause blurriness. It respects the image's aspect ratio. */  
+    /* This tells the browser to prioritize sharpness over smoothing when
+       scaling the image, which often helps with pixelated logos. */
+    image-rendering: -webkit-optimize-contrast; /* For Safari/Chrome */
+    image-rendering: crisp-edges;             /* Standard */
+  }
+  
+  .hipaaIcon:hover {
+    /* REMOVED: No hover effect needed for now */
+    opacity: 1;
+  }
+  

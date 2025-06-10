@@ -1,0 +1,305 @@
+/* src/app/soap-guide/SoapPage.module.css (or soap/SoapPage.module.css if path is different) */
+
+.pageWrapper {
+  /* Styles for the overall page, if needed, beyond what Header/Footer provide */
+}
+
+.mainLayout {
+  display: flex;
+  gap: 2rem; /* Space between sidebar and content */
+  max-width: 80rem; /* Max width for the entire layout */
+  margin: 2rem auto; /* Centering the layout with top/bottom margin */
+  padding: 0 1.5rem; /* Padding on the sides */
+}
+
+.sidebar {
+  flex: 0 0 280px; /* Sidebar fixed width, doesn't grow or shrink */
+  border-right: 1px solid var(--color-border);
+  padding-right: 2rem;
+  height: calc(100vh - var(--header-height, 70px) - 4rem); /* Adjust 4rem for top/bottom margin of mainLayout */
+  overflow-y: auto;
+  position: sticky;
+  top: calc(var(--header-height, 70px) + 2rem); /* Sticky below header, considering mainLayout top margin */
+}
+
+.sidebarTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-accent-light);
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  margin-bottom: 0.5rem;
+}
+
+.navLink {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--text-medium);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: 0.95rem;
+  position: relative; /* For arrow positioning if needed */
+}
+
+.navLink:hover {
+  background-color: var(--color-accent-light);
+  color: var(--color-primary);
+}
+
+.navLinkActive {
+  background-color: var(--color-primary);
+  color: var(--color-card); /* White text on primary background */
+  font-weight: 500;
+}
+
+.navLinkActive:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-card);
+}
+
+.contentArea {
+  flex: 1; /* Takes remaining space */
+  min-width: 0; /* Prevents content from overflowing flex container */
+  padding-bottom: 2rem; /* Space at the bottom of content */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.paragraph {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-medium);
+}
+
+.subheading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+
+.listItem {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.listItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.listItem strong {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.numberedList {
+  list-style-type: none;
+  padding-left: 0;
+  counter-reset: numbered-list-counter;
+}
+
+.numberedListItem {
+  margin-bottom: 0.75rem;
+  padding-left: 2rem; /* Space for number */
+  position: relative;
+}
+
+.numberedListItem::before {
+  counter-increment: numbered-list-counter;
+  content: counter(numbered-list-counter) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Styles for arrows and sub-navigation */
+.navLink .arrow {
+  display: inline-block;
+  /* margin-left: auto; Pushes arrow to the right if navLink is flex and justifies content */
+  padding-left: 0.5rem;
+  font-size: 0.8em;
+  transition: transform 0.2s ease-in-out;
+  float: right; /* Use float if navLink is not display:flex or display:grid */
+}
+
+.navLink .arrowUp {
+  transform: rotate(180deg);
+}
+
+.subNavList {
+  list-style: none;
+  padding-left: 1.5rem; /* Indent sub-items */
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  /* max-height: 0; Will be controlled by JS adding/removing a class or inline styles */
+  /* overflow: hidden; */
+  /* transition: max-height 0.3s ease-in-out; */
+}
+
+/* Class to apply via JS when the subNavList should be expanded */
+.subNavListExpanded {
+  max-height: 500px; /* Or a large enough value for content */
+  overflow: hidden; /* Keep hidden for animation, then can be auto if needed */
+  transition: max-height 0.3s ease-in-out;
+}
+/* Class to apply via JS when the subNavList should be collapsed (initial state) */
+.subNavListCollapsed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+
+.subNavItem {
+  margin-bottom: 0.25rem;
+}
+
+.subNavLink {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  color: var(--text-medium);
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem; /* Slightly smaller than main links */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.subNavLink:hover {
+  background-color: var(--color-accent-light);
+  color: var(--color-primary);
+}
+
+.subNavLinkActive {
+  background-color: var(--color-primary-dark); /* Slightly different active for sub-items */
+  color: var(--color-card);
+  font-weight: 500;
+}
+
+.subNavLinkActive:hover {
+  background-color: var(--color-primary);
+  color: var(--color-card);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) { /* Tablet and below */
+  .mainLayout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar {
+    flex: 0 0 auto; /* No fixed width, allow it to take full width */
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    height: auto; /* Auto height */
+    overflow-y: visible;
+    position: static; /* No longer sticky */
+  }
+  .sidebarTitle {
+    text-align: center;
+  }
+  .navList {
+    /* display: flex; // Keep as block for vertical list with nested items
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 0.5rem; */
+  }
+  .navLink {
+    padding: 0.5rem 1rem; /* Slightly larger for touch */
+  }
+  .navLink .arrow { /* Ensure arrow still behaves on mobile if main navLink changes display */
+    float: right; /* Or use flexbox on navLink to position */
+  }
+  .subNavList {
+    padding-left: 1rem; /* Adjust mobile indentation if needed */
+  }
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs span { /* For the current page in breadcrumbs */
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+.sectionSubSubHeading { /* For H3 in SOAP example sections */
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-accent-light);
+  padding-bottom: 0.25rem;
+}
+
+.soapSectionContent {
+  padding-left: 1rem; /* Indent content under S, O, A, P */
+  border-left: 2px solid var(--color-primary-light, var(--color-accent-light)); /* Use a lighter primary or accent */
+  margin-bottom: 1rem;
+}
+
+.soapSectionContent p {
+  margin-bottom: 0.5rem;
+}
+.soapSectionContent p:last-child {
+  margin-bottom: 0;
+}
+
+.internalContentLink { /* For links within the main content area */
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.internalContentLink:hover {
+  text-decoration: underline;
+  color: var(--color-primary-dark);
+}
+
+}

@@ -1,0 +1,123 @@
+/* src/app/dashboard/NotesList.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .clientGroup {
+    border-top: 1px solid var(--color-border, #e0e0e0);
+    padding-top: 1rem;
+  }
+  
+  .clientHeader {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: var(--color-text-default, #213650);
+  }
+  
+  .noteCard {
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: var(--color-surface, #ffffff);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .noteHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .noteHeader strong {
+    font-size: 1rem;
+  }
+  
+  .noteHeader em {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #555);
+  }
+  
+  .noteActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .copyBtn,
+  .editBtn,
+  .saveBtn {
+    background: var(--color-primary, #00838f);
+    color: var(--color-surface, #fff);
+    border: none;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .copyBtn:hover,
+  .editBtn:hover,
+  .saveBtn:hover {
+    background-color: var(--color-primary-dark, #00737e);
+  }
+  
+  .noteSection {
+    margin-bottom: 0.75rem;
+  }
+  
+  .noteSection h4 {
+    margin: 0 0 0.25rem;
+  }
+  
+  .pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    background-color: var(--color-surface-hover-subtle, #f9f9f9);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--color-text-default, #213650);
+  }
+  
+  .richText {
+    background-color: var(--color-surface-hover-subtle, #f9f9f9);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--color-text-default, #213650);
+  }
+  
+  .textarea {
+    width: 100%;
+    min-height: 80px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  @media (max-width: 600px) {
+    .noteHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .noteActions {
+      flex-wrap: wrap;
+    }
+  }
+  

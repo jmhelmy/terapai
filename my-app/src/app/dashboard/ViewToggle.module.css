@@ -1,0 +1,28 @@
+/* src/app/dashboard/ViewToggle.module.css */
+
+.toggleContainer {
+  display: inline-flex;
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.toggleButton {
+  padding: 0.4rem 0.8rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--color-text-default, #213650);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggleButton:hover,
+.toggleButton:focus-visible {
+  background-color: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05));
+}
+
+.active {
+  background-color: var(--color-primary, #00838f);
+  color: var(--color-surface, #ffffff);
+}

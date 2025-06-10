@@ -1,0 +1,191 @@
+/* RecordSessionPage.module.css */
+
+/* ---------- Page & Card (now truly centered) ---------- */
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* vertically center the card */
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background: linear-gradient(to bottom right, #f1f5f9, #e0f2fe);
+    font-family: sans-serif;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 720px;
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* ---------- Header ---------- */
+  .headerRow {
+    display: flex;
+    flex-direction: column;    /* stack children */
+    align-items: center;       /* center by default */
+    margin-bottom: 2rem;
+  }
+  
+  .pageTitle {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;              /* darker for stronger hierarchy */
+    text-align: center;
+  }
+  
+  .backLink {
+    align-self: flex-start;    /* pull link to the left edge */
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #0369a1;
+    text-decoration: none;
+    margin-bottom: 0.5rem;     /* space before title */
+    transition: color 0.2s;
+  }
+  .backLink:hover,
+  .backLink:focus {
+    color: #0c4a6e;
+    text-decoration: underline;
+  }
+  
+  /* ---------- Status Banner ---------- */
+  .statusMessage {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+  }
+  .statusSuccess {
+    background: #e0f2fe;
+    color: #0369a1;
+  }
+  .statusError {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  /* ---------- Disclaimer ---------- */
+  .disclaimer {
+    color: #475569;             /* neutral slate tone */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.0rem;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards 0.2s;
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  /* ---------- Controls Wrapper & Centered CTA ---------- */
+  .controlsWrapper {
+    display: flex;
+    justify-content: center;    /* center the button */
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Hide the controls once recording has stopped */
+  .hidden {
+    display: none;
+  }
+  
+  /* ---------- Button Enhancements ---------- */
+  /* Assuming your <Button> component renders <button className="base primary|secondary"> */
+  .base {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .base:hover,
+  .base:focus {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  .base:focus {
+    outline: 2px solid #009DA3;
+    outline-offset: 3px;
+  }
+  
+  /* ---------- Recording Badge (while live) ---------- */
+  .recordingBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #ef4444;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    animation: pulse 1.2s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  
+  /* ---------- Timeline ---------- */
+  .timeline {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+    font-weight: 500;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+  }
+  
+  /* ---------- Progress Bar ---------- */
+  .progressBar {
+    width: 100%;
+    margin-top: 1.5rem;
+    height: 0.5rem;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .progress {
+    width: var(--progress-percent, 0%);
+    height: 100%;
+    background-color: #009DA3;
+    transition: width 0.3s ease;
+  }
+  
+  /* ======================================================================
+    USAGE IN YOUR JSX (for reference)
+    
+    <StatusBanner ... />
+  
+    <!-- Pre-record disclaimer -->
+    {!hasStarted && <p className={styles.disclaimer}>…</p>}
+  
+    <!-- Recording controls / CTA -->
+    <div className={styles.controlsWrapper}>
+      {!isRecording && !hasStarted && (
+        <Button variant="primary" onClick={handleStart}>
+          Start Recording
+        </Button>
+      )}
+      {isRecording && (
+        <span className={styles.recordingBadge}>
+          ● Recording {recordingDuration}
+        </span>
+      )}
+    </div>
+  
+    <!-- Timeline after stop -->
+    {hasStarted && endTime && (
+      <div className={styles.timeline}>
+        {startTime} – {endTime} (Duration {recordingDuration})
+      </div>
+    )}
+    
+    {isProcessing && <ProgressBar progress={uploadProgress} />}
+  
+  ====================================================================== */
+  

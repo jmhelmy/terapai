@@ -1,0 +1,203 @@
+/* === MobileNavigation.module.css === */
+
+/* Debug helpers: uncomment to see outlines around the panel/overlay
+*/
+/*
+.mobileNavOverlay {
+  outline: 2px dashed magenta;
+}
+.mobileNav {
+  outline: 2px dashed lime;
+}
+.mobileNavHeader {
+  outline: 2px dashed cyan;
+}
+*/
+
+/* Overlay: full-screen backdrop behind the sliding menu */
+.mobileNavOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-backdrop-overlay, rgba(0, 0, 0, 0.5));
+    z-index: 1001; /* Sits above page content, below the panel itself */
+    opacity: 0;
+    visibility: hidden; /* Hidden from AT and interaction when not visible */
+    /* Delay visibility transition on hide to allow fade-out animation to complete */
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+  }
+  
+  .mobileNavOverlayActive {
+    opacity: 1;
+    visibility: visible;
+    /* Visibility becomes active immediately with opacity for fade-in */
+    transition: opacity 0.3s ease-in-out, visibility 0s 0s;
+  }
+  
+  /* Sliding menu panel (initially off-screen to the right) */
+  .mobileNav {
+    position: fixed;
+    top: 0;
+    right: 0; /* Start position for slide-in from right */
+    transform: translateX(100%); /* Initially off-screen */
+    width: 80%;
+    max-width: 320px; /* Max width for larger mobile screens */
+    height: 100%;
+    background-color: var(--color-surface, #fff);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); /* Shadow on the left edge */
+    z-index: 1002; /* Above the overlay */
+    padding: 1rem; /* General padding for content inside */
+    /* Adjust top padding to account for the fixed .mobileNavHeader */
+    padding-top: calc(var(--header-height, 70px) + 1rem);
+    overflow-y: auto; /* Enable scrolling for long menus */
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Spacing between direct children (link groups/items) */
+  }
+  
+  /* "Open" state: slide panel fully into view */
+  .mobileNavOpen {
+    transform: translateX(0);
+  }
+  
+  /* Header section within the mobile navigation panel */
+  .mobileNavHeader {
+    display: flex;
+    justify-content: space-between; /* Positions logo/title left, close button right */
+    align-items: center;
+    position: absolute; /* Fixed at the top of the .mobileNav panel */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height, 70px); /* Match main header height */
+    padding: 0 1rem; /* Horizontal padding consistent with .mobileNav */
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+    background-color: var(--color-surface, #fff); /* Ensure consistent background */
+    /* z-index might be needed if there are absolutely positioned elements within .mobileNav later */
+  }
+  
+  /* Close (×) button inside the panel's header */
+  /* This assumes .mobileCloseButton is a direct child of .mobileNavHeader */
+  .mobileNavHeader .mobileCloseButton {
+    background: none;
+    border: none;
+    font-size: 2rem; /* Large, accessible tap target */
+    line-height: 1; /* For better vertical alignment of text-based icons */
+    color: var(--color-text-default, #213650);
+    cursor: pointer;
+    padding: 0.5rem; /* Increase tappable area around the icon */
+    /* align-self: flex-end; is not needed here due to justify-content: space-between on parent */
+  }
+  /* Add focus-visible state for accessibility */
+  .mobileNavHeader .mobileCloseButton:focus-visible {
+    outline: 2px solid var(--color-primary, #00838f);
+    outline-offset: 2px;
+    border-radius: 4px; /* Optional: if you want rounded focus outline */
+  }
+  
+  
+  /* Styling for NavLink or DropdownLink components used inside .mobileNav */
+  .mobileNav .navLink,
+  .mobileNav .dropdownLink {
+    display: block;
+    padding: 0.75rem 1rem; /* Comfortable tap targets */
+    font-size: 1rem;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+    width: 100%;
+    text-align: left;
+    color: var(--color-text-default, #213650);
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .mobileNav .navLink:hover,
+  .mobileNav .navLink:focus-visible,
+  .mobileNav .dropdownLink:hover,
+  .mobileNav .dropdownLink:focus-visible {
+    background-color: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05));
+    color: var(--color-primary, #00838f);
+    outline: none; /* Assuming custom focus style is preferred via background/color change */
+  }
+  
+  /* Remove border from the last link in a sequence or if it's the only link */
+  .mobileNav .navLink:last-of-type,
+  .mobileNav .dropdownLink:last-of-type,
+  .mobileNav .navLink:only-of-type {
+    border-bottom: none;
+  }
+  
+  /* Category triggers/headers inside the mobile menu (e.g., "Solutions", "Company") */
+  .mobileDropdownTrigger {
+    padding: 0.75rem 1rem; /* Consistent with link padding */
+    font-size: 1rem; /* Same as links or slightly smaller if preferred */
+    font-weight: 600; /* Make it distinct as a header */
+    color: var(--color-text-muted, #555);
+    margin-top: 0.5rem; /* Space above category header */
+  }
+  .mobileDropdownTrigger:first-of-type {
+      margin-top: 0; /* No top margin for the very first trigger */
+  }
+  
+  /* Auth buttons (Log In / Sign Up) section at the bottom of mobile menu */
+  .mobileAuthButtons {
+    margin-top: auto; /* Pushes this section to the bottom if .mobileNav is flex */
+    padding-top: 1rem; /* Space above the buttons, after the border */
+    border-top: 1px solid var(--color-border, #e0e0e0);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Space between auth buttons */
+  }
+  
+  /* Styling for NavLinks or specific buttons within .mobileAuthButtons */
+  .mobileAuthButtons .navLink,
+  .mobileAuthButtons .signUpButton { /* Assuming .signUpButton class is applied here */
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem; /* Consistent padding for mobile buttons */
+    /* Base NavLink styles for color, font-size will apply unless overridden by .signUpButton */
+  }
+  
+  /* Styles for the .signUpButton.
+    NOTE: Ideally, if this is the *exact same* style as the desktop sign-up button,
+    these styles should live in a shared CSS module (e.g., Header.module.css or buttons.module.css)
+    and the class name imported/applied in MobileNavigation.tsx.
+    Keeping them here assumes MobileNavigation.tsx might define its own sign-up button
+    or that this file needs to be self-contained for styling this specific element.
+  */
+  .signUpButton {
+    background-color: var(--color-primary, #00838f);
+    color: var(--color-surface, white); /* Ensure text is readable on primary color */
+    padding: 10px 22px; /* This padding might differ from the .mobileAuthButtons .navLink padding above. Harmonize if needed. */
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Or 'block' if it should take full width dictated by parent */
+  }
+  .signUpButton:hover,
+  .signUpButton:focus-visible {
+    background-color: var(--color-primary-dark, #00737e);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+    outline: none; /* Assuming visual changes are sufficient for focus */
+  }
+  .signUpButton:active {
+    background-color: var(--color-primary-darker, #006069);
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*
+    IMPORTANT: Styles for .hamburgerButton, .hamburgerLine, and its animations
+    (.line1Open, .line2Open, .line3Open) along with the @media query to display
+    the hamburger button are best placed in your main Header.module.css or a
+    dedicated HamburgerButton.module.css, as they style the trigger mechanism,
+    not the mobile navigation panel itself. They have been removed from this file
+    for better separation of concerns.
+  */

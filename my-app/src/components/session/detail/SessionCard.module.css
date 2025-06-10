@@ -1,0 +1,118 @@
+/* src/components/session/SessionCard.module.css */
+
+.card {
+    background-color: white;
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--color-primary, #00838f);
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--color-primary, #00838f);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .header strong {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text, #1e293b);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .header strong::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary, #00838f);
+    border-radius: 50%;
+  }
+  
+  .date {
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #64748b);
+    background-color: var(--color-surface, #f8fafc);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+  }
+  
+  .preview {
+    font-size: 0.95rem;
+    color: var(--color-text, #1e293b);
+    line-height: 1.5;
+    max-height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 0;
+  }
+  
+  .preview::after {
+    content: '...';
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: linear-gradient(to right, transparent, white 50%);
+    padding-left: 2rem;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .card:hover .actions {
+    opacity: 1;
+  }
+  
+  .actionButton {
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    color: var(--color-text-muted, #64748b);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .actionButton:hover {
+    background-color: var(--color-surface, #f8fafc);
+    color: var(--color-primary, #00838f);
+  }
+  

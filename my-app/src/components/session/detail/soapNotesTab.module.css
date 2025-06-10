@@ -1,0 +1,101 @@
+/* src/components/session/detail/soapNotesTab.module.css */
+
+.notesContainer {
+    padding: 1rem;
+    background: #fcfcfc;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+  }
+  
+  .section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .copyBtn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .copyBtn:hover {
+    background-color: #ddd;
+  }
+  
+  .textarea {
+    width: 100%;
+    min-height: 80px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+  }
+  
+  .textContent {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .copyNoteBtn,
+  .actionBtn,
+  .deleteNoteBtn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .copyNoteBtn {
+    background-color: #f3f3f3;
+    color: #333;
+  }
+  
+  .copyNoteBtn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .actionBtn {
+    background-color: #0070f3;
+    color: white;
+  }
+  
+  .actionBtn:hover {
+    background-color: #005bb5;
+  }
+  
+  .deleteNoteBtn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .deleteNoteBtn:hover {
+    background-color: #c0392b;
+  }
+  

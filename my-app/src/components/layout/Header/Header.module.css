@@ -1,0 +1,250 @@
+/* components/layout/Header.module.css */
+
+/*
+  Assumes CSS variables are defined in a global file like app/globals.css:
+  :root {
+    --header-height: 70px;
+    --color-primary: #00838f;
+    --color-primary-dark: #00737e;
+    --color-primary-darker: #006069;
+    --color-border: #e0e0e0;
+    --color-text-default: #213650;
+    --color-text-muted: #555;
+    --color-surface: #ffffff;
+    --color-surface-hover-subtle: rgba(0, 0, 0, 0.05);
+  }
+*/
+
+.header {
+  width: 100%;
+  padding: 0 2rem;
+  height: var(--header-height, 70px);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-default, #213650);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLink {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-default, #213650);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--color-primary, #00838f);
+  background-color: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05));
+}
+
+.signUpButton {
+  background-color: var(--color-primary, #00838f);
+  color: var(--color-surface, #ffffff);
+  padding: 10px 22px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.signUpButton:hover,
+.signUpButton:focus-visible {
+  background-color: var(--color-primary-dark, #00737e);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.signUpButton:active {
+  background-color: var(--color-primary-darker, #006069);
+  transform: translateY(0px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown */
+.companyDropdownContainer {
+  position: relative;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 0.3em;
+  font-size: 0.7em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+.companyDropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  animation: fadeInDropdown 0.2s forwards ease-out;
+}
+
+@keyframes fadeInDropdown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text-default, #213650);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.dropdownLink:hover,
+.dropdownLink:focus-visible {
+  background-color: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05));
+  color: var(--color-primary, #00838f);
+}
+
+.desktopAuthButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Button styles shared across desktop nav */
+.navButton,
+.navButtonSecondary {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.navButton {
+  color: var(--color-surface, #ffffff);
+  background-color: var(--color-primary, #00838f);
+}
+
+.navButton:hover,
+.navButton:focus-visible {
+  background-color: var(--color-primary-dark, #006064);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 131, 143, 0.2);
+}
+
+.navButtonSecondary {
+  color: var(--color-primary, #00838f);
+  background-color: transparent;
+  border-color: var(--color-border, #e0e0e0);
+}
+
+.navButtonSecondary:hover,
+.navButtonSecondary:focus-visible {
+  background-color: var(--color-accent-light, #f0f8ff);
+  border-color: var(--color-accent-light, #f0f8ff);
+}
+
+/* Responsive breakpoint for desktop nav */
+@media (max-width: 1024px) {
+  .desktopNav,
+  .desktopAuthButtons {
+    display: none;
+  }
+  .header {
+    padding: 0 1rem;
+  }
+}
+
+/* Header.module.css */
+
+/* ... existing styles above ... */
+
+.hamburgerButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+  margin-left: auto;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-default, #213650);
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.line1Open {
+  transform: translateY(7px) rotate(45deg);
+}
+.line2Open {
+  opacity: 0;
+}
+.line3Open {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+  .hamburgerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

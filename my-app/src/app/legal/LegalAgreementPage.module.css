@@ -1,0 +1,93 @@
+/* LegalAgreementPage.module.css */
+
+/* this entire :root block will now be emitted globally */
+
+  
+  .legalContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(var(--spacing) * 1.5) var(--spacing);
+    background-color: var(--color-bg);
+  }
+  
+  .card {
+    max-width: 600px;
+    width: 100%;
+    background-color: var(--color-card);
+    padding: calc(var(--spacing) * 1.5);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  
+  .title {
+    margin: 0 0 var(--spacing);
+    font-size: 1.75rem; /* ~28px */
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  
+  .description {
+    margin-bottom: var(--spacing);
+    font-size: 1rem;
+    color: var(--text-medium);
+  }
+  
+  .list {
+    margin-bottom: calc(var(--spacing) * 1.5);
+    padding-left: 1.25rem; /* for disc indent */
+    color: var(--text-light);
+  }
+  
+  .list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var(--spacing) * 1.5);
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .checkboxLabel input[type="checkbox"] {
+    margin: 0;
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--color-primary);
+  }
+  
+  .checkboxLabel span {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+  }
+  
+  .button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius);
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+  }
+  
+  .button:disabled {
+    background-color: #CBD5E1;  /* slate-300 */
+    color: #94A3B8;             /* slate-400 */
+    cursor: not-allowed;
+  }
+  
+  .button:not(:disabled) {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  
+  .button:not(:disabled):hover {
+    opacity: 0.9;
+  }
+  

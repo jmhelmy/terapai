@@ -1,0 +1,27 @@
+/* src/components/session/detail/TranscriptTab.module.css */
+.transcriptContainer {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .entry {
+    margin-bottom: 0.75rem;
+  }
+  
+  .speaker {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .text {
+    color: #444;
+  }
+  
+  .empty {
+    color: #888;
+    font-style: italic;
+  }
+  

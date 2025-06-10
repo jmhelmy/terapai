@@ -1,0 +1,58 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can keep your custom CSS variables for background and foreground if you plan to use them,
+  but be aware that Tailwind's utility classes (like bg-white, text-neutral-800, etc.) 
+  are often used directly on elements in your layout.tsx or page.tsx files.
+*/
+:root {
+  --background-rgb: 255, 255, 255; /* Example for white */
+  --foreground-rgb: 23, 23, 23;   /* Example for near black */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-rgb: 10, 10, 10;    /* Example for dark background */
+    --foreground-rgb: 237, 237, 237; /* Example for light text */
+  }
+}
+
+body {
+  /* If you have configured 'Montserrat' as your default `font-sans` in tailwind.config.js,
+    Tailwind's `@tailwind base` will apply it. You generally don't need to set font-family here again.
+    The background and color here can act as fallbacks.
+  */
+  background-color: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+/* IMPORTANT: The "@theme inline" block and any explicit font-family settings
+  (like for Geist font or Arial) should generally be removed if you want 
+  Tailwind and your tailwind.config.js (with Montserrat) to control the typography.
+  If you need other specific fonts like Geist Mono, configure them in 
+  tailwind.config.js under theme.extend.fontFamily.
+*/
+
+/* styles/globals.css */
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: #0284c7;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0369a1;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}

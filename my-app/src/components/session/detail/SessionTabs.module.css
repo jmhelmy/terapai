@@ -1,0 +1,25 @@
+/* src/components/session/detail/SessionTabs.module.css */
+.tabContainer {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tabButton {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #555;
+  }
+  .tabButton:hover {
+    color: #000;
+  }
+  .activeTab {
+    color: #000;
+    border-bottom: 2px solid #0070f3;
+    font-weight: 600;
+  }
+  

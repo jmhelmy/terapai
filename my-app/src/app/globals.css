@@ -1,0 +1,123 @@
+/* src/app/globals.css */
+
+:root {
+  /* Color Palette 
+    -------------------------------------------------------------------------- 
+  */
+  /* Primary & Accent Colors */
+  --color-primary: #00838f;       /* Main primary color */
+  --color-primary-dark: #006064;  /* For hover states on primary elements */
+  --color-accent-light: #e0f7fa;  /* For pills, light backgrounds, and subtle hovers */
+
+  /* Background & Surface Colors */
+  --color-bg: #f8fafc;            /* Main background color for the body/app */
+  --color-card: #FFFFFF;          /* Background color for card-like elements, modals, etc. */
+
+  /* Text Colors */
+  --text-dark: #1f2937;           /* For primary headlines and important text */
+  --text-medium: #4b5563;         /* For general body text, subheadings */
+  --text-light: #64748B;          /* For secondary text, captions, hints */
+  
+  /* Border Colors */
+  --color-border: #e5e7eb;        /* For consistent borders on inputs, cards, dividers */
+
+  /* Layout, Spacing & Sizing
+    -------------------------------------------------------------------------- 
+  */
+  --header-height: 70px;          /* Consistent header height, used by Header.module.css */
+  --spacing: 1rem;                /* Base unit for margins, paddings (e.g., 0.5rem, 1rem, 2rem) */
+  --radius: 0.75rem;              /* Default border-radius for buttons, cards, inputs */
+  
+  /* Elevation
+    -------------------------------------------------------------------------- 
+  */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Default shadow for cards, modals */
+  /* You could add more shadow variations here, e.g., --shadow-lg, --shadow-sm */
+
+}
+
+/* Global Resets & Base Styles
+  -------------------------------------------------------------------------- 
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+  /* Consider setting a base font size for easier rem calculations, e.g., 62.5% for 1rem = 10px
+     font-size: 62.5%; 
+     Only do this if you are prepared to adjust all rem units accordingly.
+  */
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* Ensure 'Inter' font is properly imported/linked in your project (e.g., in layout.tsx or via a <link> in the <head>) */
+  background-color: var(--color-bg); /* Changed to --color-bg for main background */
+  color: var(--text-dark);
+  line-height: 1.6;
+  
+  /* Text rendering optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optional: Basic responsive typography for root font size */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 93.75%; /* 15px if base is 16px */
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 87.5%;  /* 14px if base is 16px */
+  }
+}
+
+
+/* Utility classes (optional, but can be helpful) */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Accessibility: Basic focus visibility - Applied globally */
+*:focus-visible {
+  outline: 2px solid var(--color-primary, #00838f); /* Or your preferred focus color variable */
+  outline-offset: 2px;
+  /* Optional: a subtle box-shadow can also enhance focus visibility */
+  /* box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.3); /* Assuming you have --color-primary-rgb */
+}
+
+/* Optional: Remove default browser outline ONLY IF you are sure 
+   your *:focus-visible style provides adequate visibility for ALL interactive elements.
+   Be cautious with this, as it can harm accessibility if not done carefully.
+*/
+/*
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+  outline: none;
+}
+*/
+
+/* If you had a specific focus style for elements *within* the header,
+   and it's different from the global one, you might keep a *local* version
+   in Header.module.css (e.g., .navLink:focus-visible { ... }),
+   but the general *:focus-visible should be global.
+*/

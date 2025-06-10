@@ -1,0 +1,50 @@
+.container {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+  }
+  
+  .heading {
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  
+  .player {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+  
+  .timing {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    color: #475569;
+  }
+  
+  .processButton {
+    width: 100%;
+    padding: 0.625rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #009da3;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .processButton:hover:not(:disabled) {
+    background-color: #007c80;
+  }
+  
+  .processButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

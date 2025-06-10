@@ -1,0 +1,71 @@
+/* src/app/privacy/PrivacyPage.module.css */
+
+.pageContainer {
+    max-width: 56rem; /* Equivalent to Tailwind's max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 1.5rem; /* Equivalent to py-12 px-4 (adjust as needed) */
+    color: var(--text-medium); /* Using global variable for body text */
+    line-height: 1.7; /* Improved readability */
+  }
+  
+  .title {
+    font-size: 2.25rem; /* Larger than text-3xl for more impact, adjust if needed */
+    font-weight: 700;   /* Bold */
+    margin-bottom: 1.5rem; /* mb-6 */
+    color: var(--text-dark); /* Using global variable */
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+  
+  .effectiveDate {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 2rem; /* Increased spacing after date */
+  }
+  
+  .paragraph {
+    margin-bottom: 1.25rem; /* Consistent paragraph spacing */
+  }
+  
+  .section {
+    margin-top: 2.5rem; /* mt-8 equivalent, plus a bit more for visual separation */
+    margin-bottom: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem; /* Larger than text-xl */
+    font-weight: 600; /* semibold */
+    margin-bottom: 0.75rem; /* mb-2 */
+    color: var(--text-dark);
+    padding-bottom: 0.25rem;
+    /* Optional: border-bottom: 1px solid var(--color-accent-light); */
+  }
+  
+  .list {
+    list-style-type: disc;
+    padding-left: 1.5rem; /* pl-6 */
+    margin-bottom: 1.25rem; /* mb-4 */
+  }
+  
+  .listItem {
+    margin-bottom: 0.5rem; /* Space between list items */
+  }
+  
+  .listItem strong {
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  .contactLink {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .contactLink:hover {
+    text-decoration: underline;
+    color: var(--color-primary-dark);
+  }
+  
+  /* Add any other styles you might need */
