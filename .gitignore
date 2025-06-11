@@ -9,4 +9,4 @@ typings/
 node_modules/
 *.local
 
-firebase-admin-creds.json
+firebase-admin-creds.jsonfunctions/firebase-debug.log
