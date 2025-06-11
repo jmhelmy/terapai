@@ -2,19 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // legacy (uncomment if you prefer):
-    // domains: ["images.pexels.com"],
-
-    // recommended in Next 15+:
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-        // optionally add pathname: "/photos/**"
-      },
+    domains: [
+      "images.pexels.com",
+      // add other domains as needed
     ],
   },
-  // …any other config you already have
+  // other config options...
 };
 
 export default nextConfig;

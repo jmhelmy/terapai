@@ -1,0 +1,9 @@
+{
+  "app/test/page.tsx -> firebase/auth": {
+    "id": 6203,
+    "files": [
+      "static/chunks/45e90bda-8fcca542757c50eb.js",
+      "static/chunks/6435-a2212f125ab62d7f.js"
+    ]
+  }
+}

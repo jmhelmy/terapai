@@ -27,7 +27,7 @@ export default function HomePage() {
           </p>
           <div className={styles.ctaButtons}>
             <Link href="/register" className={styles.ctaButtonPrimary}>
-              Start Your Free Trial
+              !!Start Your Free Trial
             </Link>
             <Link href="#features" className={styles.ctaButtonSecondary}>
               Explore Features

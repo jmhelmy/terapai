@@ -1,6 +1,8 @@
 // functions/src/services/firestoreService.ts
+
 import * as functions from 'firebase-functions';
-import { adminApp, db } from '../common/adminSdk'; // Import adminApp and db
+import { db } from '../common/adminSdk';
+import * as admin from 'firebase-admin';
 
 // Define the interface for the data passed to this service
 export interface NoteToSaveData {
@@ -25,14 +27,14 @@ export async function saveNote(details: NoteToSaveData): Promise<string> {
     throw new Error('sessionDate must be a positive number (ms since Unix epoch)');
   }
 
-  // Build Firestore document payload using adminApp
+  // Build Firestore document payload using admin.firestore helpers
   const noteData = {
     therapistId: details.therapistId,
-    sessionDate: adminApp.firestore.Timestamp.fromMillis(tsMillis), // Use adminApp
+    sessionDate: admin.firestore.Timestamp.fromMillis(tsMillis),
     transcript: details.transcript,
     structuredContent: details.structuredContent,
     originalAudioFileName: details.originalAudioFileName,
-    createdAt: adminApp.firestore.FieldValue.serverTimestamp(), // Use adminApp
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
     status: 'completed',
   };
 

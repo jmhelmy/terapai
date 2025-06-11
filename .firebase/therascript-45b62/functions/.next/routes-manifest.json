@@ -1,0 +1,209 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/api/sessions/[sessionId]",
+      "regex": "^/api/sessions/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPsessionId": "nxtPsessionId"
+      },
+      "namedRegex": "^/api/sessions/(?<nxtPsessionId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/session/[sessionId]",
+      "regex": "^/session/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPsessionId": "nxtPsessionId"
+      },
+      "namedRegex": "^/session/(?<nxtPsessionId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/soap-guide/[professionSlug]",
+      "regex": "^/soap\\-guide/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPprofessionSlug": "nxtPprofessionSlug"
+      },
+      "namedRegex": "^/soap\\-guide/(?<nxtPprofessionSlug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/soap-guide/[professionSlug]/[issueSlug]",
+      "regex": "^/soap\\-guide/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPprofessionSlug": "nxtPprofessionSlug",
+        "nxtPissueSlug": "nxtPissueSlug"
+      },
+      "namedRegex": "^/soap\\-guide/(?<nxtPprofessionSlug>[^/]+?)/(?<nxtPissueSlug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/about/security",
+      "regex": "^/about/security(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/security(?:/)?$"
+    },
+    {
+      "page": "/account",
+      "regex": "^/account(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/account(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/consent",
+      "regex": "^/consent(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/consent(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/faq",
+      "regex": "^/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/faq(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/legal",
+      "regex": "^/legal(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/legal(?:/)?$"
+    },
+    {
+      "page": "/legal/privacy",
+      "regex": "^/legal/privacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/legal/privacy(?:/)?$"
+    },
+    {
+      "page": "/legal/terms",
+      "regex": "^/legal/terms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/legal/terms(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/pricing",
+      "regex": "^/pricing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pricing(?:/)?$"
+    },
+    {
+      "page": "/register",
+      "regex": "^/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/register(?:/)?$"
+    },
+    {
+      "page": "/session/record",
+      "regex": "^/session/record(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/session/record(?:/)?$"
+    },
+    {
+      "page": "/soap-guide",
+      "regex": "^/soap\\-guide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/soap\\-guide(?:/)?$"
+    },
+    {
+      "page": "/solutions",
+      "regex": "^/solutions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/solutions(?:/)?$"
+    },
+    {
+      "page": "/solutions/ai-notes",
+      "regex": "^/solutions/ai\\-notes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/solutions/ai\\-notes(?:/)?$"
+    },
+    {
+      "page": "/solutions/emr-integration",
+      "regex": "^/solutions/emr\\-integration(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/solutions/emr\\-integration(?:/)?$"
+    },
+    {
+      "page": "/solutions/session-insights",
+      "regex": "^/solutions/session\\-insights(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/solutions/session\\-insights(?:/)?$"
+    },
+    {
+      "page": "/test",
+      "regex": "^/test(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/test(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}

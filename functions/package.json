@@ -24,7 +24,7 @@
     "@types/ffmpeg-static": "^3.0.3",
     "@types/fluent-ffmpeg": "^2.1.27",
     "firebase-functions-test": "^3.1.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   },
   "private": true
 }
