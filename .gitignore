@@ -10,3 +10,5 @@ node_modules/
 *.local
 
 firebase-admin-creds.jsonfunctions/firebase-debug.log
+
+firebase-admin-creds.jsonfirebase-admin-creds.json
