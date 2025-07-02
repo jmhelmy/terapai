@@ -6,11 +6,6 @@ import SessionTabs from "./SessionTabs";
 import TranscriptTab from "./TranscriptTab";
 import SoapNotesTab from "./SoapNotesTab";
 
-interface TranscriptEntry {
-  speaker: number;
-  text: string;
-}
-
 interface SOAPNote {
   subjective: string;
   objective: string;
@@ -18,11 +13,11 @@ interface SOAPNote {
   plan: string;
 }
 
-interface Session {
+export interface Session {
   id: string;
   clientName: string;
-  transcript: TranscriptEntry[];
-  notes: SOAPNote;
+  transcript: string;    // ← was TranscriptEntry[], now a single string
+  soapNote: SOAPNote;    // ← was `notes`
 }
 
 export default function SessionDetail({
@@ -43,10 +38,12 @@ export default function SessionDetail({
       <SessionTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <div style={{ marginTop: "1rem" }}>
-        {activeTab === "SOAP Notes" && (
-          <SoapNotesTab sessionId={session.id} initialSoap={session.notes} />
-        )}
-        {activeTab === "Transcript" && (
+        {activeTab === "Notes" ? (
+          <SoapNotesTab
+            sessionId={session.id}
+            initialSoap={session.soapNote}
+          />
+        ) : (
           <TranscriptTab transcript={session.transcript} />
         )}
       </div>

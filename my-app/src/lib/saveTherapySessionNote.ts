@@ -51,12 +51,18 @@ export async function saveTherapySessionNote(
   // if (!user) { ... }
 
   // Build the exact object that matches your Firestore rules:
+  const normalizedSoapNote: SoapNote = {
+    subjective: soapNote?.subjective ?? "",
+    objective: soapNote?.objective ?? "",
+    assessment: soapNote?.assessment ?? "",
+    plan: soapNote?.plan ?? "",
+  };
   const noteData: TherapySessionNoteData = {
     therapistId: userId, // Use the userId argument
     createdAt: serverTimestamp(), // Use the imported modular serverTimestamp function
     sessionDate: Timestamp.fromDate(sessionDate), // Use modular Timestamp
     transcript,
-    soapNote,
+    soapNote: normalizedSoapNote,
     structuredContent: '', // <-- this satisfies Firestore rules
     originalAudioFileName,
     status: 'complete',

@@ -10,7 +10,7 @@ interface CaduceusIconProps {
 export default function CaduceusIcon({ className = '' }: CaduceusIconProps) {
   return (
     <img
-      src="/icons/hipaa.png"
+      src="/hipaa.png"
       alt="HIPAA Compliant"
       className={className}
     />

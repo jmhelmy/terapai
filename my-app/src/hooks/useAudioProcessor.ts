@@ -20,6 +20,10 @@ export const useAudioProcessor = () => {
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [statusMessage, setStatusMessage] = useState<string>('');
 
+  // Log once when hook is first used
+  console.log('🐛 [useAudioProcessor] ENV NEXT_PUBLIC_TRANSCRIBE_URL =', process.env.NEXT_PUBLIC_TRANSCRIBE_URL);
+  console.log('🐛 [useAudioProcessor] ENV NEXT_PUBLIC_WHISPER_API_URL =', process.env.NEXT_PUBLIC_WHISPER_API_URL);
+
   const processAudio = async (
     audioBlob: Blob,
     userId: string,
@@ -38,7 +42,6 @@ export const useAudioProcessor = () => {
       onComplete?.(false, undefined, null, err);
       return;
     }
-
     if (!sessionId) {
       const err = 'Processing failed: sessionId is missing or invalid.';
       console.error(err);
@@ -53,32 +56,39 @@ export const useAudioProcessor = () => {
 
     try {
       const defaultFileName = 'session-audio.mp3';
-      const file = new File([audioBlob], defaultFileName, { type: audioBlob.type });
+      const file = new File([audioBlob], defaultFileName, {
+        type: audioBlob.type,
+      });
 
-      console.log('📤 Uploading to Whisper with file.name:', file.name);
+      console.log('📤 [useAudioProcessor] Uploading to Whisper with file.name:', file.name);
       setUploadProgress(10);
+
+      // --- DEBUG: check env right before fetch ---
+      const whisperBaseUrl = process.env.NEXT_PUBLIC_TRANSCRIBE_URL;
+      console.log('🐛 [useAudioProcessor] whisperBaseUrl:', whisperBaseUrl);
+      if (!whisperBaseUrl) {
+        throw new Error('Missing NEXT_PUBLIC_TRANSCRIBE_URL env variable');
+      }
+
+      const tranUrl = `${whisperBaseUrl.replace(/\/+$/, '')}/transcribe`;
+      console.log('🐛 [useAudioProcessor] Fetching transcription at:', tranUrl);
 
       const formData = new FormData();
       formData.append('file', file);
 
-      const whisperBaseUrl = process.env.NEXT_PUBLIC_WHISPER_API_URL;
-      if (!whisperBaseUrl) {
-        throw new Error('Whisper API URL is not defined in environment variables.');
-      }
-
-      const whisperResponse = await fetch(`${whisperBaseUrl}/transcribe`, {
+      const whisperResponse = await fetch(tranUrl, {
         method: 'POST',
         body: formData,
       });
 
       if (!whisperResponse.ok) {
-        const errText = await whisperResponse.text();
-        throw new Error(`Transcription error: ${whisperResponse.status} - ${errText}`);
+        const errText = await whisperResponse.text().catch(() => '<no body>');
+        throw new Error(`Transcription HTTP ${whisperResponse.status} – ${errText}`);
       }
 
       const whisperResult = await whisperResponse.json();
       const transcript: string = whisperResult.text;
-      console.log('✅ Whisper transcript:', transcript);
+      console.log('✅ [useAudioProcessor] Whisper transcript:', transcript);
 
       setStatusMessage('Transcript received. Sending to OpenAI…');
       setUploadProgress(40);
@@ -90,19 +100,19 @@ export const useAudioProcessor = () => {
       });
 
       if (!aiResponse.ok) {
-        const errText = await aiResponse.text();
-        throw new Error(`SOAP note generation error: ${aiResponse.status} - ${errText}`);
+        const errText = await aiResponse.text().catch(() => '<no body>');
+        throw new Error(`SOAP note HTTP ${aiResponse.status} – ${errText}`);
       }
 
       const aiData = await aiResponse.json();
       const soapNote: SoapNote = aiData.soapNote;
-      console.log('✅ Received SOAP note:', soapNote);
+      console.log('✅ [useAudioProcessor] Received SOAP note:', soapNote);
 
       setStatusMessage('Saving transcript and SOAP note…');
       setUploadProgress(70);
 
-      const safeFilename = file.name ?? defaultFileName;
-      console.log('▶️ Final originalAudioFileName to write:', safeFilename);
+      const safeFilename = file.name || defaultFileName;
+      console.log('▶️ [useAudioProcessor] Final originalAudioFileName to write:', safeFilename);
 
       const noteId = await saveTherapySessionNote(
         userId,
@@ -113,14 +123,14 @@ export const useAudioProcessor = () => {
         sessionId
       );
 
-      console.log('✅ Therapy session note saved with ID:', noteId);
+      console.log('✅ [useAudioProcessor] Therapy session note saved with ID:', noteId);
       setStatusMessage('Saved successfully.');
       setUploadProgress(100);
 
       onComplete?.(true, { transcript, soapNote }, noteId);
     } catch (err: any) {
       const errorMsg = `Processing failed: ${err.message}`;
-      console.error(errorMsg);
+      console.error('❌ [useAudioProcessor]', errorMsg);
       setStatusMessage(errorMsg);
       onComplete?.(false, undefined, null, errorMsg);
     } finally {

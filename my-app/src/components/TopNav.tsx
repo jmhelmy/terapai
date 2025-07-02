@@ -13,12 +13,12 @@ export default function TopNav() {  // ✅ now it's a default export
       {/* Left: Site Brand and Logo */}
       <div className={styles.brandContainer}>
         <Link href="/dashboard" className={styles.brand}>
-          <Image
-            src="/couchicon2.png" // IMPORTANT: Replace with your actual logo path
-            alt="terapai Logo"
-            width={32}
-            height={32}
-          />
+        <Image
+          src="/terapai-logo.png"
+          alt="terapai Logo"
+         width={32}
+         height={32}
+/>
           terapai
         </Link>
       </div>

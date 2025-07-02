@@ -1,5 +1,14 @@
 'use client';
 
+console.log('🚨 DEBUG: process.env.NEXT_PUBLIC_TRANSCRIBE_URL =', process.env.NEXT_PUBLIC_TRANSCRIBE_URL);
+
+if (typeof window !== "undefined") {
+  // This runs in the browser, after hydration
+  // (process.env should have been replaced at build time)
+  window.__debug_env_transcribe_url = process.env.NEXT_PUBLIC_TRANSCRIBE_URL;
+  console.log('🚨 [CLIENT] NEXT_PUBLIC_TRANSCRIBE_URL:', process.env.NEXT_PUBLIC_TRANSCRIBE_URL);
+}
+
 import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
@@ -14,6 +23,7 @@ import { useAudioProcessor } from '@/hooks/useAudioProcessor';
 import { makeRandomId } from '@/utils/makeRandomId';
 
 import styles from './RecordSessionPage.module.css';
+
 
 function formatDuration(seconds: number) {
   const m = Math.floor(seconds / 60);

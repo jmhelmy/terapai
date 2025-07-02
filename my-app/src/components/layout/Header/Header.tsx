@@ -67,7 +67,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo} onClick={closeAllMenus}>
-        <Image src="/couchicon2.png" alt="Terapai Logo" width={36} height={36} />
+        <Image src="/terapai-logo.png" alt="Terapai Logo" width={36} height={36} />
         <span>Terapai</span>
       </Link>
 

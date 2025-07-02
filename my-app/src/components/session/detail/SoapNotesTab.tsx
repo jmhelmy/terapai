@@ -1,7 +1,8 @@
-'use client';
+// src/components/session/detail/SoapNotesTab.tsx
+"use client";
 
-import { useState } from 'react';
-import styles from './soapNotesTab.module.css';
+import { useState } from "react";
+import styles from "./soapNotesTab.module.css";
 
 interface SoapNote {
   subjective: string;
@@ -16,7 +17,13 @@ interface SoapNotesTabProps {
 }
 
 export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabProps) {
-  const [soap, setSoap] = useState<SoapNote>(initialSoap);
+  const normalizedSoap: SoapNote = {
+    subjective: initialSoap.subjective ?? "",
+    objective: initialSoap.objective ?? "",
+    assessment: initialSoap.assessment ?? "",
+    plan: initialSoap.plan ?? "",
+  };
+  const [soap, setSoap] = useState<SoapNote>(normalizedSoap);
   const [isSaving, setIsSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
@@ -34,8 +41,8 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
 
     try {
       const res = await fetch(`/api/sessions/${sessionId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ soapNote: soap }),
       });
 
@@ -47,7 +54,7 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
       setSaveSuccess(true);
     } catch (err: any) {
       console.error(err);
-      setSaveError(err.message || 'Unknown error');
+      setSaveError(err.message || "Unknown error");
     } finally {
       setIsSaving(false);
     }
@@ -59,13 +66,11 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
       {saveSuccess && <p className={styles.success}>Saved!</p>}
 
       <section className={styles.section}>
-        <h4>
-          Subjective
-        </h4>
+        <h4>Subjective</h4>
         <textarea
           className={styles.textarea}
           value={soap.subjective}
-          onChange={(e) => handleChange('subjective', e.target.value)}
+          onChange={(e) => handleChange("subjective", e.target.value)}
         />
       </section>
 
@@ -74,7 +79,7 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
         <textarea
           className={styles.textarea}
           value={soap.objective}
-          onChange={(e) => handleChange('objective', e.target.value)}
+          onChange={(e) => handleChange("objective", e.target.value)}
         />
       </section>
 
@@ -83,7 +88,7 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
         <textarea
           className={styles.textarea}
           value={soap.assessment}
-          onChange={(e) => handleChange('assessment', e.target.value)}
+          onChange={(e) => handleChange("assessment", e.target.value)}
         />
       </section>
 
@@ -92,7 +97,7 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
         <textarea
           className={styles.textarea}
           value={soap.plan}
-          onChange={(e) => handleChange('plan', e.target.value)}
+          onChange={(e) => handleChange("plan", e.target.value)}
         />
       </section>
 
@@ -102,7 +107,7 @@ export default function SoapNotesTab({ sessionId, initialSoap }: SoapNotesTabPro
           onClick={handleSave}
           disabled={isSaving}
         >
-          {isSaving ? 'Saving…' : 'Save Changes'}
+          {isSaving ? "Saving…" : "Save Changes"}
         </button>
       </div>
     </div>

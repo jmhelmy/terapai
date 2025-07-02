@@ -1,0 +1,2320 @@
+[debug] [2025-07-02T07:15:33.604Z] ----------------------------------------------------------------------
+[debug] [2025-07-02T07:15:33.611Z] Command:       /Users/johnhelmy/.nvm/versions/node/v20.19.2/bin/node /Users/johnhelmy/.nvm/versions/node/v20.19.2/bin/firebase deploy
+[debug] [2025-07-02T07:15:33.611Z] CLI Version:   14.6.0
+[debug] [2025-07-02T07:15:33.611Z] Platform:      darwin
+[debug] [2025-07-02T07:15:33.611Z] Node Version:  v20.19.2
+[debug] [2025-07-02T07:15:33.611Z] Time:          Wed Jul 02 2025 00:15:33 GMT-0700 (Pacific Daylight Time)
+[debug] [2025-07-02T07:15:33.611Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-02T07:15:33.702Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-02T07:15:33.703Z] > authorizing via signed-in user (jmhelmy@gmail.com)
+[debug] [2025-07-02T07:15:33.703Z] [iam] checking project therascript-45b62 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-07-02T07:15:33.703Z] Checked if tokens are valid: false, expires at: 1751438654709
+[debug] [2025-07-02T07:15:33.703Z] Checked if tokens are valid: false, expires at: 1751438654709
+[debug] [2025-07-02T07:15:33.703Z] > refreshing access token with scopes: []
+[debug] [2025-07-02T07:15:33.704Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-02T07:15:33.704Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-02T07:15:33.895Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-07-02T07:15:33.895Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-02T07:15:33.906Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions [none]
+[debug] [2025-07-02T07:15:33.906Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions x-goog-quota-user=projects/therascript-45b62
+[debug] [2025-07-02T07:15:33.906Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-02T07:15:34.230Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions 200
+[debug] [2025-07-02T07:15:34.230Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-02T07:15:34.230Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:34.230Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:34.230Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-07-02T07:15:34.230Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-07-02T07:15:34.668Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-07-02T07:15:34.668Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-07-02T07:15:34.669Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:34.669Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:34.670Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therascript-45b62 [none]
+[debug] [2025-07-02T07:15:35.150Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therascript-45b62 200
+[debug] [2025-07-02T07:15:35.150Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therascript-45b62 {"projectId":"therascript-45b62","projectNumber":"64757237031","displayName":"Terapai","name":"projects/therascript-45b62","resources":{"hostingSite":"therascript-45b62"},"state":"ACTIVE","etag":"1_f7045ede-e286-4635-926e-0eff1dac0497"}
+[debug] [2025-07-02T07:15:35.897Z] defaultcredentials: writing to file /Users/johnhelmy/.config/firebase/jmhelmy_gmail_com_application_default_credentials.json
+[debug] [2025-07-02T07:15:35.899Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:35.899Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:35.899Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites pageToken=&pageSize=10
+[debug] [2025-07-02T07:15:36.865Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites 200
+[debug] [2025-07-02T07:15:36.866Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites {"sites":[{"name":"projects/therascript-45b62/sites/therascript-45b62","defaultUrl":"https://therascript-45b62.web.app","appId":"1:64757237031:web:c541b0cf649c0d80fb5502","type":"DEFAULT_SITE"}]}
+[debug] [2025-07-02T07:15:36.866Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:36.866Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:36.867Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:64757237031:web:c541b0cf649c0d80fb5502/config [none]
+[debug] [2025-07-02T07:15:37.316Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:64757237031:web:c541b0cf649c0d80fb5502/config 200
+[debug] [2025-07-02T07:15:37.317Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:64757237031:web:c541b0cf649c0d80fb5502/config {"projectId":"therascript-45b62","appId":"1:64757237031:web:c541b0cf649c0d80fb5502","storageBucket":"therascript-45b62.firebasestorage.app","apiKey":"AIzaSyB8XOlU5pDZV0FWvnRLk3520uYEgwbVmac","authDomain":"therascript-45b62.firebaseapp.com","messagingSenderId":"64757237031"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-07-02T07:15:38.575Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:38.575Z] Checked if tokens are valid: true, expires at: 1751444132895
+[debug] [2025-07-02T07:15:38.575Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites/therascript-45b62 [none]
+[debug] [2025-07-02T07:15:38.978Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites/therascript-45b62 200
+[debug] [2025-07-02T07:15:38.978Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites/therascript-45b62 {"name":"projects/therascript-45b62/sites/therascript-45b62","defaultUrl":"https://therascript-45b62.web.app","appId":"1:64757237031:web:c541b0cf649c0d80fb5502","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.3.3
+
+[info]    - Environments: .env.local
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully in 1000ms
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+Failed to compile.
+
+[info] 
+./src/app/about/security/page.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:24  Error: Strings must use doublequote.  quotes
+4:24  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+42:104  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+42:123  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+123:47  Error: Strings must use doublequote.  quotes
+
+./src/app/account/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:10  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+4:50  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+10:25  Error: Strings must use doublequote.  quotes
+34:19  Error: Strings must use doublequote.  quotes
+43:19  Error: Strings must use doublequote.  quotes
+46:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+47:21  Error: Strings must use doublequote.  quotes
+72:1  Error: Expected indentation of 4 spaces but found 5.  indent
+101:46  Error: Strings must use doublequote.  quotes
+108:46  Error: Strings must use doublequote.  quotes
+115:46  Error: Strings must use doublequote.  quotes
+124:46  Error: Strings must use doublequote.  quotes
+140:27  Error: Strings must use doublequote.  quotes
+141:35  Error: Strings must use doublequote.  quotes
+
+./src/app/api/generate-soap-note/route.ts
+3:24  Error: Strings must use doublequote.  quotes
+5:43  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+13:5  Error: Strings must use doublequote.  quotes
+16:5  Error: Strings must use doublequote.  quotes
+33:17  Error: Strings must use doublequote.  quotes
+36:20  Error: Strings must use doublequote.  quotes
+38:18  Error: Strings must use doublequote.  quotes
+57:17  Error: Strings must use doublequote.  quotes
+64:17  Error: Strings must use doublequote.  quotes
+65:20  Error: Strings must use doublequote.  quotes
+68:17  Error: Strings must use doublequote.  quotes
+74:17  Error: Strings must use doublequote.  quotes
+76:60  Error: Strings must use doublequote.  quotes
+78:17  Error: Strings must use doublequote.  quotes
+83:19  Error: Strings must use doublequote.  quotes
+84:14  Error: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+85:21  Error: Strings must use doublequote.  quotes
+87:18  Error: Strings must use doublequote.  quotes
+93:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+94:19  Error: Strings must use doublequote.  quotes
+101:31  Error: Strings must use doublequote.  quotes
+102:55  Error: Strings must use doublequote.  quotes
+
+./src/app/api/sessions/[sessionId]/route.ts
+3:24  Error: Strings must use doublequote.  quotes
+4:24  Error: Strings must use doublequote.  quotes
+6:43  Error: Strings must use doublequote.  quotes
+7:25  Error: Strings must use doublequote.  quotes
+12:39  Error: Strings must use doublequote.  quotes
+17:16  Error: Strings must use doublequote.  quotes
+26:19  Error: Strings must use doublequote.  quotes
+32:18  Error: Strings must use doublequote.  quotes
+39:48  Error: Strings must use doublequote.  quotes
+40:48  Error: Strings must use doublequote.  quotes
+41:48  Error: Strings must use doublequote.  quotes
+42:48  Error: Strings must use doublequote.  quotes
+47:46  Error: Strings must use doublequote.  quotes
+48:65  Error: Strings must use doublequote.  quotes
+49:42  Error: Strings must use doublequote.  quotes
+52:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+53:19  Error: Strings must use doublequote.  quotes
+55:31  Error: Strings must use doublequote.  quotes
+
+./src/app/api/sessions/route.ts
+1:24  Error: Strings must use doublequote.  quotes
+2:24  Error: Strings must use doublequote.  quotes
+4:43  Error: Strings must use doublequote.  quotes
+5:36  Error: Strings must use doublequote.  quotes
+8:15  Error: Strings must use doublequote.  quotes
+12:44  Error: Strings must use doublequote.  quotes
+13:17  Error: Strings must use doublequote.  quotes
+15:33  Error: Strings must use doublequote.  quotes
+16:20  Error: Strings must use doublequote.  quotes
+17:41  Error: Strings must use doublequote.  quotes
+20:38  Error: Strings must use doublequote.  quotes
+21:17  Error: Strings must use doublequote.  quotes
+26:19  Error: Strings must use doublequote.  quotes
+27:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+28:21  Error: Strings must use doublequote.  quotes
+30:18  Error: Strings must use doublequote.  quotes
+36:17  Error: Strings must use doublequote.  quotes
+39:20  Error: Strings must use doublequote.  quotes
+40:41  Error: Strings must use doublequote.  quotes
+45:19  Error: Strings must use doublequote.  quotes
+46:14  Error: Strings must use doublequote.  quotes
+46:29  Error: Strings must use doublequote.  quotes
+50:19  Error: Strings must use doublequote.  quotes
+51:42  Error: Strings must use doublequote.  quotes
+51:55  Error: Strings must use doublequote.  quotes
+52:19  Error: Strings must use doublequote.  quotes
+53:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+54:20  Error: Strings must use doublequote.  quotes
+56:19  Error: Strings must use doublequote.  quotes
+64:48  Error: Strings must use doublequote.  quotes
+65:66  Error: Strings must use doublequote.  quotes
+66:40  Error: Strings must use doublequote.  quotes
+68:52  Error: Strings must use doublequote.  quotes
+69:52  Error: Strings must use doublequote.  quotes
+70:52  Error: Strings must use doublequote.  quotes
+71:52  Error: Strings must use doublequote.  quotes
+76:17  Error: Strings must use doublequote.  quotes
+79:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+81:19  Error: Strings must use doublequote.  quotes
+81:63  Error: Strings must use doublequote.  quotes
+
+./src/app/api/testadmin/route.ts
+1:24  Error: Strings must use doublequote.  quotes
+3:24  Error: Strings must use doublequote.  quotes
+
+./src/app/consent/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:50  Error: Strings must use doublequote.  quotes
+4:27  Error: Strings must use doublequote.  quotes
+5:25  Error: Strings must use doublequote.  quotes
+17:19  Error: Strings must use doublequote.  quotes
+28:23  Error: Strings must use doublequote.  quotes
+32:23  Error: Strings must use doublequote.  quotes
+40:31  Error: Strings must use doublequote.  quotes
+41:17  Error: Strings must use doublequote.  quotes
+42:20  Error: Strings must use doublequote.  quotes
+42:36  Error: Strings must use doublequote.  quotes
+43:48  Error: Strings must use doublequote.  quotes
+47:21  Error: Strings must use doublequote.  quotes
+49:41  Error: Strings must use doublequote.  quotes
+51:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+52:21  Error: Strings must use doublequote.  quotes
+53:38  Error: Strings must use doublequote.  quotes
+81:25  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+95:23  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+132:41  Error: Strings must use doublequote.  quotes
+132:75  Error: Strings must use doublequote.  quotes
+134:24  Error: Strings must use doublequote.  quotes
+134:40  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/DashboardContainer.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:37  Error: Strings must use doublequote.  quotes
+4:22  Error: Strings must use doublequote.  quotes
+5:39  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+7:38  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:26  Error: Strings must use doublequote.  quotes
+10:27  Error: Strings must use doublequote.  quotes
+17:54  Error: Strings must use doublequote.  quotes
+
+[info] 25:21  Error: Strings must use doublequote.  quotes
+31:19  Error: Strings must use doublequote.  quotes
+31:58  Error: Strings must use doublequote.  quotes
+33:36  Error: Strings must use doublequote.  quotes
+44:19  Error: Strings must use doublequote.  quotes
+45:19  Error: Strings must use doublequote.  quotes
+46:19  Error: Strings must use doublequote.  quotes
+48:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+49:21  Error: Strings must use doublequote.  quotes
+52:53  Error: Strings must use doublequote.  quotes
+56:45  Error: Strings must use doublequote.  quotes
+57:62  Error: Strings must use doublequote.  quotes
+61:19  Error: Strings must use doublequote.  quotes
+65:21  Error: Strings must use doublequote.  quotes
+66:16  Error: Strings must use doublequote.  quotes
+73:6  Warning: React Hook useEffect has a missing dependency: 'fetchSessions'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+81:17  Error: Strings must use doublequote.  quotes
+83:11  Error: Strings must use doublequote.  quotes
+83:27  Error: Strings must use doublequote.  quotes
+96:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+97:21  Error: Strings must use doublequote.  quotes
+98:28  Error: Strings must use doublequote.  quotes
+105:17  Error: Strings must use doublequote.  quotes
+113:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+114:21  Error: Strings must use doublequote.  quotes
+115:28  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/EmptyState.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:19  Error: Strings must use doublequote.  quotes
+4:18  Error: Strings must use doublequote.  quotes
+5:26  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/Header.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/LoadingState.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/SessionList.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:32  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+6:25  Error: Strings must use doublequote.  quotes
+18:13  Error: Strings must use doublequote.  quotes
+18:24  Error: Strings must use doublequote.  quotes
+43:21  Error: Strings must use doublequote.  quotes
+63:21  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/ViewToggle.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+7:35  Error: Strings must use doublequote.  quotes
+19:55  Error: Strings must use doublequote.  quotes
+19:82  Error: Strings must use doublequote.  quotes
+20:33  Error: Strings must use doublequote.  quotes
+26:55  Error: Strings must use doublequote.  quotes
+26:84  Error: Strings must use doublequote.  quotes
+27:33  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:21  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+3:37  Error: Strings must use doublequote.  quotes
+4:27  Error: Strings must use doublequote.  quotes
+8:32  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+10:25  Error: Strings must use doublequote.  quotes
+30:15  Error: Strings must use doublequote.  quotes
+31:15  Error: Strings must use doublequote.  quotes
+51:19  Error: Strings must use doublequote.  quotes
+57:33  Error: Strings must use doublequote.  quotes
+57:52  Error: Strings must use doublequote.  quotes
+63:33  Error: Strings must use doublequote.  quotes
+63:52  Error: Strings must use doublequote.  quotes
+
+./src/app/faq/page.tsx
+4:19  Error: Strings must use doublequote.  quotes
+5:24  Error: Strings must use doublequote.  quotes
+6:24  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+63:78  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/layout.tsx
+2:28  Error: Strings must use doublequote.  quotes
+9:13  Error: Strings must use doublequote.  quotes
+10:12  Error: Strings must use doublequote.  quotes
+10:19  Error: Strings must use doublequote.  quotes
+10:26  Error: Strings must use doublequote.  quotes
+10:33  Error: Strings must use doublequote.  quotes
+11:12  Error: Strings must use doublequote.  quotes
+12:13  Error: Strings must use doublequote.  quotes
+
+./src/app/legal/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:27  Error: Strings must use doublequote.  quotes
+5:26  Error: Strings must use doublequote.  quotes
+6:18  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+16:26  Error: Strings must use doublequote.  quotes
+16:43  Error: Strings must use doublequote.  quotes
+17:17  Error: Strings must use doublequote.  quotes
+
+./src/app/legal/privacy/page.tsx
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+6:24  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+10:9  Error: 'effectiveDate' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+21:20  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:24  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:26  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:31  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:36  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:39  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/legal/terms/page.tsx
+3:19  Error: Strings must use doublequote.  quotes
+5:24  Error: Strings must use doublequote.  quotes
+6:24  Error: Strings must use doublequote.  quotes
+8:11  Error: Missing semicolon.  semi
+12:1  Error: Expected indentation of 6 spaces but found 4.  indent
+13:1  Error: Expected indentation of 6 spaces but found 4.  indent
+14:1  Error: Expected indentation of 8 spaces but found 6.  indent
+16:1  Error: Expected indentation of 8 spaces but found 6.  indent
+18:1  Error: Expected indentation of 8 spaces but found 6.  indent
+20:1  Error: Expected indentation of 8 spaces but found 6.  indent
+22:1  Error: Expected indentation of 8 spaces but found 6.  indent
+23:1  Error: Expected indentation of 8 spaces but found 6.  indent
+25:1  Error: Expected indentation of 8 spaces but found 6.  indent
+27:1  Error: Expected indentation of 8 spaces but found 6.  indent
+28:1  Error: Expected indentation of 8 spaces but found 6.  indent
+30:1  Error: Expected indentation of 8 spaces but found 6.  indent
+32:1  Error: Expected indentation of 8 spaces but found 6.  indent
+33:1  Error: Expected indentation of 8 spaces but found 6.  indent
+35:1  Error: Expected indentation of 8 spaces but found 6.  indent
+37:1  Error: Expected indentation of 8 spaces but found 6.  indent
+38:1  Error: Expected indentation of 8 spaces but found 6.  indent
+40:1  Error: Expected indentation of 8 spaces but found 6.  indent
+42:1  Error: Expected indentation of 8 spaces but found 6.  indent
+43:1  Error: Expected indentation of 8 spaces but found 6.  indent
+45:1  Error: Expected indentation of 8 spaces but found 6.  indent
+47:1  Error: Expected indentation of 8 spaces but found 6.  indent
+48:1  Error: Expected indentation of 8 spaces but found 6.  
+[info] indent
+49:34  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+49:41  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+50:1  Error: Expected indentation of 8 spaces but found 6.  indent
+52:1  Error: Expected indentation of 8 spaces but found 6.  indent
+53:1  Error: Expected indentation of 8 spaces but found 6.  indent
+55:1  Error: Expected indentation of 8 spaces but found 6.  indent
+57:1  Error: Expected indentation of 8 spaces but found 6.  indent
+58:1  Error: Expected indentation of 8 spaces but found 6.  indent
+60:1  Error: Expected indentation of 8 spaces but found 6.  indent
+62:1  Error: Expected indentation of 8 spaces but found 6.  indent
+63:1  Error: Expected indentation of 8 spaces but found 6.  indent
+65:1  Error: Expected indentation of 8 spaces but found 6.  indent
+66:1  Error: Expected indentation of 6 spaces but found 4.  indent
+67:1  Error: Expected indentation of 6 spaces but found 4.  indent
+
+./src/app/login/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:26  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+6:22  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+8:18  Error: Strings must use doublequote.  quotes
+9:44  Error: Strings must use doublequote.  quotes
+13:44  Error: Strings must use doublequote.  quotes
+14:44  Error: Strings must use doublequote.  quotes
+25:19  Error: Strings must use doublequote.  quotes
+26:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+27:21  Error: Strings must use doublequote.  quotes
+29:31  Error: Strings must use doublequote.  quotes
+63:26  Error: Strings must use doublequote.  quotes
+63:44  Error: Strings must use doublequote.  quotes
+67:14  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+67:34  Error: Strings must use doublequote.  quotes
+
+./src/app/not-found.tsx
+2:18  Error: Strings must use doublequote.  quotes
+8:18  Error: Strings must use doublequote.  quotes
+9:24  Error: Strings must use doublequote.  quotes
+10:21  Error: Strings must use doublequote.  quotes
+11:25  Error: Strings must use doublequote.  quotes
+12:20  Error: Strings must use doublequote.  quotes
+13:20  Error: Strings must use doublequote.  quotes
+14:21  Error: Strings must use doublequote.  quotes
+15:18  Error: Strings must use doublequote.  quotes
+16:16  Error: Strings must use doublequote.  quotes
+21:21  Error: Strings must use doublequote.  quotes
+23:18  Error: Strings must use doublequote.  quotes
+24:19  Error: Strings must use doublequote.  quotes
+31:21  Error: Strings must use doublequote.  quotes
+33:25  Error: Strings must use doublequote.  quotes
+40:21  Error: Strings must use doublequote.  quotes
+41:25  Error: Strings must use doublequote.  quotes
+42:21  Error: Strings must use doublequote.  quotes
+43:18  Error: Strings must use doublequote.  quotes
+53:20  Error: Strings must use doublequote.  quotes
+54:20  Error: Strings must use doublequote.  quotes
+55:21  Error: Strings must use doublequote.  quotes
+57:18  Error: Strings must use doublequote.  quotes
+58:28  Error: Strings must use doublequote.  quotes
+59:25  Error: Strings must use doublequote.  quotes
+60:27  Error: Strings must use doublequote.  quotes
+61:23  Error: Strings must use doublequote.  quotes
+
+./src/app/pricing/page.tsx
+3:18  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+17:7  Error: 'ShieldCheckIcon' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+27:13  Error: Strings must use doublequote.  quotes
+28:21  Error: Strings must use doublequote.  quotes
+29:20  Error: Strings must use doublequote.  quotes
+30:20  Error: Strings must use doublequote.  quotes
+31:16  Error: Strings must use doublequote.  quotes
+32:16  Error: Strings must use doublequote.  quotes
+34:9  Error: Strings must use doublequote.  quotes
+35:9  Error: Strings must use doublequote.  quotes
+36:9  Error: Strings must use doublequote.  quotes
+37:9  Error: Strings must use doublequote.  quotes
+38:9  Error: Strings must use doublequote.  quotes
+43:13  Error: Strings must use doublequote.  quotes
+44:21  Error: Strings must use doublequote.  quotes
+45:20  Error: Strings must use doublequote.  quotes
+46:20  Error: Strings must use doublequote.  quotes
+47:16  Error: Strings must use doublequote.  quotes
+48:16  Error: Strings must use doublequote.  quotes
+50:9  Error: Strings must use doublequote.  quotes
+51:9  Error: Strings must use doublequote.  quotes
+52:9  Error: Strings must use doublequote.  quotes
+53:9  Error: Strings must use doublequote.  quotes
+54:9  Error: Strings must use doublequote.  quotes
+55:9  Error: Strings must use doublequote.  quotes
+56:9  Error: Strings must use doublequote.  quotes
+61:13  Error: Strings must use doublequote.  quotes
+62:21  Error: Strings must use doublequote.  quotes
+63:20  Error: Strings must use doublequote.  quotes
+64:20  Error: Strings must use doublequote.  quotes
+65:16  Error: Strings must use doublequote.  quotes
+66:16  Error: Strings must use doublequote.  quotes
+68:9  Error: Strings must use doublequote.  quotes
+69:9  Error: Strings must use doublequote.  quotes
+70:9  Error: Strings must use doublequote.  quotes
+71:9  Error: Strings must use doublequote.  quotes
+72:9  Error: Strings must use doublequote.  quotes
+73:9  Error: Strings must use doublequote.  quotes
+74:9  Error: Strings must use doublequote.  quotes
+104:105  Error: Strings must use doublequote.  quotes
+109:40  Error: Strings must use doublequote.  quotes
+118:38  Error: Strings must use doublequote.  quotes
+118:76  Error: Strings must use doublequote.  quotes
+159:1  Error: Expected indentation of 10 spaces but found 11.  indent
+161:263  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/register/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+6:26  Error: Strings must use doublequote.  quotes
+7:27  Error: Strings must use doublequote.  quotes
+8:20  Error: Strings must use doublequote.  quotes
+9:22  Error: Strings must use doublequote.  quotes
+11:48  Error: Strings must use doublequote.  quotes
+29:44  Error: Strings must use doublequote.  quotes
+30:44  Error: Strings must use doublequote.  quotes
+39:19  Error: Strings must use doublequote.  quotes
+40:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+41:21  Error: Strings must use doublequote.  quotes
+42:31  Error: Strings must use doublequote.  quotes
+75:36  Error: Strings must use doublequote.  quotes
+
+./src/app/session/[sessionId]/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:37  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+6:40  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+23:21  Error: Strings must use doublequote.  quotes
+28:46  Error: Strings must use doublequote.  quotes
+29:42  Error: Strings must use doublequote.  quotes
+31:54  Error: Strings must use doublequote.  quotes
+32:52  Error: Strings must use doublequote.  quotes
+33:54  Error: Strings must use doublequote.  quotes
+34:42  Error: Strings must use doublequote.  quotes
+39:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/session/record/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:13  Error: Strings must use doublequote.  quotes
+9:15  Error: Strings must use doublequote.  quotes
+12:54  Error: Strings must use doublequote.  quotes
+13:44  Error: Strings must use doublequote.  quotes
+14:18  Error: Strings must use doublequote.  quotes
+15:25  Error: Strings must use doublequote.  quotes
+17:26  Error: Strings must use doublequote.  quotes
+18:25  Error: Strings must use doublequote.  quotes
+19:20  Error: Strings must use doublequote.  quotes
+21:34  Error: Strings must use doublequote.  quotes
+22:35  Erro
+[info] r: Strings must use doublequote.  quotes
+23:30  Error: Strings must use doublequote.  quotes
+25:20  Error: Strings must use doublequote.  quotes
+31:40  Error: Strings must use doublequote.  quotes
+46:36  Error: Strings must use doublequote.  quotes
+76:19  Error: Strings must use doublequote.  quotes
+95:31  Error: 'token' is defined but never used.  @typescript-eslint/no-unused-vars
+98:25  Error: Strings must use doublequote.  quotes
+99:25  Error: Strings must use doublequote.  quotes
+101:27  Error: Strings must use doublequote.  quotes
+102:31  Error: Strings must use doublequote.  quotes
+152:53  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+173:21  Error: Strings must use doublequote.  quotes
+174:23  Error: Strings must use doublequote.  quotes
+178:21  Error: Strings must use doublequote.  quotes
+179:23  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/[professionSlug]/[issueSlug]/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:75  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:39  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+11:20  Error: Strings must use doublequote.  quotes
+12:58  Error: Strings must use doublequote.  quotes
+14:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+21:9  Error: 'pathname' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+24:83  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+25:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+31:58  Error: Strings must use doublequote.  quotes
+32:57  Error: Strings must use doublequote.  quotes
+32:63  Error: Strings must use doublequote.  quotes
+93:72  Error: Strings must use doublequote.  quotes
+95:27  Error: Strings must use doublequote.  quotes
+108:76  Error: Strings must use doublequote.  quotes
+131:35  Error: Strings must use doublequote.  quotes
+148:62  Error: Strings must use doublequote.  quotes
+149:86  Error: Strings must use doublequote.  quotes
+160:71  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+160:96  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/[professionSlug]/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:75  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:39  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+10:42  Error: 'Subtopic' is defined but never used.  @typescript-eslint/no-unused-vars
+10:58  Error: Strings must use doublequote.  quotes
+12:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+16:9  Error: 'pathname' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+29:75  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+42:3  Error: React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render.  react-hooks/rules-of-hooks
+65:89  Error: Strings must use doublequote.  quotes
+78:76  Error: Strings must use doublequote.  quotes
+125:42  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/_issue-content/physical-therapy/LowBackPaincontent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/_issue-content/psychotherapy/SubstanceUseDisorderContent.tsx
+1:19  Error: Strings must use doublequote.  quotes
+2:20  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/_profession-content/OccupationalTherapyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+14:82  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+14:98  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:79  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/PhysicalTherapyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+18:83  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+19:234  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+20:169  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+29:229  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/PsychotherapyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+19:78  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+22:80  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+23:41  Error: Strings must use doublequote.  quotes
+23:63  Error: Strings must use doublequote.  quotes
+23:82  Error: Strings must use doublequote.  quotes
+30:25  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+34:59  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+35:41  Error: Strings must use doublequote.  quotes
+35:63  Error: Strings must use doublequote.  quotes
+35:82  Error: Strings must use doublequote.  quotes
+36:42  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+47:41  Error: Strings must use doublequote.  quotes
+47:63  Error: Strings must use doublequote.  quotes
+47:82  Error: Strings must use doublequote.  quotes
+64:139  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+67:122  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/SpeechLanguagePathologyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+14:82  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+14:98  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:79  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/VeterinaryContent.tsx
+4:75  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:39  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+10:27  Error: 'GuideCategory' is defined but never used.  @typescript-eslint/no-unused-vars
+10:48  Error: Strings must use doublequote.  quotes
+13:11  Error: 'ProfessionContentComponentsMap' is defined but never used.  @typescript-eslint/no-unused-vars
+14:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+18:73  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+36:9  Error: 'pathname' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+54:7  Error: 'currentActiveGroupSlug' is never reassigned. Use 'const' instead.  prefer-const
+55:7  Error: 'currentActiveSubSlug' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+55:7  Error: 'currentActiveSubSlug' is never reassigned. Use 'const' instead.  prefer-const
+74:119  Error: Strings m
+[info] ust use doublequote.  quotes
+75:31  Error: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+83:108  Error: Strings must use doublequote.  quotes
+116:42  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/data.ts
+8:1  Error: Expected indentation of 0 spaces but found 2.  indent
+18:1  Error: Expected indentation of 0 spaces but found 2.  indent
+19:1  Error: Expected indentation of 2 spaces but found 4.  indent
+20:1  Error: Expected indentation of 2 spaces but found 4.  indent
+21:1  Error: Expected indentation of 4 spaces but found 6.  indent
+22:1  Error: Expected indentation of 4 spaces but found 6.  indent
+23:1  Error: Expected indentation of 4 spaces but found 6.  indent
+24:1  Error: Expected indentation of 4 spaces but found 6.  indent
+25:1  Error: Expected indentation of 2 spaces but found 4.  indent
+26:1  Error: Expected indentation of 2 spaces but found 4.  indent
+27:1  Error: Expected indentation of 4 spaces but found 6.  indent
+28:1  Error: Expected indentation of 4 spaces but found 6.  indent
+29:1  Error: Expected indentation of 4 spaces but found 6.  indent
+30:1  Error: Expected indentation of 4 spaces but found 6.  indent
+31:1  Error: Expected indentation of 2 spaces but found 4.  indent
+32:1  Error: Expected indentation of 2 spaces but found 4.  indent
+33:1  Error: Expected indentation of 4 spaces but found 6.  indent
+34:1  Error: Expected indentation of 4 spaces but found 6.  indent
+35:1  Error: Expected indentation of 4 spaces but found 6.  indent
+36:1  Error: Expected indentation of 4 spaces but found 6.  indent
+37:1  Error: Expected indentation of 2 spaces but found 4.  indent
+39:1  Error: Expected indentation of 2 spaces but found 4.  indent
+40:1  Error: Expected indentation of 2 spaces but found 4.  indent
+41:1  Error: Expected indentation of 4 spaces but found 6.  indent
+42:1  Error: Expected indentation of 4 spaces but found 6.  indent
+43:1  Error: Expected indentation of 4 spaces but found 6.  indent
+44:1  Error: Expected indentation of 4 spaces but found 6.  indent
+45:1  Error: Expected indentation of 4 spaces but found 6.  indent
+46:1  Error: Expected indentation of 4 spaces but found 6.  indent
+47:1  Error: Expected indentation of 6 spaces but found 8.  indent
+48:1  Error: Expected indentation of 6 spaces but found 8.  indent
+49:1  Error: Expected indentation of 6 spaces but found 8.  indent
+50:1  Error: Expected indentation of 4 spaces but found 6.  indent
+51:1  Error: Expected indentation of 2 spaces but found 4.  indent
+52:1  Error: Expected indentation of 2 spaces but found 4.  indent
+53:1  Error: Expected indentation of 4 spaces but found 6.  indent
+54:1  Error: Expected indentation of 4 spaces but found 6.  indent
+55:1  Error: Expected indentation of 4 spaces but found 6.  indent
+56:1  Error: Expected indentation of 4 spaces but found 6.  indent
+57:1  Error: Expected indentation of 4 spaces but found 6.  indent
+58:1  Error: Expected indentation of 4 spaces but found 6.  indent
+59:1  Error: Expected indentation of 6 spaces but found 8.  indent
+60:1  Error: Expected indentation of 6 spaces but found 8.  indent
+61:1  Error: Expected indentation of 6 spaces but found 8.  indent
+62:1  Error: Expected indentation of 4 spaces but found 6.  indent
+63:1  Error: Expected indentation of 2 spaces but found 4.  indent
+64:1  Error: Expected indentation of 2 spaces but found 4.  indent
+65:1  Error: Expected indentation of 4 spaces but found 6.  indent
+66:1  Error: Expected indentation of 4 spaces but found 6.  indent
+67:1  Error: Expected indentation of 4 spaces but found 6.  indent
+68:1  Error: Expected indentation of 4 spaces but found 6.  indent
+69:1  Error: Expected indentation of 4 spaces but found 6.  indent
+70:1  Error: Expected indentation of 4 spaces but found 6.  indent
+71:1  Error: Expected indentation of 6 spaces but found 8.  indent
+72:1  Error: Expected indentation of 6 spaces but found 8.  indent
+73:1  Error: Expected indentation of 6 spaces but found 8.  indent
+74:1  Error: Expected indentation of 4 spaces but found 6.  indent
+75:1  Error: Expected indentation of 2 spaces but found 4.  indent
+76:1  Error: Expected indentation of 2 spaces but found 4.  indent
+77:1  Error: Expected indentation of 4 spaces but found 6.  indent
+78:1  Error: Expected indentation of 4 spaces but found 6.  indent
+79:1  Error: Expected indentation of 4 spaces but found 6.  indent
+80:1  Error: Expected indentation of 4 spaces but found 6.  indent
+81:1  Error: Expected indentation of 4 spaces but found 6.  indent
+82:1  Error: Expected indentation of 4 spaces but found 6.  indent
+83:1  Error: Expected indentation of 6 spaces but found 8.  indent
+84:1  Error: Expected indentation of 6 spaces but found 8.  indent
+85:1  Error: Expected indentation of 6 spaces but found 8.  indent
+86:1  Error: Expected indentation of 6 spaces but found 8.  indent
+87:1  Error: Expected indentation of 6 spaces but found 8.  indent
+88:1  Error: Expected indentation of 6 spaces but found 8.  indent
+89:1  Error: Expected indentation of 6 spaces but found 8.  indent
+90:1  Error: Expected indentation of 6 spaces but found 8.  indent
+91:1  Error: Expected indentation of 6 spaces but found 8.  indent
+92:1  Error: Expected indentation of 6 spaces but found 8.  indent
+93:1  Error: Expected indentation of 4 spaces but found 6.  indent
+94:1  Error: Expected indentation of 2 spaces but found 4.  indent
+95:1  Error: Expected indentation of 2 spaces but found 4.  indent
+96:1  Error: Expected indentation of 4 spaces but found 6.  indent
+97:1  Error: Expected indentation of 4 spaces but found 6.  indent
+98:1  Error: Expected indentation of 4 spaces but found 6.  indent
+99:1  Error: Expected indentation of 4 spaces but found 6.  indent
+100:1  Error: Expected indentation of 4 spaces but found 6.  indent
+101:1  Error: Expected indentation of 4 spaces but found 6.  indent
+102:1  Error: Expected indentation of 6 spaces but found 8.  indent
+103:1  Error: Expected indentation of 6 spaces but found 8.  indent
+104:1  Error: Expected indentation of 6 spaces but found 8.  indent
+105:1  Error: Expected indentation of 4 spaces but found 6.  indent
+106:1  Error: Expected indentation of 2 spaces but found 4.  indent
+107:1  Error: Expected indentation of 2 spaces but found 4.  indent
+108:1  Error: Expected indentation of 2 spaces but found 4.  indent
+109:1  Error: Expected indentation of 0 spaces but found 2.  indent
+
+./src/app/soap-guide/page.tsx
+4:33  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:29  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+13:15  Error: 'GuideCategory' is defined but never used.  @typescript-eslint/no-unused-vars
+13:35  Error: 'Subtopic' is defined but never used.  @typescript-eslint/no-unused-vars
+13:51  Error: Strings must use doublequote.  quotes
+122:39  Error: Strings must use doublequote.  quotes
+125:27  Error: Strings must use doublequote.  quotes
+127:1  Error: Expected indentation of 6 spaces but found 8.  indent
+128:1  Error: Expected indentation of 6 spaces but found 8.  indent
+129:1  Error: Expected indentation of 6 spaces but found 8.  indent
+130:1  Error: Expected indentation of 6 spaces but found 8.  indent
+132:1  Error: Expected indentation of 6 spaces but found 8.  indent
+134:1  Error: Expected indentation of 6 spaces but found 8.  indent
+135:1  Error: Expected indentation of 6 spaces but found 8.  indent
+135:59  Error: Strings must use doublequote.  quotes
+156:1  Error: Expected indentation of 22 spaces but found 24.  indent
+156:119  Error: Strings must use doublequote.  quotes
+158:1  Error: Expected indentation of 24 spaces but found 25.  indent
+158:51  Error: Strings must use doublequote.  quotes
+159:31  Error: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+168:108  Error: Strings must use doublequote.  quotes
+177:1  Error: Expected indentation of 26 spaces but found 27.  indent
+178:1  Error: Expected indentation of 28 spaces but found 29.  indent
+179:1  Error: Expected indentation of 28 spaces b
+[info] ut found 29.  indent
+179:154  Error: Strings must use doublequote.  quotes
+180:1  Error: Expected indentation of 26 spaces but found 27.  indent
+181:1  Error: Expected indentation of 28 spaces but found 29.  indent
+182:1  Error: Expected indentation of 26 spaces but found 27.  indent
+198:129  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+205:65  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+205:91  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+213:83  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+216:58  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+219:290  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+231:220  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+237:256  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+251:231  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+251:392  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/test/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+
+./src/components/Button.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:19  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+6:29  Error: Strings must use doublequote.  quotes
+6:41  Error: Strings must use doublequote.  quotes
+13:13  Error: Strings must use doublequote.  quotes
+14:15  Error: Strings must use doublequote.  quotes
+18:17  Error: Strings must use doublequote.  quotes
+
+./src/components/CaduceusIcon.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+10:52  Error: Strings must use doublequote.  quotes
+12:5  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/TopNav.tsx
+1:18  Error: Strings must use doublequote.  quotes
+2:19  Error: Strings must use doublequote.  quotes
+3:29  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+5:26  Error: Strings must use doublequote.  quotes
+16:1  Error: Expected indentation of 10 spaces but found 8.  indent
+17:1  Error: Expected indentation of 12 spaces but found 10.  indent
+18:1  Error: Expected indentation of 12 spaces but found 10.  indent
+19:1  Error: Expected indentation of 12 spaces but found 9.  indent
+20:1  Error: Expected indentation of 12 spaces but found 9.  indent
+21:1  Error: Expected indentation of 10 spaces but found 0.  indent
+32:38  Error: Strings must use doublequote.  quotes
+32:53  Error: Strings must use doublequote.  quotes
+39:38  Error: Strings must use doublequote.  quotes
+39:51  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/DesktopNavigation.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:39  Error: Strings must use doublequote.  quotes
+4:72  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+38:23  Error: Strings must use doublequote.  quotes
+39:92  Error: Strings must use doublequote.  quotes
+71:21  Error: Strings must use doublequote.  quotes
+72:90  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/HamburgerButton.tsx
+2:1  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+21:81  Error: Strings must use doublequote.  quotes
+22:81  Error: Strings must use doublequote.  quotes
+23:81  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/Header.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:18  Error: Strings must use doublequote.  quotes
+5:19  Error: Strings must use doublequote.  quotes
+6:45  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+9:35  Error: Strings must use doublequote.  quotes
+10:34  Error: Strings must use doublequote.  quotes
+11:33  Error: Strings must use doublequote.  quotes
+56:31  Error: Strings must use doublequote.  quotes
+57:47  Error: Strings must use doublequote.  quotes
+61:55  Error: Strings must use doublequote.  quotes
+61:66  Error: Strings must use doublequote.  quotes
+63:38  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/MobileNavigation.tsx
+2:34  Error: Strings must use doublequote.  quotes
+3:8  Error: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+3:18  Error: Strings must use doublequote.  quotes
+4:8  Error: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+4:19  Error: Strings must use doublequote.  quotes
+5:25  Error: Strings must use doublequote.  quotes
+6:72  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+24:17  Error: Strings must use doublequote.  quotes
+29:17  Error: Strings must use doublequote.  quotes
+40:21  Error: Strings must use doublequote.  quotes
+43:18  Error: Strings must use doublequote.  quotes
+44:19  Error: Strings must use doublequote.  quotes
+45:28  Error: Strings must use doublequote.  quotes
+47:19  Error: Strings must use doublequote.  quotes
+50:23  Error: Strings must use doublequote.  quotes
+54:23  Error: Strings must use doublequote.  quotes
+65:21  Error: Strings must use doublequote.  quotes
+68:18  Error: Strings must use doublequote.  quotes
+69:21  Error: Strings must use doublequote.  quotes
+70:19  Error: Strings must use doublequote.  quotes
+71:28  Error: Strings must use doublequote.  quotes
+72:22  Error: Strings must use doublequote.  quotes
+74:19  Error: Strings must use doublequote.  quotes
+75:22  Error: Strings must use doublequote.  quotes
+76:23  Error: Strings must use doublequote.  quotes
+77:20  Error: Strings must use doublequote.  quotes
+78:26  Error: Strings must use doublequote.  quotes
+79:20  Error: Strings must use doublequote.  quotes
+80:23  Error: Strings must use doublequote.  quotes
+81:22  Error: Strings must use doublequote.  quotes
+86:23  Error: Strings must use doublequote.  quotes
+94:24  Error: Strings must use doublequote.  quotes
+95:23  Error: Strings must use doublequote.  quotes
+96:27  Error: Strings must use doublequote.  quotes
+99:25  Error: Strings must use doublequote.  quotes
+157:27  Error: Strings must use doublequote.  quotes
+167:27  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/NavLink.tsx
+2:18  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+15:50  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/navigationData.ts
+8:1  Error: Expected indentation of 0 spaces but found 2.  indent
+9:1  Error: Expected indentation of 2 spaces but found 4.  indent
+9:13  Error: Strings must use doublequote.  quotes
+9:43  Error: Strings must use doublequote.  quotes
+10:1  Error: Expected indentation of 2 spaces but found 4.  indent
+10:13  Error: Strings must use doublequote.  quotes
+10:51  Error: Strings must use doublequote.  quotes
+11:1  Error: Expected indentation of 2 spaces but found 4.  indent
+11:13  Error: Strings must use doublequote.  quotes
+11:50  Error: Strings must use doublequote.  quotes
+12:1  Error: Expected indentation of 0 spaces but found 2.  indent
+14:1  Error: Expected indentation of 0 spaces but found 2.  indent
+15:1  Error: Expected indentation of 2 spaces but found 4.  indent
+15:13  Error: Strings must use doublequote.  quotes
+15:32  Error: Strings must use doublequote.  quotes
+16:1  Error: Expected indentation of 2 spaces but found 4.  indent
+16:13  Error: Strings must use doublequote.  quotes
+16:35  Error: Strings must use doublequote.  quotes
+17:1  Error: E
+[info] xpected indentation of 2 spaces but found 4.  indent
+17:13  Error: Strings must use doublequote.  quotes
+17:29  Error: Strings must use doublequote.  quotes
+18:1  Error: Expected indentation of 0 spaces but found 2.  indent
+20:1  Error: Expected indentation of 0 spaces but found 2.  indent
+21:1  Error: Expected indentation of 2 spaces but found 4.  indent
+21:13  Error: Strings must use doublequote.  quotes
+21:30  Error: Strings must use doublequote.  quotes
+22:1  Error: Expected indentation of 2 spaces but found 4.  indent
+22:13  Error: Strings must use doublequote.  quotes
+22:28  Error: Strings must use doublequote.  quotes
+23:1  Error: Expected indentation of 2 spaces but found 4.  indent
+23:13  Error: Strings must use doublequote.  quotes
+23:39  Error: Strings must use doublequote.  quotes
+24:1  Error: Expected indentation of 2 spaces but found 4.  indent
+24:13  Error: Strings must use doublequote.  quotes
+24:38  Error: Strings must use doublequote.  quotes
+25:1  Error: Expected indentation of 0 spaces but found 2.  indent
+
+./src/components/session/detail/SessionCard.tsx
+25:54  Error: 'onUpdate' is defined but never used.  @typescript-eslint/no-unused-vars
+25:64  Error: 'onDelete' is defined but never used.  @typescript-eslint/no-unused-vars
+27:19  Error: Strings must use doublequote.  quotes
+52:54  Error: Strings must use doublequote.  quotes
+
+./src/components/session/detail/SoapNotesTab.tsx
+55:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/components/session/recording/AudioReview.tsx
+1:1  Error: Strings must use doublequote.  quotes
+2:41  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+23:56  Error: Strings must use doublequote.  quotes
+53:13  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/ProgressBar.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/RecordSessionClient.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:44  Error: Strings must use doublequote.  quotes
+4:44  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:25  Error: Strings must use doublequote.  quotes
+8:26  Error: Strings must use doublequote.  quotes
+9:25  Error: Strings must use doublequote.  quotes
+10:20  Error: Strings must use doublequote.  quotes
+12:34  Error: Strings must use doublequote.  quotes
+13:35  Error: Strings must use doublequote.  quotes
+14:30  Error: Strings must use doublequote.  quotes
+16:20  Error: Strings must use doublequote.  quotes
+21:40  Error: Strings must use doublequote.  quotes
+28:36  Error: Strings must use doublequote.  quotes
+58:19  Error: Strings must use doublequote.  quotes
+77:31  Error: 'token' is defined but never used.  @typescript-eslint/no-unused-vars
+80:25  Error: Strings must use doublequote.  quotes
+81:25  Error: Strings must use doublequote.  quotes
+83:27  Error: Strings must use doublequote.  quotes
+84:31  Error: Strings must use doublequote.  quotes
+134:53  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+155:21  Error: Strings must use doublequote.  quotes
+156:23  Error: Strings must use doublequote.  quotes
+160:21  Error: Strings must use doublequote.  quotes
+161:23  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/RecordingControls.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:17  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+3:33  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+23:56  Error: Strings must use doublequote.  quotes
+42:13  Error: Strings must use doublequote.  quotes
+44:1  Error: Expected indentation of 12 spaces but found 10.  indent
+44:13  Error: Strings must use doublequote.  quotes
+45:1  Error: Expected indentation of 12 spaces but found 10.  indent
+45:13  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/StatusBanner.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+23:36  Error: Strings must use doublequote.  quotes
+24:36  Error: Strings must use doublequote.  quotes
+
+./src/context/AuthContext.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:82  Error: Strings must use doublequote.  quotes
+4:22  Error: Strings must use doublequote.  quotes
+5:22  Error: Strings must use doublequote.  quotes
+53:21  Error: Strings must use doublequote.  quotes
+
+./src/hooks/useAudioProcessor.ts
+1:1  Error: Strings must use doublequote.  quotes
+3:26  Error: Strings must use doublequote.  quotes
+4:40  Error: Strings must use doublequote.  quotes
+21:62  Error: Strings must use doublequote.  quotes
+24:15  Error: Strings must use doublequote.  quotes
+25:15  Error: Strings must use doublequote.  quotes
+39:19  Error: Strings must use doublequote.  quotes
+46:19  Error: Strings must use doublequote.  quotes
+55:22  Error: Strings must use doublequote.  quotes
+58:31  Error: Strings must use doublequote.  quotes
+63:19  Error: Strings must use doublequote.  quotes
+68:19  Error: Strings must use doublequote.  quotes
+70:25  Error: Strings must use doublequote.  quotes
+73:57  Error: Strings must use doublequote.  quotes
+74:19  Error: Strings must use doublequote.  quotes
+77:23  Error: Strings must use doublequote.  quotes
+80:17  Error: Strings must use doublequote.  quotes
+85:66  Error: Strings must use doublequote.  quotes
+91:19  Error: Strings must use doublequote.  quotes
+93:24  Error: Strings must use doublequote.  quotes
+96:38  Error: Strings must use doublequote.  quotes
+97:17  Error: Strings must use doublequote.  quotes
+98:20  Error: Strings must use doublequote.  quotes
+98:36  Error: Strings must use doublequote.  quotes
+103:61  Error: Strings must use doublequote.  quotes
+109:19  Error: Strings must use doublequote.  quotes
+111:24  Error: Strings must use doublequote.  quotes
+115:19  Error: Strings must use doublequote.  quotes
+126:19  Error: Strings must use doublequote.  quotes
+127:24  Error: Strings must use doublequote.  quotes
+131:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+133:21  Error: Strings must use doublequote.  quotes
+
+./src/hooks/useAudioRecorder.ts
+2:58  Error: Strings must use doublequote.  quotes
+8:54  Error: Strings must use doublequote.  quotes
+34:22  Error: Strings must use doublequote.  quotes
+37:24  Error: Strings must use doublequote.  quotes
+52:26  Error: Strings must use doublequote.  quotes
+62:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+63:24  Error: Strings must use doublequote.  quotes
+69:45  Error: Strings must use doublequote.  quotes
+
+./src/lib/adminFirebase.ts
+2:31  Error: 'getApp' is defined but never used.  @typescript-eslint/no-unused-vars
+2:57  Error: Strings must use doublequote.  quotes
+3:30  Error: Strings must use doublequote.  quotes
+4:25  Error: Strings must use doublequote.  quotes
+5:28  Error: Strings must use doublequote.  quotes
+13:13  Error: Strings must use doublequote.  quotes
+14:13  Error: Strings must use doublequote.  quotes
+15:13  Error: Strings must use doublequote.  quotes
+16:13  Error: Strings must use doublequote.  quotes
+17:13  Error: Strings must use doublequote.  quotes
+18:13  Error: Strings must use doublequote.  quotes
+23:17  Error: Strings must use doublequote.  quotes
+27:17  Error: Strings must use doublequote.  quotes
+33:19  Error: Strings must use doublequote.  quotes
+35:19  Error: Strings must use doublequote.  quotes
+40:19  Error: Strings must use doublequote.  quotes
+41:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+42:21  Error: Strings must use doublequote.  quotes
+43:23  Error: Strings must use doublequote.  quotes
+49:19  Error: Strings must use doublequote.  quotes
+51:19  Error: Strings must use doublequote.  quotes
+52:19  Warning: Unexpected any. Specify a different type.  @ty
+[info] pescript-eslint/no-explicit-any
+53:21  Error: Strings must use doublequote.  quotes
+54:23  Error: Strings must use doublequote.  quotes
+58:15  Error: Strings must use doublequote.  quotes
+
+./src/lib/firebaseConfig.ts
+2:48  Error: Strings must use doublequote.  quotes
+3:30  Error: Strings must use doublequote.  quotes
+4:25  Error: Strings must use doublequote.  quotes
+
+./src/lib/firestore.ts
+6:22  Error: Strings must use doublequote.  quotes
+7:8  Error: Strings must use doublequote.  quotes
+67:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+69:1  Error: Expected indentation of 2 spaces but found 0.  indent
+71:17  Error: Strings must use doublequote.  quotes
+72:14  Error: Strings must use doublequote.  quotes
+72:29  Error: Strings must use doublequote.  quotes
+100:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+103:23  Error: Strings must use doublequote.  quotes
+110:23  Error: Strings must use doublequote.  quotes
+
+./src/lib/saveTherapySessionNote.ts
+9:27  Error: Strings must use doublequote.  quotes
+11:81  Error: Strings must use doublequote.  quotes
+66:24  Error: Strings must use doublequote.  quotes
+68:13  Error: Strings must use doublequote.  quotes
+74:15  Error: Strings must use doublequote.  quotes
+90:46  Error: Strings must use doublequote.  quotes
+93:17  Error: Strings must use doublequote.  quotes
+96:19  Error: Strings must use doublequote.  quotes
+97:21  Error: Strings must use doublequote.  quotes
+
+./src/utils/logConsent.ts
+23:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/utils/makeRandomId.ts
+3:1  Error: Expected indentation of 2 spaces but found 4.  indent
+4:7  Error: Strings must use doublequote.  quotes
+5:1  Error: Expected indentation of 2 spaces but found 4.  indent
+5:18  Error: Strings must use doublequote.  quotes
+6:1  Error: Expected indentation of 2 spaces but found 4.  indent
+7:1  Error: Expected indentation of 4 spaces but found 6.  indent
+8:1  Error: Expected indentation of 2 spaces but found 4.  indent
+9:1  Error: Expected indentation of 2 spaces but found 4.  indent
+10:1  Error: Expected indentation of 0 spaces but found 2.  indent
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+
+[debug] [2025-07-02T07:15:44.349Z] Error: ENOENT: no such file or directory, open '/Users/johnhelmy/Desktop/Programming/terapai/my-app/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-02T16:35:33.955Z] ----------------------------------------------------------------------
+[debug] [2025-07-02T16:35:33.960Z] Command:       /Users/johnhelmy/.nvm/versions/node/v20.19.2/bin/node /Users/johnhelmy/.nvm/versions/node/v20.19.2/bin/firebase deploy
+[debug] [2025-07-02T16:35:33.961Z] CLI Version:   14.6.0
+[debug] [2025-07-02T16:35:33.961Z] Platform:      darwin
+[debug] [2025-07-02T16:35:33.961Z] Node Version:  v20.19.2
+[debug] [2025-07-02T16:35:33.961Z] Time:          Wed Jul 02 2025 09:35:33 GMT-0700 (Pacific Daylight Time)
+[debug] [2025-07-02T16:35:33.961Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-02T16:35:34.046Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-02T16:35:34.046Z] > authorizing via signed-in user (jmhelmy@gmail.com)
+[debug] [2025-07-02T16:35:34.046Z] [iam] checking project therascript-45b62 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-07-02T16:35:34.047Z] Checked if tokens are valid: false, expires at: 1751444132895
+[debug] [2025-07-02T16:35:34.047Z] Checked if tokens are valid: false, expires at: 1751444132895
+[debug] [2025-07-02T16:35:34.047Z] > refreshing access token with scopes: []
+[debug] [2025-07-02T16:35:34.048Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-02T16:35:34.048Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-02T16:35:34.273Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-07-02T16:35:34.274Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-02T16:35:34.284Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions [none]
+[debug] [2025-07-02T16:35:34.284Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions x-goog-quota-user=projects/therascript-45b62
+[debug] [2025-07-02T16:35:34.284Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-02T16:35:34.602Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions 200
+[debug] [2025-07-02T16:35:34.602Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therascript-45b62:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-02T16:35:34.603Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:34.603Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:34.603Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-07-02T16:35:34.603Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-07-02T16:35:35.064Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-07-02T16:35:35.065Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/therascript-45b62/serviceAccounts/therascript-45b62@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-07-02T16:35:35.066Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:35.066Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:35.067Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therascript-45b62 [none]
+[debug] [2025-07-02T16:35:35.367Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therascript-45b62 200
+[debug] [2025-07-02T16:35:35.367Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therascript-45b62 {"projectId":"therascript-45b62","projectNumber":"64757237031","displayName":"Terapai","name":"projects/therascript-45b62","resources":{"hostingSite":"therascript-45b62"},"state":"ACTIVE","etag":"1_f7045ede-e286-4635-926e-0eff1dac0497"}
+[debug] [2025-07-02T16:35:36.146Z] defaultcredentials: writing to file /Users/johnhelmy/.config/firebase/jmhelmy_gmail_com_application_default_credentials.json
+[debug] [2025-07-02T16:35:36.148Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:36.148Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:36.148Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites pageToken=&pageSize=10
+[debug] [2025-07-02T16:35:37.013Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites 200
+[debug] [2025-07-02T16:35:37.014Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites {"sites":[{"name":"projects/therascript-45b62/sites/therascript-45b62","defaultUrl":"https://therascript-45b62.web.app","appId":"1:64757237031:web:c541b0cf649c0d80fb5502","type":"DEFAULT_SITE"}]}
+[debug] [2025-07-02T16:35:37.014Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:37.014Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:37.014Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:64757237031:web:c541b0cf649c0d80fb5502/config [none]
+[debug] [2025-07-02T16:35:37.420Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:64757237031:web:c541b0cf649c0d80fb5502/config 200
+[debug] [2025-07-02T16:35:37.421Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:64757237031:web:c541b0cf649c0d80fb5502/config {"projectId":"therascript-45b62","appId":"1:64757237031:web:c541b0cf649c0d80fb5502","storageBucket":"therascript-45b62.firebasestorage.app","apiKey":"AIzaSyB8XOlU5pDZV0FWvnRLk3520uYEgwbVmac","authDomain":"therascript-45b62.firebaseapp.com","messagingSenderId":"64757237031"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-07-02T16:35:38.734Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:38.734Z] Checked if tokens are valid: true, expires at: 1751477733274
+[debug] [2025-07-02T16:35:38.734Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites/therascript-45b62 [none]
+[debug] [2025-07-02T16:35:39.101Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites/therascript-45b62 200
+[debug] [2025-07-02T16:35:39.101Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/therascript-45b62/sites/therascript-45b62 {"name":"projects/therascript-45b62/sites/therascript-45b62","defaultUrl":"https://therascript-45b62.web.app","appId":"1:64757237031:web:c541b0cf649c0d80fb5502","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.3.3
+
+[info]    - Environments: .env.local
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully in 1000ms
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+Failed to compile.
+
+[info] 
+./src/app/about/security/page.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:24  Error: Strings must use doublequote.  quotes
+4:24  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+42:104  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+42:123  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+123:47  Error: Strings must use doublequote.  quotes
+
+./src/app/account/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:10  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+4:50  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+10:25  Error: Strings must use doublequote.  quotes
+34:19  Error: Strings must use doublequote.  quotes
+43:19  Error: Strings must use doublequote.  quotes
+46:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+47:21  Error: Strings must use doublequote.  quotes
+72:1  Error: Expected indentation of 4 spaces but found 5.  indent
+101:46  Error: Strings must use doublequote.  quotes
+108:46  Error: Strings must use doublequote.  quotes
+115:46  Error: Strings must use doublequote.  quotes
+124:46  Error: Strings must use doublequote.  quotes
+140:27  Error: Strings must use doublequote.  quotes
+141:35  Error: Strings must use doublequote.  quotes
+
+./src/app/api/generate-soap-note/route.ts
+3:24  Error: Strings must use doublequote.  quotes
+5:43  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+13:5  Error: Strings must use doublequote.  quotes
+16:5  Error: Strings must use doublequote.  quotes
+33:17  Error: Strings must use doublequote.  quotes
+36:20  Error: Strings must use doublequote.  quotes
+38:18  Error: Strings must use doublequote.  quotes
+57:17  Error: Strings must use doublequote.  quotes
+64:17  Error: Strings must use doublequote.  quotes
+65:20  Error: Strings must use doublequote.  quotes
+68:17  Error: Strings must use doublequote.  quotes
+74:17  Error: Strings must use doublequote.  quotes
+76:60  Error: Strings must use doublequote.  quotes
+78:17  Error: Strings must use doublequote.  quotes
+83:19  Error: Strings must use doublequote.  quotes
+84:14  Error: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+85:21  Error: Strings must use doublequote.  quotes
+87:18  Error: Strings must use doublequote.  quotes
+93:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+94:19  Error: Strings must use doublequote.  quotes
+101:31  Error: Strings must use doublequote.  quotes
+102:55  Error: Strings must use doublequote.  quotes
+
+./src/app/api/sessions/[sessionId]/route.ts
+3:24  Error: Strings must use doublequote.  quotes
+4:24  Error: Strings must use doublequote.  quotes
+6:43  Error: Strings must use doublequote.  quotes
+7:25  Error: Strings must use doublequote.  quotes
+12:39  Error: Strings must use doublequote.  quotes
+17:16  Error: Strings must use doublequote.  quotes
+26:19  Error: Strings must use doublequote.  quotes
+32:18  Error: Strings must use doublequote.  quotes
+39:48  Error: Strings must use doublequote.  quotes
+40:48  Error: Strings must use doublequote.  quotes
+41:48  Error: Strings must use doublequote.  quotes
+42:48  Error: Strings must use doublequote.  quotes
+47:46  Error: Strings must use doublequote.  quotes
+48:65  Error: Strings must use doublequote.  quotes
+49:42  Error: Strings must use doublequote.  quotes
+52:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+53:19  Error: Strings must use doublequote.  quotes
+55:31  Error: Strings must use doublequote.  quotes
+
+./src/app/api/sessions/route.ts
+1:24  Error: Strings must use doublequote.  quotes
+2:24  Error: Strings must use doublequote.  quotes
+4:43  Error: Strings must use doublequote.  quotes
+5:36  Error: Strings must use doublequote.  quotes
+8:15  Error: Strings must use doublequote.  quotes
+12:44  Error: Strings must use doublequote.  quotes
+13:17  Error: Strings must use doublequote.  quotes
+15:33  Error: Strings must use doublequote.  quotes
+16:20  Error: Strings must use doublequote.  quotes
+17:41  Error: Strings must use doublequote.  quotes
+20:38  Error: Strings must use doublequote.  quotes
+21:17  Error: Strings must use doublequote.  quotes
+26:19  Error: Strings must use doublequote.  quotes
+27:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+28:21  Error: Strings must use doublequote.  quotes
+30:18  Error: Strings must use doublequote.  quotes
+36:17  Error: Strings must use doublequote.  quotes
+39:20  Error: Strings must use doublequote.  quotes
+40:41  Error: Strings must use doublequote.  quotes
+45:19  Error: Strings must use doublequote.  quotes
+46:14  Error: Strings must use doublequote.  quotes
+46:29  Error: Strings must use doublequote.  quotes
+50:19  Error: Strings must use doublequote.  quotes
+51:42  Error: Strings must use doublequote.  quotes
+51:55  Error: Strings must use doublequote.  quotes
+52:19  Error: Strings must use doublequote.  quotes
+53:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+54:20  Error: Strings must use doublequote.  quotes
+56:19  Error: Strings must use doublequote.  quotes
+64:48  Error: Strings must use doublequote.  quotes
+65:66  Error: Strings must use doublequote.  quotes
+66:40  Error: Strings must use doublequote.  quotes
+68:52  Error: Strings must use doublequote.  quotes
+69:52  Error: Strings must use doublequote.  quotes
+70:52  Error: Strings must use doublequote.  quotes
+71:52  Error: Strings must use doublequote.  quotes
+76:17  Error: Strings must use doublequote.  quotes
+79:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+81:19  Error: Strings must use doublequote.  quotes
+81:63  Error: Strings must use doublequote.  quotes
+
+./src/app/api/testadmin/route.ts
+1:24  Error: Strings must use doublequote.  quotes
+3:24  Error: Strings must use doublequote.  quotes
+
+./src/app/consent/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:50  Error: Strings must use doublequote.  quotes
+4:27  Error: Strings must use doublequote.  quotes
+5:25  Error: Strings must use doublequote.  quotes
+17:19  Error: Strings must use doublequote.  quotes
+28:23  Error: Strings must use doublequote.  quotes
+32:23  Error: Strings must use doublequote.  quotes
+40:31  Error: Strings must use doublequote.  quotes
+41:17  Error: Strings must use doublequote.  quotes
+42:20  Error: Strings must use doublequote.  quotes
+42:36  Error: Strings must use doublequote.  quotes
+43:48  Error: Strings must use doublequote.  quotes
+47:21  Error: Strings must use doublequote.  quotes
+49:41  Error: Strings must use doublequote.  quotes
+51:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+52:21  Error: Strings must use doublequote.  quotes
+53:38  Error: Strings must use doublequote.  quotes
+81:25  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+95:23  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+132:41  Error: Strings must use doublequote.  quotes
+132:75  Error: Strings must use doublequote.  quotes
+134:24  Error: Strings must use doublequote.  quotes
+134:40  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/DashboardContainer.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:37  Error: Strings must use doublequote.  quotes
+4:22  Error: Strings must use doublequote.  quotes
+5:39  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+7:38  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:26  Error: Strings must use doublequote.  quotes
+10:27  Error: Strings must use doublequote.  quotes
+17:54  Error: Strings must use doublequote.  quotes
+
+[info] 25:21  Error: Strings must use doublequote.  quotes
+31:19  Error: Strings must use doublequote.  quotes
+31:58  Error: Strings must use doublequote.  quotes
+33:36  Error: Strings must use doublequote.  quotes
+44:19  Error: Strings must use doublequote.  quotes
+45:19  Error: Strings must use doublequote.  quotes
+46:19  Error: Strings must use doublequote.  quotes
+48:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+49:21  Error: Strings must use doublequote.  quotes
+52:53  Error: Strings must use doublequote.  quotes
+56:45  Error: Strings must use doublequote.  quotes
+57:62  Error: Strings must use doublequote.  quotes
+61:19  Error: Strings must use doublequote.  quotes
+65:21  Error: Strings must use doublequote.  quotes
+66:16  Error: Strings must use doublequote.  quotes
+73:6  Warning: React Hook useEffect has a missing dependency: 'fetchSessions'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+81:17  Error: Strings must use doublequote.  quotes
+83:11  Error: Strings must use doublequote.  quotes
+83:27  Error: Strings must use doublequote.  quotes
+96:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+97:21  Error: Strings must use doublequote.  quotes
+98:28  Error: Strings must use doublequote.  quotes
+105:17  Error: Strings must use doublequote.  quotes
+113:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+114:21  Error: Strings must use doublequote.  quotes
+115:28  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/EmptyState.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:19  Error: Strings must use doublequote.  quotes
+4:18  Error: Strings must use doublequote.  quotes
+5:26  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/Header.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:20  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/LoadingState.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/SessionList.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:32  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+6:25  Error: Strings must use doublequote.  quotes
+18:13  Error: Strings must use doublequote.  quotes
+18:24  Error: Strings must use doublequote.  quotes
+43:21  Error: Strings must use doublequote.  quotes
+63:21  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/ViewToggle.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+7:35  Error: Strings must use doublequote.  quotes
+19:55  Error: Strings must use doublequote.  quotes
+19:82  Error: Strings must use doublequote.  quotes
+20:33  Error: Strings must use doublequote.  quotes
+26:55  Error: Strings must use doublequote.  quotes
+26:84  Error: Strings must use doublequote.  quotes
+27:33  Error: Strings must use doublequote.  quotes
+
+./src/app/dashboard/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:21  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+3:37  Error: Strings must use doublequote.  quotes
+4:27  Error: Strings must use doublequote.  quotes
+8:32  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+10:25  Error: Strings must use doublequote.  quotes
+30:15  Error: Strings must use doublequote.  quotes
+31:15  Error: Strings must use doublequote.  quotes
+51:19  Error: Strings must use doublequote.  quotes
+57:33  Error: Strings must use doublequote.  quotes
+57:52  Error: Strings must use doublequote.  quotes
+63:33  Error: Strings must use doublequote.  quotes
+63:52  Error: Strings must use doublequote.  quotes
+
+./src/app/faq/page.tsx
+4:19  Error: Strings must use doublequote.  quotes
+5:24  Error: Strings must use doublequote.  quotes
+6:24  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+63:78  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/layout.tsx
+2:28  Error: Strings must use doublequote.  quotes
+9:13  Error: Strings must use doublequote.  quotes
+10:12  Error: Strings must use doublequote.  quotes
+10:19  Error: Strings must use doublequote.  quotes
+10:26  Error: Strings must use doublequote.  quotes
+10:33  Error: Strings must use doublequote.  quotes
+11:12  Error: Strings must use doublequote.  quotes
+12:13  Error: Strings must use doublequote.  quotes
+
+./src/app/legal/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:27  Error: Strings must use doublequote.  quotes
+5:26  Error: Strings must use doublequote.  quotes
+6:18  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+16:26  Error: Strings must use doublequote.  quotes
+16:43  Error: Strings must use doublequote.  quotes
+17:17  Error: Strings must use doublequote.  quotes
+
+./src/app/legal/privacy/page.tsx
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+6:24  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+10:9  Error: 'effectiveDate' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+21:20  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:24  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:26  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:31  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:36  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:39  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/legal/terms/page.tsx
+3:19  Error: Strings must use doublequote.  quotes
+5:24  Error: Strings must use doublequote.  quotes
+6:24  Error: Strings must use doublequote.  quotes
+8:11  Error: Missing semicolon.  semi
+12:1  Error: Expected indentation of 6 spaces but found 4.  indent
+13:1  Error: Expected indentation of 6 spaces but found 4.  indent
+14:1  Error: Expected indentation of 8 spaces but found 6.  indent
+16:1  Error: Expected indentation of 8 spaces but found 6.  indent
+18:1  Error: Expected indentation of 8 spaces but found 6.  indent
+20:1  Error: Expected indentation of 8 spaces but found 6.  indent
+22:1  Error: Expected indentation of 8 spaces but found 6.  indent
+23:1  Error: Expected indentation of 8 spaces but found 6.  indent
+25:1  Error: Expected indentation of 8 spaces but found 6.  indent
+27:1  Error: Expected indentation of 8 spaces but found 6.  indent
+28:1  Error: Expected indentation of 8 spaces but found 6.  indent
+30:1  Error: Expected indentation of 8 spaces but found 6.  indent
+32:1  Error: Expected indentation of 8 spaces but found 6.  indent
+33:1  Error: Expected indentation of 8 spaces but found 6.  indent
+35:1  Error: Expected indentation of 8 spaces but found 6.  indent
+37:1  Error: Expected indentation of 8 spaces but found 6.  indent
+38:1  Error: Expected indentation of 8 spaces but found 6.  indent
+40:1  Error: Expected indentation of 8 spaces but found 6.  indent
+42:1  Error: Expected indentation of 8 spaces but found 6.  indent
+43:1  Error: Expected indentation of 8 spaces but found 6.  indent
+45:1  Error: Expected indentation of 8 spaces but found 6.  indent
+47:1  Error: Expected indentation of 8 spaces but found 6.  indent
+48:1  Error: Expected indentation of 8 spaces but found 6.  
+[info] indent
+49:34  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+49:41  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+50:1  Error: Expected indentation of 8 spaces but found 6.  indent
+52:1  Error: Expected indentation of 8 spaces but found 6.  indent
+53:1  Error: Expected indentation of 8 spaces but found 6.  indent
+55:1  Error: Expected indentation of 8 spaces but found 6.  indent
+57:1  Error: Expected indentation of 8 spaces but found 6.  indent
+58:1  Error: Expected indentation of 8 spaces but found 6.  indent
+60:1  Error: Expected indentation of 8 spaces but found 6.  indent
+62:1  Error: Expected indentation of 8 spaces but found 6.  indent
+63:1  Error: Expected indentation of 8 spaces but found 6.  indent
+65:1  Error: Expected indentation of 8 spaces but found 6.  indent
+66:1  Error: Expected indentation of 6 spaces but found 4.  indent
+67:1  Error: Expected indentation of 6 spaces but found 4.  indent
+
+./src/app/login/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:26  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+6:22  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+8:18  Error: Strings must use doublequote.  quotes
+9:44  Error: Strings must use doublequote.  quotes
+13:44  Error: Strings must use doublequote.  quotes
+14:44  Error: Strings must use doublequote.  quotes
+25:19  Error: Strings must use doublequote.  quotes
+26:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+27:21  Error: Strings must use doublequote.  quotes
+29:31  Error: Strings must use doublequote.  quotes
+63:26  Error: Strings must use doublequote.  quotes
+63:44  Error: Strings must use doublequote.  quotes
+67:14  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+67:34  Error: Strings must use doublequote.  quotes
+
+./src/app/not-found.tsx
+2:18  Error: Strings must use doublequote.  quotes
+8:18  Error: Strings must use doublequote.  quotes
+9:24  Error: Strings must use doublequote.  quotes
+10:21  Error: Strings must use doublequote.  quotes
+11:25  Error: Strings must use doublequote.  quotes
+12:20  Error: Strings must use doublequote.  quotes
+13:20  Error: Strings must use doublequote.  quotes
+14:21  Error: Strings must use doublequote.  quotes
+15:18  Error: Strings must use doublequote.  quotes
+16:16  Error: Strings must use doublequote.  quotes
+21:21  Error: Strings must use doublequote.  quotes
+23:18  Error: Strings must use doublequote.  quotes
+24:19  Error: Strings must use doublequote.  quotes
+31:21  Error: Strings must use doublequote.  quotes
+33:25  Error: Strings must use doublequote.  quotes
+40:21  Error: Strings must use doublequote.  quotes
+41:25  Error: Strings must use doublequote.  quotes
+42:21  Error: Strings must use doublequote.  quotes
+43:18  Error: Strings must use doublequote.  quotes
+53:20  Error: Strings must use doublequote.  quotes
+54:20  Error: Strings must use doublequote.  quotes
+55:21  Error: Strings must use doublequote.  quotes
+57:18  Error: Strings must use doublequote.  quotes
+58:28  Error: Strings must use doublequote.  quotes
+59:25  Error: Strings must use doublequote.  quotes
+60:27  Error: Strings must use doublequote.  quotes
+61:23  Error: Strings must use doublequote.  quotes
+
+./src/app/pricing/page.tsx
+3:18  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+17:7  Error: 'ShieldCheckIcon' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+27:13  Error: Strings must use doublequote.  quotes
+28:21  Error: Strings must use doublequote.  quotes
+29:20  Error: Strings must use doublequote.  quotes
+30:20  Error: Strings must use doublequote.  quotes
+31:16  Error: Strings must use doublequote.  quotes
+32:16  Error: Strings must use doublequote.  quotes
+34:9  Error: Strings must use doublequote.  quotes
+35:9  Error: Strings must use doublequote.  quotes
+36:9  Error: Strings must use doublequote.  quotes
+37:9  Error: Strings must use doublequote.  quotes
+38:9  Error: Strings must use doublequote.  quotes
+43:13  Error: Strings must use doublequote.  quotes
+44:21  Error: Strings must use doublequote.  quotes
+45:20  Error: Strings must use doublequote.  quotes
+46:20  Error: Strings must use doublequote.  quotes
+47:16  Error: Strings must use doublequote.  quotes
+48:16  Error: Strings must use doublequote.  quotes
+50:9  Error: Strings must use doublequote.  quotes
+51:9  Error: Strings must use doublequote.  quotes
+52:9  Error: Strings must use doublequote.  quotes
+53:9  Error: Strings must use doublequote.  quotes
+54:9  Error: Strings must use doublequote.  quotes
+55:9  Error: Strings must use doublequote.  quotes
+56:9  Error: Strings must use doublequote.  quotes
+61:13  Error: Strings must use doublequote.  quotes
+62:21  Error: Strings must use doublequote.  quotes
+63:20  Error: Strings must use doublequote.  quotes
+64:20  Error: Strings must use doublequote.  quotes
+65:16  Error: Strings must use doublequote.  quotes
+66:16  Error: Strings must use doublequote.  quotes
+68:9  Error: Strings must use doublequote.  quotes
+69:9  Error: Strings must use doublequote.  quotes
+70:9  Error: Strings must use doublequote.  quotes
+71:9  Error: Strings must use doublequote.  quotes
+72:9  Error: Strings must use doublequote.  quotes
+73:9  Error: Strings must use doublequote.  quotes
+74:9  Error: Strings must use doublequote.  quotes
+104:105  Error: Strings must use doublequote.  quotes
+109:40  Error: Strings must use doublequote.  quotes
+118:38  Error: Strings must use doublequote.  quotes
+118:76  Error: Strings must use doublequote.  quotes
+159:1  Error: Expected indentation of 10 spaces but found 11.  indent
+161:263  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/register/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+6:26  Error: Strings must use doublequote.  quotes
+7:27  Error: Strings must use doublequote.  quotes
+8:20  Error: Strings must use doublequote.  quotes
+9:22  Error: Strings must use doublequote.  quotes
+11:48  Error: Strings must use doublequote.  quotes
+29:44  Error: Strings must use doublequote.  quotes
+30:44  Error: Strings must use doublequote.  quotes
+39:19  Error: Strings must use doublequote.  quotes
+40:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+41:21  Error: Strings must use doublequote.  quotes
+42:31  Error: Strings must use doublequote.  quotes
+75:36  Error: Strings must use doublequote.  quotes
+
+./src/app/session/[sessionId]/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:37  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+6:40  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+23:21  Error: Strings must use doublequote.  quotes
+28:46  Error: Strings must use doublequote.  quotes
+29:42  Error: Strings must use doublequote.  quotes
+31:54  Error: Strings must use doublequote.  quotes
+32:52  Error: Strings must use doublequote.  quotes
+33:54  Error: Strings must use doublequote.  quotes
+34:42  Error: Strings must use doublequote.  quotes
+39:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/session/record/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:13  Error: Strings must use doublequote.  quotes
+9:15  Error: Strings must use doublequote.  quotes
+12:54  Error: Strings must use doublequote.  quotes
+13:44  Error: Strings must use doublequote.  quotes
+14:18  Error: Strings must use doublequote.  quotes
+15:25  Error: Strings must use doublequote.  quotes
+17:26  Error: Strings must use doublequote.  quotes
+18:25  Error: Strings must use doublequote.  quotes
+19:20  Error: Strings must use doublequote.  quotes
+21:34  Error: Strings must use doublequote.  quotes
+22:35  Erro
+[info] r: Strings must use doublequote.  quotes
+23:30  Error: Strings must use doublequote.  quotes
+25:20  Error: Strings must use doublequote.  quotes
+31:40  Error: Strings must use doublequote.  quotes
+46:36  Error: Strings must use doublequote.  quotes
+76:19  Error: Strings must use doublequote.  quotes
+95:31  Error: 'token' is defined but never used.  @typescript-eslint/no-unused-vars
+98:25  Error: Strings must use doublequote.  quotes
+99:25  Error: Strings must use doublequote.  quotes
+101:27  Error: Strings must use doublequote.  quotes
+102:31  Error: Strings must use doublequote.  quotes
+152:53  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+173:21  Error: Strings must use doublequote.  quotes
+174:23  Error: Strings must use doublequote.  quotes
+178:21  Error: Strings must use doublequote.  quotes
+179:23  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/[professionSlug]/[issueSlug]/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:75  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:39  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+11:20  Error: Strings must use doublequote.  quotes
+12:58  Error: Strings must use doublequote.  quotes
+14:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+21:9  Error: 'pathname' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+24:83  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+25:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+31:58  Error: Strings must use doublequote.  quotes
+32:57  Error: Strings must use doublequote.  quotes
+32:63  Error: Strings must use doublequote.  quotes
+93:72  Error: Strings must use doublequote.  quotes
+95:27  Error: Strings must use doublequote.  quotes
+108:76  Error: Strings must use doublequote.  quotes
+131:35  Error: Strings must use doublequote.  quotes
+148:62  Error: Strings must use doublequote.  quotes
+149:86  Error: Strings must use doublequote.  quotes
+160:71  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+160:96  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/[professionSlug]/page.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:75  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:39  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+10:42  Error: 'Subtopic' is defined but never used.  @typescript-eslint/no-unused-vars
+10:58  Error: Strings must use doublequote.  quotes
+12:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+16:9  Error: 'pathname' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+29:75  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+42:3  Error: React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render.  react-hooks/rules-of-hooks
+65:89  Error: Strings must use doublequote.  quotes
+78:76  Error: Strings must use doublequote.  quotes
+125:42  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/_issue-content/physical-therapy/LowBackPaincontent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/_issue-content/psychotherapy/SubstanceUseDisorderContent.tsx
+1:19  Error: Strings must use doublequote.  quotes
+2:20  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/_profession-content/OccupationalTherapyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+14:82  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+14:98  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:79  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/PhysicalTherapyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+18:83  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+19:234  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+20:169  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+29:229  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/PsychotherapyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+19:78  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+22:80  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+23:41  Error: Strings must use doublequote.  quotes
+23:63  Error: Strings must use doublequote.  quotes
+23:82  Error: Strings must use doublequote.  quotes
+30:25  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+34:59  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+35:41  Error: Strings must use doublequote.  quotes
+35:63  Error: Strings must use doublequote.  quotes
+35:82  Error: Strings must use doublequote.  quotes
+36:42  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+47:41  Error: Strings must use doublequote.  quotes
+47:63  Error: Strings must use doublequote.  quotes
+47:82  Error: Strings must use doublequote.  quotes
+64:139  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+67:122  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/SpeechLanguagePathologyContent.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+14:82  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+14:98  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:79  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/soap-guide/_profession-content/VeterinaryContent.tsx
+4:75  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:39  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+10:27  Error: 'GuideCategory' is defined but never used.  @typescript-eslint/no-unused-vars
+10:48  Error: Strings must use doublequote.  quotes
+13:11  Error: 'ProfessionContentComponentsMap' is defined but never used.  @typescript-eslint/no-unused-vars
+14:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+18:73  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+36:9  Error: 'pathname' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+54:7  Error: 'currentActiveGroupSlug' is never reassigned. Use 'const' instead.  prefer-const
+55:7  Error: 'currentActiveSubSlug' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+55:7  Error: 'currentActiveSubSlug' is never reassigned. Use 'const' instead.  prefer-const
+74:119  Error: Strings m
+[info] ust use doublequote.  quotes
+75:31  Error: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+83:108  Error: Strings must use doublequote.  quotes
+116:42  Error: Strings must use doublequote.  quotes
+
+./src/app/soap-guide/data.ts
+8:1  Error: Expected indentation of 0 spaces but found 2.  indent
+18:1  Error: Expected indentation of 0 spaces but found 2.  indent
+19:1  Error: Expected indentation of 2 spaces but found 4.  indent
+20:1  Error: Expected indentation of 2 spaces but found 4.  indent
+21:1  Error: Expected indentation of 4 spaces but found 6.  indent
+22:1  Error: Expected indentation of 4 spaces but found 6.  indent
+23:1  Error: Expected indentation of 4 spaces but found 6.  indent
+24:1  Error: Expected indentation of 4 spaces but found 6.  indent
+25:1  Error: Expected indentation of 2 spaces but found 4.  indent
+26:1  Error: Expected indentation of 2 spaces but found 4.  indent
+27:1  Error: Expected indentation of 4 spaces but found 6.  indent
+28:1  Error: Expected indentation of 4 spaces but found 6.  indent
+29:1  Error: Expected indentation of 4 spaces but found 6.  indent
+30:1  Error: Expected indentation of 4 spaces but found 6.  indent
+31:1  Error: Expected indentation of 2 spaces but found 4.  indent
+32:1  Error: Expected indentation of 2 spaces but found 4.  indent
+33:1  Error: Expected indentation of 4 spaces but found 6.  indent
+34:1  Error: Expected indentation of 4 spaces but found 6.  indent
+35:1  Error: Expected indentation of 4 spaces but found 6.  indent
+36:1  Error: Expected indentation of 4 spaces but found 6.  indent
+37:1  Error: Expected indentation of 2 spaces but found 4.  indent
+39:1  Error: Expected indentation of 2 spaces but found 4.  indent
+40:1  Error: Expected indentation of 2 spaces but found 4.  indent
+41:1  Error: Expected indentation of 4 spaces but found 6.  indent
+42:1  Error: Expected indentation of 4 spaces but found 6.  indent
+43:1  Error: Expected indentation of 4 spaces but found 6.  indent
+44:1  Error: Expected indentation of 4 spaces but found 6.  indent
+45:1  Error: Expected indentation of 4 spaces but found 6.  indent
+46:1  Error: Expected indentation of 4 spaces but found 6.  indent
+47:1  Error: Expected indentation of 6 spaces but found 8.  indent
+48:1  Error: Expected indentation of 6 spaces but found 8.  indent
+49:1  Error: Expected indentation of 6 spaces but found 8.  indent
+50:1  Error: Expected indentation of 4 spaces but found 6.  indent
+51:1  Error: Expected indentation of 2 spaces but found 4.  indent
+52:1  Error: Expected indentation of 2 spaces but found 4.  indent
+53:1  Error: Expected indentation of 4 spaces but found 6.  indent
+54:1  Error: Expected indentation of 4 spaces but found 6.  indent
+55:1  Error: Expected indentation of 4 spaces but found 6.  indent
+56:1  Error: Expected indentation of 4 spaces but found 6.  indent
+57:1  Error: Expected indentation of 4 spaces but found 6.  indent
+58:1  Error: Expected indentation of 4 spaces but found 6.  indent
+59:1  Error: Expected indentation of 6 spaces but found 8.  indent
+60:1  Error: Expected indentation of 6 spaces but found 8.  indent
+61:1  Error: Expected indentation of 6 spaces but found 8.  indent
+62:1  Error: Expected indentation of 4 spaces but found 6.  indent
+63:1  Error: Expected indentation of 2 spaces but found 4.  indent
+64:1  Error: Expected indentation of 2 spaces but found 4.  indent
+65:1  Error: Expected indentation of 4 spaces but found 6.  indent
+66:1  Error: Expected indentation of 4 spaces but found 6.  indent
+67:1  Error: Expected indentation of 4 spaces but found 6.  indent
+68:1  Error: Expected indentation of 4 spaces but found 6.  indent
+69:1  Error: Expected indentation of 4 spaces but found 6.  indent
+70:1  Error: Expected indentation of 4 spaces but found 6.  indent
+71:1  Error: Expected indentation of 6 spaces but found 8.  indent
+72:1  Error: Expected indentation of 6 spaces but found 8.  indent
+73:1  Error: Expected indentation of 6 spaces but found 8.  indent
+74:1  Error: Expected indentation of 4 spaces but found 6.  indent
+75:1  Error: Expected indentation of 2 spaces but found 4.  indent
+76:1  Error: Expected indentation of 2 spaces but found 4.  indent
+77:1  Error: Expected indentation of 4 spaces but found 6.  indent
+78:1  Error: Expected indentation of 4 spaces but found 6.  indent
+79:1  Error: Expected indentation of 4 spaces but found 6.  indent
+80:1  Error: Expected indentation of 4 spaces but found 6.  indent
+81:1  Error: Expected indentation of 4 spaces but found 6.  indent
+82:1  Error: Expected indentation of 4 spaces but found 6.  indent
+83:1  Error: Expected indentation of 6 spaces but found 8.  indent
+84:1  Error: Expected indentation of 6 spaces but found 8.  indent
+85:1  Error: Expected indentation of 6 spaces but found 8.  indent
+86:1  Error: Expected indentation of 6 spaces but found 8.  indent
+87:1  Error: Expected indentation of 6 spaces but found 8.  indent
+88:1  Error: Expected indentation of 6 spaces but found 8.  indent
+89:1  Error: Expected indentation of 6 spaces but found 8.  indent
+90:1  Error: Expected indentation of 6 spaces but found 8.  indent
+91:1  Error: Expected indentation of 6 spaces but found 8.  indent
+92:1  Error: Expected indentation of 6 spaces but found 8.  indent
+93:1  Error: Expected indentation of 4 spaces but found 6.  indent
+94:1  Error: Expected indentation of 2 spaces but found 4.  indent
+95:1  Error: Expected indentation of 2 spaces but found 4.  indent
+96:1  Error: Expected indentation of 4 spaces but found 6.  indent
+97:1  Error: Expected indentation of 4 spaces but found 6.  indent
+98:1  Error: Expected indentation of 4 spaces but found 6.  indent
+99:1  Error: Expected indentation of 4 spaces but found 6.  indent
+100:1  Error: Expected indentation of 4 spaces but found 6.  indent
+101:1  Error: Expected indentation of 4 spaces but found 6.  indent
+102:1  Error: Expected indentation of 6 spaces but found 8.  indent
+103:1  Error: Expected indentation of 6 spaces but found 8.  indent
+104:1  Error: Expected indentation of 6 spaces but found 8.  indent
+105:1  Error: Expected indentation of 4 spaces but found 6.  indent
+106:1  Error: Expected indentation of 2 spaces but found 4.  indent
+107:1  Error: Expected indentation of 2 spaces but found 4.  indent
+108:1  Error: Expected indentation of 2 spaces but found 4.  indent
+109:1  Error: Expected indentation of 0 spaces but found 2.  indent
+
+./src/app/soap-guide/page.tsx
+4:33  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:29  Error: Strings must use doublequote.  quotes
+7:24  Error: Strings must use doublequote.  quotes
+8:24  Error: Strings must use doublequote.  quotes
+9:20  Error: Strings must use doublequote.  quotes
+13:15  Error: 'GuideCategory' is defined but never used.  @typescript-eslint/no-unused-vars
+13:35  Error: 'Subtopic' is defined but never used.  @typescript-eslint/no-unused-vars
+13:51  Error: Strings must use doublequote.  quotes
+122:39  Error: Strings must use doublequote.  quotes
+125:27  Error: Strings must use doublequote.  quotes
+127:1  Error: Expected indentation of 6 spaces but found 8.  indent
+128:1  Error: Expected indentation of 6 spaces but found 8.  indent
+129:1  Error: Expected indentation of 6 spaces but found 8.  indent
+130:1  Error: Expected indentation of 6 spaces but found 8.  indent
+132:1  Error: Expected indentation of 6 spaces but found 8.  indent
+134:1  Error: Expected indentation of 6 spaces but found 8.  indent
+135:1  Error: Expected indentation of 6 spaces but found 8.  indent
+135:59  Error: Strings must use doublequote.  quotes
+156:1  Error: Expected indentation of 22 spaces but found 24.  indent
+156:119  Error: Strings must use doublequote.  quotes
+158:1  Error: Expected indentation of 24 spaces but found 25.  indent
+158:51  Error: Strings must use doublequote.  quotes
+159:31  Error: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+168:108  Error: Strings must use doublequote.  quotes
+177:1  Error: Expected indentation of 26 spaces but found 27.  indent
+178:1  Error: Expected indentation of 28 spaces but found 29.  indent
+179:1  Error: Expected indentation of 28 spaces b
+[info] ut found 29.  indent
+179:154  Error: Strings must use doublequote.  quotes
+180:1  Error: Expected indentation of 26 spaces but found 27.  indent
+181:1  Error: Expected indentation of 28 spaces but found 29.  indent
+182:1  Error: Expected indentation of 26 spaces but found 27.  indent
+198:129  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+205:65  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+205:91  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+213:83  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+216:58  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+219:290  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+231:220  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+237:256  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+251:231  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+251:392  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/test/page.tsx
+1:1  Error: Strings must use doublequote.  quotes
+
+./src/components/Button.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:19  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+6:29  Error: Strings must use doublequote.  quotes
+6:41  Error: Strings must use doublequote.  quotes
+13:13  Error: Strings must use doublequote.  quotes
+14:15  Error: Strings must use doublequote.  quotes
+18:17  Error: Strings must use doublequote.  quotes
+
+./src/components/CaduceusIcon.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+10:52  Error: Strings must use doublequote.  quotes
+12:5  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/TopNav.tsx
+1:18  Error: Strings must use doublequote.  quotes
+2:19  Error: Strings must use doublequote.  quotes
+3:29  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+5:26  Error: Strings must use doublequote.  quotes
+16:1  Error: Expected indentation of 10 spaces but found 8.  indent
+17:1  Error: Expected indentation of 12 spaces but found 10.  indent
+18:1  Error: Expected indentation of 12 spaces but found 10.  indent
+19:1  Error: Expected indentation of 12 spaces but found 9.  indent
+20:1  Error: Expected indentation of 12 spaces but found 9.  indent
+21:1  Error: Expected indentation of 10 spaces but found 0.  indent
+32:38  Error: Strings must use doublequote.  quotes
+32:53  Error: Strings must use doublequote.  quotes
+39:38  Error: Strings must use doublequote.  quotes
+39:51  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/DesktopNavigation.tsx
+2:19  Error: Strings must use doublequote.  quotes
+3:39  Error: Strings must use doublequote.  quotes
+4:72  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+38:23  Error: Strings must use doublequote.  quotes
+39:92  Error: Strings must use doublequote.  quotes
+71:21  Error: Strings must use doublequote.  quotes
+72:90  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/HamburgerButton.tsx
+2:1  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+21:81  Error: Strings must use doublequote.  quotes
+22:81  Error: Strings must use doublequote.  quotes
+23:81  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/Header.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:18  Error: Strings must use doublequote.  quotes
+5:19  Error: Strings must use doublequote.  quotes
+6:45  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+9:35  Error: Strings must use doublequote.  quotes
+10:34  Error: Strings must use doublequote.  quotes
+11:33  Error: Strings must use doublequote.  quotes
+56:31  Error: Strings must use doublequote.  quotes
+57:47  Error: Strings must use doublequote.  quotes
+61:55  Error: Strings must use doublequote.  quotes
+61:66  Error: Strings must use doublequote.  quotes
+63:38  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/MobileNavigation.tsx
+2:34  Error: Strings must use doublequote.  quotes
+3:8  Error: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+3:18  Error: Strings must use doublequote.  quotes
+4:8  Error: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+4:19  Error: Strings must use doublequote.  quotes
+5:25  Error: Strings must use doublequote.  quotes
+6:72  Error: Strings must use doublequote.  quotes
+7:20  Error: Strings must use doublequote.  quotes
+24:17  Error: Strings must use doublequote.  quotes
+29:17  Error: Strings must use doublequote.  quotes
+40:21  Error: Strings must use doublequote.  quotes
+43:18  Error: Strings must use doublequote.  quotes
+44:19  Error: Strings must use doublequote.  quotes
+45:28  Error: Strings must use doublequote.  quotes
+47:19  Error: Strings must use doublequote.  quotes
+50:23  Error: Strings must use doublequote.  quotes
+54:23  Error: Strings must use doublequote.  quotes
+65:21  Error: Strings must use doublequote.  quotes
+68:18  Error: Strings must use doublequote.  quotes
+69:21  Error: Strings must use doublequote.  quotes
+70:19  Error: Strings must use doublequote.  quotes
+71:28  Error: Strings must use doublequote.  quotes
+72:22  Error: Strings must use doublequote.  quotes
+74:19  Error: Strings must use doublequote.  quotes
+75:22  Error: Strings must use doublequote.  quotes
+76:23  Error: Strings must use doublequote.  quotes
+77:20  Error: Strings must use doublequote.  quotes
+78:26  Error: Strings must use doublequote.  quotes
+79:20  Error: Strings must use doublequote.  quotes
+80:23  Error: Strings must use doublequote.  quotes
+81:22  Error: Strings must use doublequote.  quotes
+86:23  Error: Strings must use doublequote.  quotes
+94:24  Error: Strings must use doublequote.  quotes
+95:23  Error: Strings must use doublequote.  quotes
+96:27  Error: Strings must use doublequote.  quotes
+99:25  Error: Strings must use doublequote.  quotes
+157:27  Error: Strings must use doublequote.  quotes
+167:27  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/NavLink.tsx
+2:18  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+15:50  Error: Strings must use doublequote.  quotes
+
+./src/components/layout/Header/navigationData.ts
+8:1  Error: Expected indentation of 0 spaces but found 2.  indent
+9:1  Error: Expected indentation of 2 spaces but found 4.  indent
+9:13  Error: Strings must use doublequote.  quotes
+9:43  Error: Strings must use doublequote.  quotes
+10:1  Error: Expected indentation of 2 spaces but found 4.  indent
+10:13  Error: Strings must use doublequote.  quotes
+10:51  Error: Strings must use doublequote.  quotes
+11:1  Error: Expected indentation of 2 spaces but found 4.  indent
+11:13  Error: Strings must use doublequote.  quotes
+11:50  Error: Strings must use doublequote.  quotes
+12:1  Error: Expected indentation of 0 spaces but found 2.  indent
+14:1  Error: Expected indentation of 0 spaces but found 2.  indent
+15:1  Error: Expected indentation of 2 spaces but found 4.  indent
+15:13  Error: Strings must use doublequote.  quotes
+15:32  Error: Strings must use doublequote.  quotes
+16:1  Error: Expected indentation of 2 spaces but found 4.  indent
+16:13  Error: Strings must use doublequote.  quotes
+16:35  Error: Strings must use doublequote.  quotes
+17:1  Error: E
+[info] xpected indentation of 2 spaces but found 4.  indent
+17:13  Error: Strings must use doublequote.  quotes
+17:29  Error: Strings must use doublequote.  quotes
+18:1  Error: Expected indentation of 0 spaces but found 2.  indent
+20:1  Error: Expected indentation of 0 spaces but found 2.  indent
+21:1  Error: Expected indentation of 2 spaces but found 4.  indent
+21:13  Error: Strings must use doublequote.  quotes
+21:30  Error: Strings must use doublequote.  quotes
+22:1  Error: Expected indentation of 2 spaces but found 4.  indent
+22:13  Error: Strings must use doublequote.  quotes
+22:28  Error: Strings must use doublequote.  quotes
+23:1  Error: Expected indentation of 2 spaces but found 4.  indent
+23:13  Error: Strings must use doublequote.  quotes
+23:39  Error: Strings must use doublequote.  quotes
+24:1  Error: Expected indentation of 2 spaces but found 4.  indent
+24:13  Error: Strings must use doublequote.  quotes
+24:38  Error: Strings must use doublequote.  quotes
+25:1  Error: Expected indentation of 0 spaces but found 2.  indent
+
+./src/components/session/detail/SessionCard.tsx
+25:54  Error: 'onUpdate' is defined but never used.  @typescript-eslint/no-unused-vars
+25:64  Error: 'onDelete' is defined but never used.  @typescript-eslint/no-unused-vars
+27:19  Error: Strings must use doublequote.  quotes
+52:54  Error: Strings must use doublequote.  quotes
+
+./src/components/session/detail/SoapNotesTab.tsx
+55:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/components/session/recording/AudioReview.tsx
+1:1  Error: Strings must use doublequote.  quotes
+2:41  Error: Strings must use doublequote.  quotes
+3:20  Error: Strings must use doublequote.  quotes
+23:56  Error: Strings must use doublequote.  quotes
+53:13  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/ProgressBar.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:20  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/RecordSessionClient.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:44  Error: Strings must use doublequote.  quotes
+4:44  Error: Strings must use doublequote.  quotes
+5:18  Error: Strings must use doublequote.  quotes
+6:25  Error: Strings must use doublequote.  quotes
+8:26  Error: Strings must use doublequote.  quotes
+9:25  Error: Strings must use doublequote.  quotes
+10:20  Error: Strings must use doublequote.  quotes
+12:34  Error: Strings must use doublequote.  quotes
+13:35  Error: Strings must use doublequote.  quotes
+14:30  Error: Strings must use doublequote.  quotes
+16:20  Error: Strings must use doublequote.  quotes
+21:40  Error: Strings must use doublequote.  quotes
+28:36  Error: Strings must use doublequote.  quotes
+58:19  Error: Strings must use doublequote.  quotes
+77:31  Error: 'token' is defined but never used.  @typescript-eslint/no-unused-vars
+80:25  Error: Strings must use doublequote.  quotes
+81:25  Error: Strings must use doublequote.  quotes
+83:27  Error: Strings must use doublequote.  quotes
+84:31  Error: Strings must use doublequote.  quotes
+134:53  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+155:21  Error: Strings must use doublequote.  quotes
+156:23  Error: Strings must use doublequote.  quotes
+160:21  Error: Strings must use doublequote.  quotes
+161:23  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/RecordingControls.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:17  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+3:33  Error: Strings must use doublequote.  quotes
+4:20  Error: Strings must use doublequote.  quotes
+23:56  Error: Strings must use doublequote.  quotes
+42:13  Error: Strings must use doublequote.  quotes
+44:1  Error: Expected indentation of 12 spaces but found 10.  indent
+44:13  Error: Strings must use doublequote.  quotes
+45:1  Error: Expected indentation of 12 spaces but found 10.  indent
+45:13  Error: Strings must use doublequote.  quotes
+
+./src/components/session/recording/StatusBanner.tsx
+2:1  Error: Strings must use doublequote.  quotes
+4:19  Error: Strings must use doublequote.  quotes
+5:27  Error: Strings must use doublequote.  quotes
+23:36  Error: Strings must use doublequote.  quotes
+24:36  Error: Strings must use doublequote.  quotes
+
+./src/context/AuthContext.tsx
+1:1  Error: Strings must use doublequote.  quotes
+3:82  Error: Strings must use doublequote.  quotes
+4:22  Error: Strings must use doublequote.  quotes
+5:22  Error: Strings must use doublequote.  quotes
+53:21  Error: Strings must use doublequote.  quotes
+
+./src/hooks/useAudioProcessor.ts
+1:1  Error: Strings must use doublequote.  quotes
+3:26  Error: Strings must use doublequote.  quotes
+4:40  Error: Strings must use doublequote.  quotes
+21:62  Error: Strings must use doublequote.  quotes
+24:15  Error: Strings must use doublequote.  quotes
+25:15  Error: Strings must use doublequote.  quotes
+39:19  Error: Strings must use doublequote.  quotes
+46:19  Error: Strings must use doublequote.  quotes
+55:22  Error: Strings must use doublequote.  quotes
+58:31  Error: Strings must use doublequote.  quotes
+63:19  Error: Strings must use doublequote.  quotes
+68:19  Error: Strings must use doublequote.  quotes
+70:25  Error: Strings must use doublequote.  quotes
+73:57  Error: Strings must use doublequote.  quotes
+74:19  Error: Strings must use doublequote.  quotes
+77:23  Error: Strings must use doublequote.  quotes
+80:17  Error: Strings must use doublequote.  quotes
+85:66  Error: Strings must use doublequote.  quotes
+91:19  Error: Strings must use doublequote.  quotes
+93:24  Error: Strings must use doublequote.  quotes
+96:38  Error: Strings must use doublequote.  quotes
+97:17  Error: Strings must use doublequote.  quotes
+98:20  Error: Strings must use doublequote.  quotes
+98:36  Error: Strings must use doublequote.  quotes
+103:61  Error: Strings must use doublequote.  quotes
+109:19  Error: Strings must use doublequote.  quotes
+111:24  Error: Strings must use doublequote.  quotes
+115:19  Error: Strings must use doublequote.  quotes
+126:19  Error: Strings must use doublequote.  quotes
+127:24  Error: Strings must use doublequote.  quotes
+131:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+133:21  Error: Strings must use doublequote.  quotes
+
+./src/hooks/useAudioRecorder.ts
+2:58  Error: Strings must use doublequote.  quotes
+8:54  Error: Strings must use doublequote.  quotes
+34:22  Error: Strings must use doublequote.  quotes
+37:24  Error: Strings must use doublequote.  quotes
+52:26  Error: Strings must use doublequote.  quotes
+62:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+63:24  Error: Strings must use doublequote.  quotes
+69:45  Error: Strings must use doublequote.  quotes
+
+./src/lib/adminFirebase.ts
+2:31  Error: 'getApp' is defined but never used.  @typescript-eslint/no-unused-vars
+2:57  Error: Strings must use doublequote.  quotes
+3:30  Error: Strings must use doublequote.  quotes
+4:25  Error: Strings must use doublequote.  quotes
+5:28  Error: Strings must use doublequote.  quotes
+13:13  Error: Strings must use doublequote.  quotes
+14:13  Error: Strings must use doublequote.  quotes
+15:13  Error: Strings must use doublequote.  quotes
+16:13  Error: Strings must use doublequote.  quotes
+17:13  Error: Strings must use doublequote.  quotes
+18:13  Error: Strings must use doublequote.  quotes
+23:17  Error: Strings must use doublequote.  quotes
+27:17  Error: Strings must use doublequote.  quotes
+33:19  Error: Strings must use doublequote.  quotes
+35:19  Error: Strings must use doublequote.  quotes
+40:19  Error: Strings must use doublequote.  quotes
+41:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+42:21  Error: Strings must use doublequote.  quotes
+43:23  Error: Strings must use doublequote.  quotes
+49:19  Error: Strings must use doublequote.  quotes
+51:19  Error: Strings must use doublequote.  quotes
+52:19  Warning: Unexpected any. Specify a different type.  @ty
+[info] pescript-eslint/no-explicit-any
+53:21  Error: Strings must use doublequote.  quotes
+54:23  Error: Strings must use doublequote.  quotes
+58:15  Error: Strings must use doublequote.  quotes
+
+./src/lib/firebaseConfig.ts
+2:48  Error: Strings must use doublequote.  quotes
+3:30  Error: Strings must use doublequote.  quotes
+4:25  Error: Strings must use doublequote.  quotes
+
+./src/lib/firestore.ts
+6:22  Error: Strings must use doublequote.  quotes
+7:8  Error: Strings must use doublequote.  quotes
+67:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+69:1  Error: Expected indentation of 2 spaces but found 0.  indent
+71:17  Error: Strings must use doublequote.  quotes
+72:14  Error: Strings must use doublequote.  quotes
+72:29  Error: Strings must use doublequote.  quotes
+100:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+103:23  Error: Strings must use doublequote.  quotes
+110:23  Error: Strings must use doublequote.  quotes
+
+./src/lib/saveTherapySessionNote.ts
+9:27  Error: Strings must use doublequote.  quotes
+11:81  Error: Strings must use doublequote.  quotes
+66:24  Error: Strings must use doublequote.  quotes
+68:13  Error: Strings must use doublequote.  quotes
+74:15  Error: Strings must use doublequote.  quotes
+90:46  Error: Strings must use doublequote.  quotes
+93:17  Error: Strings must use doublequote.  quotes
+96:19  Error: Strings must use doublequote.  quotes
+97:21  Error: Strings must use doublequote.  quotes
+
+./src/utils/logConsent.ts
+23:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/utils/makeRandomId.ts
+3:1  Error: Expected indentation of 2 spaces but found 4.  indent
+4:7  Error: Strings must use doublequote.  quotes
+5:1  Error: Expected indentation of 2 spaces but found 4.  indent
+5:18  Error: Strings must use doublequote.  quotes
+6:1  Error: Expected indentation of 2 spaces but found 4.  indent
+7:1  Error: Expected indentation of 4 spaces but found 6.  indent
+8:1  Error: Expected indentation of 2 spaces but found 4.  indent
+9:1  Error: Expected indentation of 2 spaces but found 4.  indent
+10:1  Error: Expected indentation of 0 spaces but found 2.  indent
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+
+[debug] [2025-07-02T16:35:44.339Z] Error: ENOENT: no such file or directory, open '/Users/johnhelmy/Desktop/Programming/terapai/my-app/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.

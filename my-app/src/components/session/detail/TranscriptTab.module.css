@@ -1,27 +1,16 @@
 /* src/components/session/detail/TranscriptTab.module.css */
-.transcriptContainer {
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 4px;
-    max-height: 60vh;
-    overflow-y: auto;
-  }
-  
-  .entry {
-    margin-bottom: 0.75rem;
-  }
-  
-  .speaker {
-    font-weight: 500;
-    color: #333;
-  }
-  
-  .text {
-    color: #444;
-  }
-  
-  .empty {
-    color: #888;
-    font-style: italic;
-  }
-  
+.transcript {
+  white-space: pre-wrap;
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 4px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text, #1e293b);
+}
+.empty {
+  text-align: center;
+  color: var(--color-text-muted, #64748b);
+  padding: 1rem;
+}

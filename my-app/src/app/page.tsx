@@ -20,14 +20,14 @@ export default function HomePage() {
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            !!Clinical Notes & Clinical Feedback using HIPAA Compliant AI
+            Clinical Notes & Clinical Feedback using HIPAA Compliant AI
           </h1>
           <p className={styles.heroSubtitle}>
             Terapai goes beyond automated notes. We provide secure, AI-powered tools to streamline your documentation and offer clinical insights, giving you more time and confidence to focus on what matters most—your clients.
           </p>
           <div className={styles.ctaButtons}>
             <Link href="/register" className={styles.ctaButtonPrimary}>
-              !!Start Your Free Trial
+              Start Your Free Trial
             </Link>
             <Link href="#features" className={styles.ctaButtonSecondary}>
               Explore Features

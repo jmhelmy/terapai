@@ -1,3 +1,4 @@
+// src/app/dashboard/SessionList.tsx
 'use client';
 
 import React, { useMemo } from 'react';
@@ -47,7 +48,10 @@ export default function SessionList({
             .map((note) => (
               <SessionCard
                 key={note.id}
-                note={note}
+                note={{
+                  ...note,
+                  sessionDate: note.sessionDate.toISOString(), // fix
+                }}
                 onClick={onClick}
                 onUpdate={onUpdate}
                 onDelete={onDelete}
@@ -67,7 +71,10 @@ export default function SessionList({
                 .map((note) => (
                   <SessionCard
                     key={note.id}
-                    note={note}
+                    note={{
+                      ...note,
+                      sessionDate: note.sessionDate.toISOString(), // fix
+                    }}
                     onClick={onClick}
                     onUpdate={onUpdate}
                     onDelete={onDelete}

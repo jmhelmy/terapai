@@ -7,7 +7,7 @@ import styles from "./SessionCard.module.css";
 export interface SessionItem {
   id: string;
   clientInitials: string;
-  sessionDate: Date;
+  sessionDate: string;   // ← was Date, now ISO string
   transcript: string;
   structuredContent: string;
 }
@@ -28,21 +28,14 @@ export default function SessionCard({ note, onClick, onUpdate, onDelete }: Sessi
     return null;
   }
 
-  const dateString = note.sessionDate instanceof Date 
-    ? note.sessionDate.toLocaleString([], {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-      })
-    : new Date(note.sessionDate).toLocaleString([], {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-      });
+  // Convert ISO string to locale date
+  const dateString = new Date(note.sessionDate).toLocaleString([], {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
 
   return (
     <div
