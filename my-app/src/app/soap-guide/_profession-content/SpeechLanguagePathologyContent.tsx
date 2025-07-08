@@ -1,6 +1,6 @@
 // src/app/soap-guide/_profession-content/SpeechLanguagePathologyContent.tsx
-import React from 'react';
-import styles from '../SoapPage.module.css';
+import React from "react";
+import styles from "../SoapPage.module.css";
 
 export default function SpeechLanguagePathologyContent() {
   return (

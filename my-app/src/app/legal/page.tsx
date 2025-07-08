@@ -1,20 +1,20 @@
 // src/app/legal/page.tsx
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import Link from 'next/link';
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer';
-import styles from './LegalAgreementPage.module.css';
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import Link from "next/link";
+import Header from "@/components/layout/MarketingNav/Header";
+import Footer from "@/components/layout/MarketingNav/Footer";
+import styles from "./LegalAgreementPage.module.css";
 
 export default function LegalAgreementPage() {
   const router = useRouter();
   const [agreed, setAgreed] = useState(false);
 
   const handleAgree = () => {
-    localStorage.setItem('agreedToTerms', 'true');
-    router.push('/dashboard');
+    localStorage.setItem("agreedToTerms", "true");
+    router.push("/dashboard");
   };
 
   return (

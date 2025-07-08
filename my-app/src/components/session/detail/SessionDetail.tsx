@@ -1,17 +1,12 @@
-// src/components/session/detail/SessionDetail.tsx
 "use client";
-
 import { useState } from "react";
-import SessionTabs from "./SessionTabs";
-import TranscriptTab from "./TranscriptTab";
-import SoapNotesTab from "./SoapNotesTab";
+import styles from "./SessionDetail.module.css";
+import SessionTabs from "@/components/session/detail/SessionTabs";
+import SoapNotesTab from "@/components/session/detail/SoapNotesTab";
+import TranscriptTab from "@/components/session/detail/TranscriptTab";
+import TopNav from "@/components/layout/DashboardNav/TopNav";
 
-interface TranscriptEntry {
-  speaker: number;
-  text: string;
-}
-
-interface SOAPNote {
+interface SoapNote {
   subjective: string;
   objective: string;
   assessment: string;
@@ -20,35 +15,78 @@ interface SOAPNote {
 
 interface Session {
   id: string;
-  clientName: string;
-  transcript: TranscriptEntry[];
-  notes: SOAPNote;
+  clientInitials?: string;
+  sessionDate?: string;
+  transcript?: string;
+  soapNote: SoapNote;
+  duration?: string;
 }
 
-export default function SessionDetail({
-  session,
-  initialTab,
-}: {
-  session: Session;
-  initialTab: string;
-}) {
+interface Props {
+  session: Session | null | undefined;
+  initialTab?: string;
+}
+
+export default function SessionDetail({ session, initialTab = "Notes" }: Props) {
   const [activeTab, setActiveTab] = useState(initialTab);
 
+  if (!session) {
+    // This should never trigger if you handle errors in the page, but it's safe to keep.
+    return (
+      <div>
+        <TopNav />
+        <div className={styles.pageContainer}>
+          <main className={styles.mainContent}>
+            <div style={{ margin: "3rem auto", textAlign: "center", color: "#b00" }}>
+              <b>Session not found.</b>
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
+
+  const {
+    clientInitials,
+    sessionDate,
+    transcript,
+    soapNote,
+    duration = "N/A",
+  } = session;
+
   return (
-    <div style={{ padding: "1.5rem" }}>
-      <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-        Session with {session.clientName}
-      </h2>
-
-      <SessionTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-
-      <div style={{ marginTop: "1rem" }}>
-        {activeTab === "SOAP Notes" && (
-          <SoapNotesTab sessionId={session.id} initialSoap={session.notes} />
-        )}
-        {activeTab === "Transcript" && (
-          <TranscriptTab transcript={session.transcript} />
-        )}
+    <div>
+      <TopNav />
+      <div className={styles.pageContainer}>
+        <aside className={styles.sidebar}>
+          <div className={styles.sidebarSection}>
+            <div className={styles.sidebarTitle}>Client:</div>
+            <div className={styles.sidebarValue}>{clientInitials}</div>
+          </div>
+          <div className={styles.sidebarSection}>
+            <div className={styles.sidebarTitle}>Date:</div>
+            <div className={styles.sidebarValue}>
+              {sessionDate ? new Date(sessionDate).toLocaleString() : "—"}
+            </div>
+          </div>
+          <div className={styles.sidebarSection}>
+            <div className={styles.sidebarTitle}>Duration:</div>
+            <div className={styles.sidebarValue}>{duration}</div>
+          </div>
+        </aside>
+        <main className={styles.mainContent}>
+          <SessionTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+          {activeTab === "Notes" && soapNote && (
+            <SoapNotesTab
+              sessionId={session.id}
+              initialSoap={soapNote}
+              showCopyButtons={true}
+            />
+          )}
+          {activeTab === "Transcript" && (
+            <TranscriptTab transcript={transcript || ""} />
+          )}
+        </main>
       </div>
     </div>
   );

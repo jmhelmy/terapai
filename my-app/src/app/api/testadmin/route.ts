@@ -1,6 +1,6 @@
-export const runtime = 'nodejs';
+export const runtime = "nodejs";
 
-import * as admin from 'firebase-admin';
+import * as admin from "firebase-admin";
 
 export async function GET() {
   try {

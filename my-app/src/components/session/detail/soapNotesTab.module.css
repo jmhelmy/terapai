@@ -1,101 +1,96 @@
-/* src/components/session/detail/soapNotesTab.module.css */
-
-.notesContainer {
-    padding: 1rem;
-    background: #fcfcfc;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    margin-top: 1rem;
-  }
-  
-  .section {
-    margin-bottom: 1.5rem;
-  }
-  
-  .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .copyBtn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    background-color: #eee;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  .copyBtn:hover {
-    background-color: #ddd;
-  }
-  
-  .textarea {
-    width: 100%;
-    min-height: 80px;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-    font-family: inherit;
-  }
-  
-  .textContent {
-    font-size: 0.95rem;
-    color: #333;
-    line-height: 1.4;
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .copyNoteBtn,
-  .actionBtn,
-  .deleteNoteBtn {
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.2s ease;
-  }
-  
-  .copyNoteBtn {
-    background-color: #f3f3f3;
-    color: #333;
-  }
-  
-  .copyNoteBtn:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .actionBtn {
-    background-color: #0070f3;
-    color: white;
-  }
-  
-  .actionBtn:hover {
-    background-color: #005bb5;
-  }
-  
-  .deleteNoteBtn {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .deleteNoteBtn:hover {
-    background-color: #c0392b;
-  }
-  
+.soapForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+}
+.soapHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.soapHeader {
+  font-size: 1.6rem;
+  font-weight: 600;
+  flex: 1;
+}
+.copyAllBtn {
+  background: #eaf3ff;
+  border: 1px solid #b1ccfa;
+  color: #1761b0;
+  padding: 0.3rem 1.1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+.copyAllBtn:hover {
+  background: #d1e6fd;
+}
+.copyNoteSuccess {
+  color: #308c48;
+  font-weight: 500;
+  margin-left: 8px;
+}
+.soapField {
+  margin-bottom: 1rem;
+}
+.fieldHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.label {
+  font-size: 1.07rem;
+  font-weight: 500;
+}
+.copyBtn {
+  background: #f2f5f9;
+  border: 1px solid #b9c5d8;
+  color: #1c487c;
+  font-size: 0.95rem;
+  border-radius: 7px;
+  padding: 2px 13px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.copyBtn:hover {
+  background: #e7f0fc;
+}
+.textarea {
+  width: 100%;
+  min-height: 64px;
+  font-size: 1rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #dbe4ef;
+  resize: vertical;
+  margin-top: 2px;
+  font-family: inherit;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.saveBtn {
+  background: #2262c6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.6rem;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+.saveBtn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+.saved {
+  color: #239c4b;
+  font-weight: 500;
+}

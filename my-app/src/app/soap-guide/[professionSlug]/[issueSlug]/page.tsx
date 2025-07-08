@@ -1,15 +1,15 @@
 // src/app/soap-guide/[professionSlug]/[issueSlug]/page.tsx
-'use client';
+"use client";
 
-import React, { useState, useEffect, Suspense, lazy, ComponentType } from 'react';
-import Link from 'next/link';
-import { usePathname, notFound } from 'next/navigation';
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer';
+import React, { useState, useEffect, Suspense, lazy, ComponentType } from "react";
+import Link from "next/link";
+import { usePathname, notFound } from "next/navigation";
+import { Header } from "@/components/layout/MarketingNav/Header";
+import { Footer } from "@/components/layout/MarketingNav/Footer";
 // TWO dots (../../) because this file lives under:
 // src/app/soap-guide/[professionSlug]/[issueSlug]/page.tsx
-import styles from '../../SoapPage.module.css';
-import { guideCategories, GuideCategory, Subtopic } from '../../data';
+import styles from "../../SoapPage.module.css";
+import { guideCategories, GuideCategory, Subtopic } from "../../data";
 
 export default function IssueGuidePage(props: any) {
   const { professionSlug, issueSlug } = props.params as {
@@ -28,8 +28,8 @@ export default function IssueGuidePage(props: any) {
         components[category.slug] = {};
         category.subtopics.forEach((subtopic) => {
           const capFirst = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
-          const componentNameParts = subtopic.slug.split('-').map(capFirst);
-          const componentName = componentNameParts.join('') + 'Content';
+          const componentNameParts = subtopic.slug.split("-").map(capFirst);
+          const componentName = componentNameParts.join("") + "Content";
           try {
             // TWO dots again to reach `src/app/soap-guide/_issue-content/...`
             components[category.slug][subtopic.slug] = lazy(() =>
@@ -90,9 +90,9 @@ export default function IssueGuidePage(props: any) {
                     href={category.path}
                     className={`${styles.navLink} ${
                       currentActiveGroupSlug === category.slug &&
-                      !currentActiveSubSlug.startsWith(category.slug + '/')
+                      !currentActiveSubSlug.startsWith(category.slug + "/")
                         ? styles.navLinkActive
-                        : ''
+                        : ""
                     }`}
                     onClick={(e) => {
                       if (category.isGroup && category.subtopics?.length) {
@@ -105,7 +105,7 @@ export default function IssueGuidePage(props: any) {
                     {category.isGroup && category.subtopics && (
                       <span
                         className={`${styles.arrow} ${
-                          expandedGroups[category.slug] ? styles.arrowUp : ''
+                          expandedGroups[category.slug] ? styles.arrowUp : ""
                         }`}
                       >
                         &#9662;
@@ -128,7 +128,7 @@ export default function IssueGuidePage(props: any) {
                               currentActiveSubSlug ===
                               `${category.slug}/${subtopic.slug}`
                                 ? styles.subNavLinkActive
-                                : ''
+                                : ""
                             }`}
                           >
                             {subtopic.name}
@@ -145,8 +145,8 @@ export default function IssueGuidePage(props: any) {
 
         <main className={styles.contentArea}>
           <div className={styles.breadcrumbs}>
-            <Link href="/soap-guide">SOAP Guides</Link> &gt;{' '}
-            <Link href={currentProfession.path}>{currentProfession.name}</Link> &gt;{' '}
+            <Link href="/soap-guide">SOAP Guides</Link> &gt;{" "}
+            <Link href={currentProfession.path}>{currentProfession.name}</Link> &gt;{" "}
             <span>{currentIssue.name}</span>
           </div>
 

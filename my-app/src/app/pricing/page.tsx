@@ -1,11 +1,11 @@
 // src/app/pricing/page.tsx
 "use client";
-import Link from 'next/link';
-import styles from './PricingPage.module.css';
+import Link from "next/link";
+import styles from "./PricingPage.module.css";
 
 // Import your reusable Header and Footer components
-import { Header } from '@/components/layout/Header/Header'; // Adjust path if necessary
-import { Footer } from '@/components/layout/Footer'; // Adjust path if necessary
+import { Header } from "@/components/layout/MarketingNav/Header"; // Adjust path if necessary
+import { Footer } from "@/components/layout/MarketingNav/Footer"; // Adjust path if necessary
 
 // Example SVG Icons (replace with your actual icons or a library)
 const CheckCircleIcon = () => (
@@ -24,54 +24,54 @@ const ShieldCheckIcon = () => (
 export default function PricingPage() {
   const pricingPlans = [
     {
-      name: 'Starter',
-      priceMonthly: '0',
-      priceYearly: '0',
-      description: 'Perfect for trying out TheraScript and handling a few sessions.',
-      ctaText: 'Start for Free',
-      ctaLink: '/register',
+      name: "Starter",
+      priceMonthly: "0",
+      priceYearly: "0",
+      description: "Perfect for trying out TheraScript and handling a few sessions.",
+      ctaText: "Start for Free",
+      ctaLink: "/register",
       features: [
-        'Up to 5 sessions transcribed per month',
-        'AI-generated SOAP notes',
-        'Secure session recording',
-        'HIPAA-compliant platform',
-        'Basic email support',
+        "Up to 5 sessions transcribed per month",
+        "AI-generated SOAP notes",
+        "Secure session recording",
+        "HIPAA-compliant platform",
+        "Basic email support",
       ],
       isPopular: false,
     },
     {
-      name: 'Professional',
-      priceMonthly: '49',
-      priceYearly: '490', // Example: 2 months free
-      description: 'For individual therapists managing a regular client load.',
-      ctaText: 'Choose Professional',
-      ctaLink: '/register?plan=professional',
+      name: "Professional",
+      priceMonthly: "49",
+      priceYearly: "490", // Example: 2 months free
+      description: "For individual therapists managing a regular client load.",
+      ctaText: "Choose Professional",
+      ctaLink: "/register?plan=professional",
       features: [
-        'Up to 50 sessions transcribed per month',
-        'AI-generated SOAP notes',
-        'AI Clinical Advisor (Beta)',
-        'Secure session recording & storage',
-        'HIPAA-compliant platform',
-        'Priority email support',
-        'Download notes (PDF, DOCX)',
+        "Up to 50 sessions transcribed per month",
+        "AI-generated SOAP notes",
+        "AI Clinical Advisor (Beta)",
+        "Secure session recording & storage",
+        "HIPAA-compliant platform",
+        "Priority email support",
+        "Download notes (PDF, DOCX)",
       ],
       isPopular: true,
     },
     {
-      name: 'Clinic',
-      priceMonthly: 'Contact Us',
-      priceYearly: 'Custom',
-      description: 'Tailored solutions for clinics and group practices.',
-      ctaText: 'Contact Sales',
-      ctaLink: '/contact-sales',
+      name: "Clinic",
+      priceMonthly: "Contact Us",
+      priceYearly: "Custom",
+      description: "Tailored solutions for clinics and group practices.",
+      ctaText: "Contact Sales",
+      ctaLink: "/contact-sales",
       features: [
-        'Unlimited sessions transcribed',
-        'All Professional features',
-        'Multi-user accounts & management',
-        'Team collaboration features',
-        'Dedicated account manager',
-        'Custom EHR integrations (coming soon)',
-        'Advanced audit logs',
+        "Unlimited sessions transcribed",
+        "All Professional features",
+        "Multi-user accounts & management",
+        "Team collaboration features",
+        "Dedicated account manager",
+        "Custom EHR integrations (coming soon)",
+        "Advanced audit logs",
       ],
       isPopular: false,
     },
@@ -101,12 +101,12 @@ export default function PricingPage() {
 
         <div className={styles.pricingGrid}>
           {pricingPlans.map((plan) => (
-            <div key={plan.name} className={`${styles.planCard} ${plan.isPopular ? styles.popularCard : ''}`}>
+            <div key={plan.name} className={`${styles.planCard} ${plan.isPopular ? styles.popularCard : ""}`}>
               {plan.isPopular && <div className={styles.popularBadge}>Most Popular</div>}
               <h2>{plan.name}</h2>
               <p className={styles.planDescription}>{plan.description}</p>
               <div className={styles.priceContainer}>
-                {plan.priceMonthly === 'Contact Us' ? (
+                {plan.priceMonthly === "Contact Us" ? (
                   <span className={styles.price}>Contact Us</span>
                 ) : (
                   <>
@@ -115,7 +115,7 @@ export default function PricingPage() {
                   </>
                 )}
               </div>
-              {plan.priceMonthly !== 'Contact Us' && plan.priceMonthly !== '0' && (
+              {plan.priceMonthly !== "Contact Us" && plan.priceMonthly !== "0" && (
                 <p className={styles.yearlyOption}>
                   Or ${plan.priceYearly}/year (Save ~16%)
                 </p>
@@ -156,7 +156,7 @@ export default function PricingPage() {
             <h4>What happens if I exceed my session limit on the Starter or Professional plan?</h4>
             <p>We will notify you as you approach your limit. You can choose to upgrade your plan at any time to accommodate more sessions. For occasional overages, we may offer small top-up packages.</p>
           </div>
-           <div className={styles.faqItem}>
+          <div className={styles.faqItem}>
             <h4>How does the AI Clinical Advisor work?</h4>
             <p>The AI Clinical Advisor (currently in Beta for Professional users) analyzes anonymized patterns and keywords from session transcripts to offer potential insights, suggest evidence-based interventions, or highlight areas for further exploration. It's designed as a supportive tool, not a replacement for your clinical judgment.</p>
           </div>

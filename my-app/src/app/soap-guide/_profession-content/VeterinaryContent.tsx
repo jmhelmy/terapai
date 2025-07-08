@@ -1,13 +1,13 @@
 // src/app/soap-guide/[professionSlug]/page.tsx
 "use client";
 
-import React, { useState, useEffect, Suspense, lazy, ComponentType } from 'react';
-import Link from 'next/link';
-import { usePathname, notFound } from 'next/navigation'; // Import notFound
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer';
-import styles from '../SoapPage.module.css'; // Path to your shared CSS module
-import { guideCategories, GuideCategory } from '../data';
+import React, { useState, useEffect, Suspense, lazy, ComponentType } from "react";
+import Link from "next/link";
+import { usePathname, notFound } from "next/navigation"; // Import notFound
+import { Header } from "@/components/layout/MarketingNav/Header";
+import { Footer } from "@/components/layout/MarketingNav/Footer";
+import styles from "../SoapPage.module.css"; // Path to your shared CSS module
+import { guideCategories, GuideCategory } from "../data";
 
 // Interface for dynamically imported components
 interface ProfessionContentComponentsMap {
@@ -51,8 +51,8 @@ export default function ProfessionGuidePage({ params }: ProfessionPageProps) {
   };
 
   // Active link logic
-  let currentActiveGroupSlug = professionSlug;
-  let currentActiveSubSlug = ""; // Not relevant for this page as it's a group landing
+  const currentActiveGroupSlug = professionSlug;
+  const currentActiveSubSlug = ""; // Not relevant for this page as it's a group landing
 
   if (!currentProfession) {
     notFound(); // Use Next.js notFound to render 404 page
@@ -71,7 +71,7 @@ export default function ProfessionGuidePage({ params }: ProfessionPageProps) {
                 <li key={category.slug} className={styles.navItem}>
                   <Link
                     href={category.path}
-                    className={`${styles.navLink} ${currentActiveGroupSlug === category.slug ? styles.navLinkActive : ''}`}
+                    className={`${styles.navLink} ${currentActiveGroupSlug === category.slug ? styles.navLinkActive : ""}`}
                     onClick={(e) => {
                       if (category.isGroup && category.subtopics && category.subtopics.length > 0) {
                         toggleGroup(category.slug);
@@ -80,7 +80,7 @@ export default function ProfessionGuidePage({ params }: ProfessionPageProps) {
                   >
                     {category.name}
                     {category.isGroup && category.subtopics && category.subtopics.length > 0 && (
-                      <span className={`${styles.arrow} ${expandedGroups[category.slug] ? styles.arrowUp : ''}`}>
+                      <span className={`${styles.arrow} ${expandedGroups[category.slug] ? styles.arrowUp : ""}`}>
                         &#9662;
                       </span>
                     )}
@@ -113,7 +113,7 @@ export default function ProfessionGuidePage({ params }: ProfessionPageProps) {
           </Suspense>
 
           {currentProfession.subtopics && currentProfession.subtopics.length > 0 && (
-            <section style={{ marginTop: '2rem' }}>
+            <section style={{ marginTop: "2rem" }}>
               <h2 className={styles.subheading}>Specific Examples & Conditions for {currentProfession.name}</h2>
               <p className={styles.paragraph}>
                 Explore detailed SOAP note examples for common scenarios encountered in {currentProfession.name}:

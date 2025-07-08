@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect, ChangeEvent } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '@/context/AuthContext';
+import { useState, useEffect, ChangeEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
 export default function ConsentPage() {
   const [isChecked, setIsChecked] = useState(false);
@@ -14,7 +14,7 @@ export default function ConsentPage() {
 
   useEffect(() => {
     if (!authLoading && !user) {
-      router.push('/login');
+      router.push("/login");
     }
   }, [authLoading, user, router]);
 
@@ -25,11 +25,11 @@ export default function ConsentPage() {
 
   const handleContinueClick = async () => {
     if (!isChecked) {
-      setErrorMessage('Please confirm consent by checking the box.');
+      setErrorMessage("Please confirm consent by checking the box.");
       return;
     }
     if (!user) {
-      setErrorMessage('Authentication required to log consent.');
+      setErrorMessage("Authentication required to log consent.");
       return;
     }
 
@@ -37,20 +37,20 @@ export default function ConsentPage() {
     setErrorMessage(null);
 
     try {
-      const res = await fetch('/api/consent', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ consentVersion: 'v1.0', userId: user.uid }),
+      const res = await fetch("/api/consent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ consentVersion: "v1.0", userId: user.uid }),
       });
       const json = await res.json();
       if (json.success) {
-        router.push('/session/record');
+        router.push("/session/record");
       } else {
-        throw new Error(json.message || 'Failed to log consent.');
+        throw new Error(json.message || "Failed to log consent.");
       }
     } catch (err: any) {
-      console.error('Error logging consent:', err);
-      setErrorMessage(err.message || 'An unexpected error occurred while logging consent.');
+      console.error("Error logging consent:", err);
+      setErrorMessage(err.message || "An unexpected error occurred while logging consent.");
     } finally {
       setIsLoading(false);
     }
@@ -129,9 +129,9 @@ export default function ConsentPage() {
           onClick={handleContinueClick}
           disabled={!isChecked || isLoading}
           className={`w-full py-3 px-4 rounded-md text-white font-semibold transition-colors duration-150
-            ${isChecked && !isLoading ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'}`}
+            ${isChecked && !isLoading ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"}`}
         >
-          {isLoading ? 'Processing…' : 'Confirm Consent & Proceed'}
+          {isLoading ? "Processing…" : "Confirm Consent & Proceed"}
         </button>
 
         <p className="text-xs text-gray-500 mt-4 text-center">

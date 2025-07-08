@@ -1,8 +1,8 @@
 // src/components/session/recording/StatusBanner.tsx
-'use client';
+"use client";
 
-import React from 'react';
-import defaultStyles from './StatusBanner.module.css'; // Styles local to StatusBanner
+import React from "react";
+import defaultStyles from "./StatusBanner.module.css"; // Styles local to StatusBanner
 
 interface StatusBannerProps {
   message?: string;
@@ -20,8 +20,8 @@ export default function StatusBanner({
   if (!message) return null;
 
   const isError =
-    message.toLowerCase().includes('error') ||
-    message.toLowerCase().includes('failed');
+    message.toLowerCase().includes("error") ||
+    message.toLowerCase().includes("failed");
 
   const containerClass = baseClass || defaultStyles.container;
   const conditionalClass = isError

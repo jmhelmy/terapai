@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { auth } from '@/lib/firebaseClient'; // Import your Firebase auth instance
-import firebase from 'firebase/compat/app';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { auth } from "@/lib/firebaseClient"; // Import your Firebase auth instance
+import firebase from "firebase/compat/app";
 // You might need to import the User type if you use it directly in the context type
 // import type { User } from 'firebase/auth';
 
@@ -50,7 +50,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 }; 

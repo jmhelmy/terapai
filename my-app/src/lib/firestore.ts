@@ -3,8 +3,8 @@
 // —————————————————————————————————————————————————————————————
 // 1) Import Firebase “compat” SDK so that firebase.firestore() is available
 // —————————————————————————————————————————————————————————————
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
 // —————————————————————————————————————————————————————————————
 // 2) Initialize Firebase App (only once)
@@ -66,10 +66,10 @@ export async function getNotes(): Promise<
     structuredContent?: string;
     [key: string]: any;         // in case you add extra fields
   }>
-> {
+  > {
   const snapshot = await db
-    .collection('notes')
-    .orderBy('sessionDate', 'desc')
+    .collection("notes")
+    .orderBy("sessionDate", "desc")
     .get();
 
   return snapshot.docs.map((doc) => {
@@ -100,14 +100,14 @@ export async function updateNote(
     [key: string]: any;
   }
 ): Promise<void> {
-  await db.collection('notes').doc(id).update(updates);
+  await db.collection("notes").doc(id).update(updates);
 }
 
 /**
  * Deletes a single note document (by ID).
  */
 export async function deleteNote(id: string): Promise<void> {
-  await db.collection('notes').doc(id).delete();
+  await db.collection("notes").doc(id).delete();
 }
 
 // —————————————————————————————————————————————————————————————

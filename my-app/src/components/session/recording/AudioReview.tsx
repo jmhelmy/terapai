@@ -1,6 +1,6 @@
-'use client';
-import React, { useRef, useState } from 'react';
-import styles from './AudioReview.module.css';
+"use client";
+import React, { useRef, useState } from "react";
+import styles from "./AudioReview.module.css";
 
 interface AudioReviewProps {
   audioBlob: Blob;
@@ -20,7 +20,7 @@ export function AudioReview({
 
   const format = (sec: number) => {
     const m = Math.floor(sec / 60);
-    const s = String(Math.floor(sec % 60)).padStart(2, '0');
+    const s = String(Math.floor(sec % 60)).padStart(2, "0");
     return `${m}:${s}`;
   };
 
@@ -50,7 +50,7 @@ export function AudioReview({
       >
         {isProcessing
           ? `Processing (${Math.round(uploadProgress)}%)…`
-          : 'Process & Generate Note'}
+          : "Process & Generate Note"}
       </button>
     </div>
   );

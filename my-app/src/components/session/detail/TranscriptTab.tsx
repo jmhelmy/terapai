@@ -3,27 +3,9 @@
 
 import styles from "./TranscriptTab.module.css";
 
-interface TranscriptEntry {
-  speaker: number;
-  text: string;
-}
-
-export default function TranscriptTab({
-  transcript,
-}: {
-  transcript: TranscriptEntry[];
-}) {
-  if (!transcript?.length) {
+export default function TranscriptTab({ transcript }: { transcript: string }) {
+  if (!transcript) {
     return <p className={styles.empty}>No transcript available.</p>;
   }
-  return (
-    <div className={styles.transcriptContainer}>
-      {transcript.map((entry, index) => (
-        <div key={index} className={styles.entry}>
-          <span className={styles.speaker}>Speaker {entry.speaker}:</span>{" "}
-          <span className={styles.text}>{entry.text}</span>
-        </div>
-      ))}
-    </div>
-  );
+  return <pre className={styles.transcript}>{transcript}</pre>;
 }

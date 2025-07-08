@@ -1,6 +1,6 @@
 // src/app/soap-guide/_profession-content/PhysicalTherapyContent.tsx
-import React from 'react';
-import styles from '../SoapPage.module.css'; // Assuming you want to reuse styles
+import React from "react";
+import styles from "../SoapPage.module.css"; // Assuming you want to reuse styles
 
 export default function PhysicalTherapyContent() {
   return (

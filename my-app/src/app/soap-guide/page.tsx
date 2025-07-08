@@ -1,16 +1,16 @@
 // src/app/soap-guide/page.tsx
 "use client";
 
-import React, { useState } from 'react'; // Removed unused useEffect
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer';
-import styles from './SoapPage.module.css';
+import React, { useState } from "react"; // Removed unused useEffect
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Header } from "@/components/layout/MarketingNav/Header";
+import { Footer } from "@/components/layout/MarketingNav/Footer";
+import styles from "./SoapPage.module.css";
 
 // Assuming './data' exports the GuideCategory and Subtopic types.
 // We are removing 'guideCategories' from this import because we define it below.
-import { type GuideCategory, type Subtopic } from './data'; // Use 'type' for type-only imports if your TS version supports it well
+import { type GuideCategory, type Subtopic } from "./data"; // Use 'type' for type-only imports if your TS version supports it well
 
 // This is now the sole definition of guideCategories for this file.
 // Optionally, you can add the type for better safety if GuideCategory from './data' matches this structure:
@@ -119,20 +119,20 @@ export default function SoapGuideLandingPage() {
   let currentActiveGroupSlug = "";
   let currentActiveSubSlug = "";
 
-  const pathSegments = pathname.split('/').filter(Boolean); // e.g., ['soap-guide', 'physical-therapy', 'low-back-pain']
+  const pathSegments = pathname.split("/").filter(Boolean); // e.g., ['soap-guide', 'physical-therapy', 'low-back-pain']
 
   // Adjusted logic to better handle base /soap-guide page and specific slugs like "introduction"
-  if (pathSegments[0] === 'soap-guide') {
+  if (pathSegments[0] === "soap-guide") {
     if (pathSegments.length === 1) {
-        // This is the base /soap-guide page. You might want to highlight "Introduction to SOAP Notes" by default
-        // or handle it based on whether "introduction" is a specific slug or just the content of this page.
-        // For now, let's assume if no other segment, "introduction" is implied for this page.
-        // You could also set a default active slug here if needed.
+      // This is the base /soap-guide page. You might want to highlight "Introduction to SOAP Notes" by default
+      // or handle it based on whether "introduction" is a specific slug or just the content of this page.
+      // For now, let's assume if no other segment, "introduction" is implied for this page.
+      // You could also set a default active slug here if needed.
     } else if (pathSegments.length === 2) {
-        currentActiveGroupSlug = pathSegments[1]; // e.g., "physical-therapy" or "introduction"
+      currentActiveGroupSlug = pathSegments[1]; // e.g., "physical-therapy" or "introduction"
     } else if (pathSegments.length >= 3) {
-        currentActiveGroupSlug = pathSegments[1]; // e.g., "physical-therapy"
-        currentActiveSubSlug = pathSegments.slice(1).join('/'); // e.g., "physical-therapy/low-back-pain"
+      currentActiveGroupSlug = pathSegments[1]; // e.g., "physical-therapy"
+      currentActiveSubSlug = pathSegments.slice(1).join("/"); // e.g., "physical-therapy/low-back-pain"
     }
   }
 
@@ -153,9 +153,9 @@ export default function SoapGuideLandingPage() {
                     // Active if it's the current group and no sub-topic is active under a *different* group,
                     // OR if it's a non-group item and its slug matches.
                     className={`${styles.navLink} ${
-                        (currentActiveGroupSlug === category.slug && !currentActiveSubSlug.startsWith(category.slug + '/')) ||
+                      (currentActiveGroupSlug === category.slug && !currentActiveSubSlug.startsWith(category.slug + "/")) ||
                         (currentActiveGroupSlug === category.slug && !category.isGroup)
-                         ? styles.navLinkActive : ''}`}
+                        ? styles.navLinkActive : ""}`}
                     onClick={(e) => {
                       if (category.isGroup && category.subtopics && category.subtopics.length > 0) {
                         // e.preventDefault(); // Optional: prevent navigation if you only want to expand/collapse
@@ -165,7 +165,7 @@ export default function SoapGuideLandingPage() {
                   >
                     {category.name}
                     {category.isGroup && category.subtopics && category.subtopics.length > 0 && (
-                      <span className={`${styles.arrow} ${expandedGroups[category.slug] ? styles.arrowUp : ''}`}>
+                      <span className={`${styles.arrow} ${expandedGroups[category.slug] ? styles.arrowUp : ""}`}>
                         &#9662; {/* Downwards arrow, CSS will rotate if arrowUp */}
                       </span>
                     )}
@@ -174,12 +174,12 @@ export default function SoapGuideLandingPage() {
                     <ul className={styles.subNavList}>
                       {category.subtopics.map(subtopic => (
                         <li key={subtopic.slug} className={styles.subNavItem}>
-                           <Link
-                             href={`${category.path}/${subtopic.slug}`}
-                             className={`${styles.subNavLink} ${currentActiveSubSlug === `${category.slug}/${subtopic.slug}` ? styles.subNavLinkActive : ''}`}
-                           >
-                             {subtopic.name}
-                           </Link>
+                          <Link
+                            href={`${category.path}/${subtopic.slug}`}
+                            className={`${styles.subNavLink} ${currentActiveSubSlug === `${category.slug}/${subtopic.slug}` ? styles.subNavLinkActive : ""}`}
+                          >
+                            {subtopic.name}
+                          </Link>
                         </li>
                       ))}
                     </ul>
