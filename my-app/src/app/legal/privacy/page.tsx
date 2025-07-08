@@ -1,10 +1,10 @@
 // src/app/privacy/page.tsx
 "use client"; // Keep this if you have client-side interactions, though this page seems static
 
-import React from 'react';
-import styles from './PrivacyPage.module.css'; // Import the CSS module
-import { Header } from '@/components/layout/Header/Header'; // Adjust path if necessary
-import { Footer } from '@/components/layout/Footer'; // Adjust path if necessary
+import React from "react";
+import styles from "./PrivacyPage.module.css"; // Import the CSS module
+import { Header } from "@/components/layout/MarketingNav/Header"; // Adjust path if necessary
+import { Footer } from "@/components/layout/MarketingNav/Footer"; // Adjust path if necessary
 
 export default function PrivacyPage() {
   const effectiveDate = "[Insert Date]"; // TODO: Replace with actual date

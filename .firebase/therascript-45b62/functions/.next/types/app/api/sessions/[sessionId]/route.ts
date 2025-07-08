@@ -1,4 +1,4 @@
-// File: /Users/johnhelmy/Desktop/Programming/terapai/my-app/src/app/api/sessions/[sessionId]/route.js
+// File: /Users/johnhelmy/Desktop/Programming/terapai/my-app/src/app/api/sessions/[sessionId]/route.ts
 import * as entry from '../../../../../../src/app/api/sessions/[sessionId]/route.js'
 import type { NextRequest } from 'next/server.js'
 

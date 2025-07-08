@@ -13,18 +13,19 @@ export default function SessionTabs({
   setActiveTab: (tab: string) => void;
 }) {
   return (
-    <div className={styles.tabContainer}>
+    <nav className={styles.tabContainer} aria-label="Session navigation tabs">
       {TABS.map((tab) => (
         <button
           key={tab}
-          className={`${styles.tabButton} ${
-            activeTab === tab ? styles.activeTab : ""
-          }`}
+          className={`${styles.tabButton} ${activeTab === tab ? styles.activeTab : ""}`}
           onClick={() => setActiveTab(tab)}
+          aria-selected={activeTab === tab}
+          tabIndex={0}
+          type="button"
         >
           {tab}
         </button>
       ))}
-    </div>
+    </nav>
   );
 }

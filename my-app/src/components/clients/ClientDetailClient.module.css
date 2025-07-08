@@ -1,0 +1,49 @@
+/* src/components/clients/ClientDetailClient.module.css */
+.container {
+  display: flex;
+  height: 100%;
+}
+.sidebar {
+  width: 220px;
+  border-right: 1px solid #e2e8f0;
+  padding: 1rem;
+  background: #fafafa;
+}
+.clientName {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.sessionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sessionList li {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.sessionList li:hover {
+  background: #e2e8f0;
+}
+.sessionList li.active {
+  background: #cbd5e1;
+  font-weight: 600;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+.header {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.content {
+  flex: 1;
+  overflow-y: auto;
+} 

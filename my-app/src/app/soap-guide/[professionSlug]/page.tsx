@@ -1,13 +1,13 @@
 // src/app/soap-guide/[professionSlug]/page.tsx
-'use client';
+"use client";
 
-import React, { useState, useEffect, Suspense, lazy, ComponentType } from 'react';
-import Link from 'next/link';
-import { usePathname, notFound } from 'next/navigation';
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer';
-import styles from '../SoapPage.module.css';
-import { guideCategories, GuideCategory, Subtopic } from '../data';
+import React, { useState, useEffect, Suspense, lazy, ComponentType } from "react";
+import Link from "next/link";
+import { usePathname, notFound } from "next/navigation";
+import { Header } from "@/components/layout/MarketingNav/Header";
+import { Footer } from "@/components/layout/MarketingNav/Footer";
+import styles from "../SoapPage.module.css";
+import { guideCategories, GuideCategory, Subtopic } from "../data";
 
 export default function ProfessionGuidePage(props: any) {
   const { professionSlug } = (props.params as { professionSlug: string });
@@ -62,7 +62,7 @@ export default function ProfessionGuidePage(props: any) {
                   <Link
                     href={category.path}
                     className={`${styles.navLink} ${
-                      currentActiveGroupSlug === category.slug ? styles.navLinkActive : ''
+                      currentActiveGroupSlug === category.slug ? styles.navLinkActive : ""
                     }`}
                     onClick={(e) => {
                       if (category.isGroup && category.subtopics && category.subtopics.length) {
@@ -75,7 +75,7 @@ export default function ProfessionGuidePage(props: any) {
                     {category.isGroup && category.subtopics && category.subtopics.length > 0 && (
                       <span
                         className={`${styles.arrow} ${
-                          expandedGroups[category.slug] ? styles.arrowUp : ''
+                          expandedGroups[category.slug] ? styles.arrowUp : ""
                         }`}
                       >
                         &#9662;
@@ -122,7 +122,7 @@ export default function ProfessionGuidePage(props: any) {
           </Suspense>
 
           {currentProfession.subtopics && currentProfession.subtopics.length > 0 && (
-            <section style={{ marginTop: '2rem' }}>
+            <section style={{ marginTop: "2rem" }}>
               <h2 className={styles.subheading}>
                 Specific Examples & Conditions for {currentProfession.name}
               </h2>

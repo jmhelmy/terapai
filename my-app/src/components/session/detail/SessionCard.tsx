@@ -7,6 +7,7 @@ import styles from "./SessionCard.module.css";
 export interface SessionItem {
   id: string;
   clientInitials: string;
+  clientName?: string;
   sessionDate: string;   // ← was Date, now ISO string
   transcript: string;
   structuredContent: string;
@@ -24,7 +25,7 @@ interface SessionCardProps {
 
 export default function SessionCard({ note, onClick, onUpdate, onDelete }: SessionCardProps) {
   if (!note) {
-    console.error('SessionCard received undefined note prop');
+    console.error("SessionCard received undefined note prop");
     return null;
   }
 
@@ -45,11 +46,13 @@ export default function SessionCard({ note, onClick, onUpdate, onDelete }: Sessi
       tabIndex={0}
     >
       <header className={styles.header}>
-        <strong>{note.clientInitials}</strong>
+        <div>
+          <strong>{note.clientName ?? note.clientInitials}</strong>
+        </div>
         <span className={styles.date}>{dateString}</span>
       </header>
       <section className={styles.preview}>
-        <p>{note.structuredContent?.slice(0, 120) || 'No content'}...</p>
+        <p>{note.structuredContent?.slice(0, 120) || "No content"}...</p>
       </section>
     </div>
   );

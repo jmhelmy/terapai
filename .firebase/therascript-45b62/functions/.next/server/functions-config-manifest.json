@@ -1,7 +1,8 @@
 {
   "version": 1,
   "functions": {
-    "/api/sessions": {},
-    "/api/testadmin": {}
+    "/api/testadmin": {},
+    "/api/sessions/[sessionId]": {},
+    "/api/sessions": {}
   }
 }

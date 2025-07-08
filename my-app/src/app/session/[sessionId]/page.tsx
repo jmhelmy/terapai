@@ -1,60 +1,38 @@
-// src/app/session/[sessionId]/page.tsx
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import SessionDetail, { Session } from '@/components/session/detail/SessionDetail';
-import styles from './SessionDetail.module.css';
+"use client";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import SessionDetail from "@/components/session/detail/SessionDetail";
 
 export default function SessionDetailPage() {
   const { sessionId } = useParams() as { sessionId: string };
-  const [session, setSession] = useState<Session | null>(null);
+  const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchSession = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(`/api/sessions/${sessionId}`);
-        if (!res.ok) throw new Error(`Failed: ${res.status}`);
-        const data = await res.json();
-
-        console.log('🔥 session from Firestore:', data);
-
-        // Build correct Session type
-        const sessionData: Session = {
-          id: data.id,
-          clientName: data.clientInitials ?? '—',
-          transcript: data.transcript ?? '',
-          soapNote: {
-            subjective: data.soapNote?.subjective ?? '',
-            objective: data.soapNote?.objective ?? '',
-            assessment: data.soapNote?.assessment ?? '',
-            plan: data.soapNote?.plan ?? '',
-          },
-        };
-
-        setSession(sessionData);
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchSession();
+    if (!sessionId) return;
+    setLoading(true);
+    fetch(`/api/sessions/${sessionId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          setSession(null);
+          setError("Session not found");
+        } else {
+          setSession(data);
+          setError(null);
+        }
+      })
+      .catch((err) => {
+        setSession(null);
+        setError("Failed to load session");
+      })
+      .finally(() => setLoading(false));
   }, [sessionId]);
 
-  if (loading) return <p className={styles.loading}>Loading session…</p>;
-  if (error) return <p className={styles.error}>Error: {error}</p>;
-  if (!session) return <p className={styles.empty}>Session not found.</p>;
+  if (loading) return <div>Loading…</div>;
+  if (error) return <div>{error}</div>;
 
-  return (
-    <SessionDetail
-      session={session}
-      initialTab="Notes"
-    />
-  );
+  // This is how you connect everything:
+  return <SessionDetail session={session} />;
 }

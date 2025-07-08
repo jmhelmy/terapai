@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from '../../SoapPage.module.css'; // <-- CORRECTED PATH
+import React from "react";
+import styles from "../../SoapPage.module.css"; // <-- CORRECTED PATH
 
 export default function SubstanceUseDisorderContent() {
   return (

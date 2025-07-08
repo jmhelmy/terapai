@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import styles from './RecordingControls.module.css';
+import React, { useState } from "react";
+import styles from "./RecordingControls.module.css";
 
 interface RecordingControlsProps {
   isRecording: boolean;
@@ -20,7 +20,7 @@ export function RecordingControls({
 }: RecordingControlsProps) {
   const format = (sec: number) => {
     const m = Math.floor(sec / 60);
-    const s = String(Math.floor(sec % 60)).padStart(2, '0');
+    const s = String(Math.floor(sec % 60)).padStart(2, "0");
     return `${m}:${s}`;
   };
 
@@ -39,10 +39,10 @@ export function RecordingControls({
         className={isRecording ? styles.stopButton : styles.startButton}
       >
         {isRecording
-          ? 'Stop Recording'
+          ? "Stop Recording"
           : isProcessing
-          ? 'Processing…'
-          : 'Start Recording'}
+            ? "Processing…"
+            : "Start Recording"}
       </button>
       <span className={styles.timer}>
         {isRecording

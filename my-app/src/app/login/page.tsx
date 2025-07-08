@@ -1,17 +1,17 @@
 // src/app/login/page.tsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { auth } from '@/lib/firebaseClient'; // Import the shared auth instance
-import styles from './LoginPage.module.css'; // Import the CSS module
-import Link from 'next/link'; // Import Link for the registration link
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { auth } from "@/lib/firebaseClient"; // Import the shared auth instance
+import styles from "./LoginPage.module.css"; // Import the CSS module
+import Link from "next/link"; // Import Link for the registration link
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail]       = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail]       = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError]       = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false); // Add loading state
 
@@ -22,11 +22,11 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // On successful login, redirect to the dashboard
-      router.push('/dashboard');
+      router.push("/dashboard");
     } catch (err: any) {
-      console.error('Login error:', err);
+      console.error("Login error:", err);
       // Display a user-friendly error message
-      setError(err.message || 'Login failed. Please try again.');
+      setError(err.message || "Login failed. Please try again.");
       setIsLoading(false); // Unset loading state on error
     }
   };
@@ -60,11 +60,11 @@ export default function LoginPage() {
           </label>
           {error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.submitBtn} disabled={isLoading}>
-            {isLoading ? 'Logging In...' : 'Log In'} {/* Button text changes based on loading */}
+            {isLoading ? "Logging In..." : "Log In"} {/* Button text changes based on loading */}
           </button>
         </form>
         <p className={styles.footer}>
-          Don't have an account?{' '}
+          Don&apos;t have an account?{" "}
           <Link href="/register" className={styles.link}>Sign Up</Link> {/* Use Link component */}
         </p>
       </main>

@@ -1,7 +1,8 @@
 // src/app/page.tsx
 
-import { Header } from "@/components/layout/Header/Header";
-import { Footer } from "@/components/layout/Footer";
+import Header from "@/components/layout/MarketingNav/Header";
+import Footer from "@/components/layout/MarketingNav/Footer";
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./HomePage.module.css";

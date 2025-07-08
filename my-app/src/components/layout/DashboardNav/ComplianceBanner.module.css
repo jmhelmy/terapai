@@ -1,0 +1,21 @@
+.complianceBanner {
+    width: 100%;
+    background: #f3f7fc;
+    color: #232a31;
+    display: flex;
+    align-items: center;
+    justify-content: center;      /* <-- CENTER children horizontally */
+    padding: 0.7rem 0;           /* Remove side padding for true center */
+    font-size: 1.08rem;
+    border-bottom: 1px solid #e2e5ea;
+    font-family: inherit;
+  }
+  
+  
+  .hipaaIcon {
+    width: 70px;
+    height: 34px;
+    margin-right: 0.6rem;
+    color: #2c5fa9;          /* subtle medical blue */
+  }
+  

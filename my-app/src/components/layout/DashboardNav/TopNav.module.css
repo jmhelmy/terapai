@@ -1,0 +1,108 @@
+/* TopNav.module.css */
+
+/* --- GLOBAL CSS VARIABLES (ensure these are in your globals.css) --- */
+:root {
+  --header-height: 70px; /* Note: TopNav height is 60px, so this won't be used directly there, but other colors will */
+  --color-primary: #00838f; /* Used for active states, primary actions */
+  --color-primary-dark: #00737e;
+  --color-primary-darker: #006069;
+  --color-border: #e0e0e0; /* Used for borders */
+  --color-text-default: #213650; /* Main text color */
+  --color-text-muted: #555; /* Lighter text color */
+  --color-surface: #ffffff; /* Background color for white elements */
+  --color-surface-hover-subtle: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+  --color-active-bg: #e0f2f7; /* Custom for this nav's active background */
+  --color-active-text: var(--color-primary); /* Custom for this nav's active text */
+}
+/* ------------------------------------------------------------------ */
+
+.nav {
+  width: 100%;
+  height: 60px; /* Retain height for this nav */
+  display: flex;
+  align-items: center;
+  background: var(--color-surface, #fff); /* Use variable */
+  border-bottom: 1px solid var(--color-border, #e0e0e0); /* Use variable */
+  padding: 0 2rem;
+  justify-content: space-between;
+  font-family: inherit;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.brandContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Consistent with previous header's logo gap */
+}
+
+.brand {
+  font-size: 1.5rem; /* Consistent with previous header's logo font size */
+  font-weight: 700;
+  color: var(--color-text-default, #213650); /* Use variable */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Gap between image and text in brand */
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem; /* Consistent with previous header's desktopNav gap */
+  align-items: center;
+  /* Add margin to separate from brand, similar to how desktopNavAndAuthContainer had margin-left */
+  margin-right: auto; /* Pushes brand left, menu and rightControls to the right */
+  margin-left: 2rem; /* Give some space from the logo */
+}
+
+.link {
+  padding: 0.5rem 0.75rem; /* Consistent with previous header's navLink padding */
+  font-size: 0.9rem; /* Consistent with previous header's navLink font size */
+  font-weight: 500;
+  color: var(--color-text-default, #213650); /* Use variable */
+  text-decoration: none;
+  border-radius: 6px; /* Consistent */
+  transition: background 0.2s, color 0.2s; /* Adjust transition speed for consistency */
+  white-space: nowrap; /* Ensure text doesn't wrap inside links */
+}
+
+.link:hover,
+.link:focus-visible {
+  background: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05)); /* Use variable */
+  color: var(--color-primary, #00838f); /* Use variable */
+}
+
+.activeLink {
+  color: var(--color-primary, #00838f); /* Use primary color for active text */
+  font-weight: 700;
+  background: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05)); /* Use subtle hover background */
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* Slightly adjusted gap for better spacing between "Account" and HIPAA icon */
+}
+
+/* Removed .accountIconLink and .accountIcon styles as they are no longer needed */
+
+.complianceContainer {
+  display: flex; /* Ensure it's a flex container for alignment */
+  align-items: center;
+  /* No margin-left here; controlled by gap on .rightControls */
+}
+
+.hipaaIcon {
+  width: 1.6rem; /* Slightly larger for better prominence */
+  height: 1.6rem; /* Slightly larger */
+  color: var(--color-primary, #00838f); /* Match primary color */
+  display: block; /* Helps in precise sizing and positioning */
+  flex-shrink: 0; /* Ensures it doesn't shrink */
+}
+
+/* You can remove any .iconLink svg styles if they were just for the user icon */
+/* .iconLink svg {
+  width: 1.45rem;
+  height: 1.45rem;
+} */

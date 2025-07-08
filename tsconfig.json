@@ -1,0 +1,8 @@
+{
+    "files": [],
+    "references": [
+      { "path": "./my-app" },
+      { "path": "./functions" }
+    ]
+  }
+  

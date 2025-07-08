@@ -1,10 +1,10 @@
 // src/app/faq/page.tsx
 "use client"; // If you plan to add interactive elements like accordions later
 
-import React from 'react';
-import { Header } from '@/components/layout/Header/Header'; // Adjust path if necessary
-import { Footer } from '@/components/layout/Footer'; // Adjust path if necessary
-import styles from './FaqPage.module.css';
+import React from "react";
+import { Header } from "@/components/layout/MarketingNav/Header"; // Adjust path if necessary
+import { Footer } from "@/components/layout/MarketingNav/Footer"; // Adjust path if necessary
+import styles from "./FaqPage.module.css";
 
 const faqs = [
   {

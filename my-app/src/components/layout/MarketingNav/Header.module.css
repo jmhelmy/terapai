@@ -1,0 +1,234 @@
+/* Header.module.css */
+
+/* --- GLOBAL CSS VARIABLES (ensure these are in your globals.css) --- */
+:root {
+  --header-height: 70px;
+  --color-primary: #00838f;
+  --color-primary-dark: #00737e;
+  --color-primary-darker: #006069;
+  --color-border: #e0e0e0;
+  --color-text-default: #213650;
+  --color-text-muted: #555;
+  --color-surface: #ffffff;
+  --color-surface-hover-subtle: rgba(0, 0, 0, 0.05);
+}
+/* ------------------------------------------------------------------ */
+
+.header {
+  width: 100%;
+  padding: 0 2rem;
+  height: var(--header-height, 70px);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: nowrap; /* Ensures header's main children don't wrap */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-default, #213650);
+  text-decoration: none;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+/* NEW CONTAINER FOR DESKTOP NAV AND AUTH BUTTONS */
+.desktopNavAndAuthContainer {
+  display: flex;
+  align-items: center;
+  /* Adjust gap between the main nav links and the auth buttons */
+  gap: 2rem; /* Keep this or adjust as needed for separation between nav group and auth buttons */
+  flex-grow: 1; /* Allow this container to take up available space */
+  justify-content: flex-end; /* Pushes the nav/auth group to the right within the header */
+  /* --- CRITICAL FIX FOR WRAPPING --- */
+  flex-wrap: nowrap; /* Ensures DesktopNavigation and desktopAuthButtons stay on one line */
+  min-width: 0; /* Prevents overflow issues within flex items */
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Space between individual nav items */
+  flex-shrink: 1; /* Allow nav items to shrink if necessary */
+  min-width: 0; /* Prevents overflow */
+}
+
+.navLink {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-default, #213650);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  outline: none;
+  white-space: nowrap; /* Ensure text in links doesn't wrap */
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--color-primary, #00838f);
+  background-color: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05));
+}
+
+.signUpButton {
+  background-color: var(--color-primary, #00838f);
+  color: var(--color-surface, #ffffff) !important;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  white-space: nowrap; /* Ensure button text doesn't wrap */
+}
+
+.signUpButton:hover,
+.signUpButton:focus-visible {
+  background-color: var(--color-primary-dark, #00737e);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.signUpButton:active {
+  background-color: var(--color-primary-darker, #006069);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.desktopAuthButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between Log In and Sign Up Free */
+  flex-shrink: 0; /* Prevent buttons from shrinking prematurely */
+  white-space: nowrap; /* Ensure buttons stay on one line even with content inside */
+}
+
+.companyDropdownContainer {
+  position: relative;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 0.3em;
+  font-size: 0.7em;
+  transition: transform 0.2s;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+.companyDropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  animation: fadeInDropdown 0.2s forwards ease-out;
+}
+
+@keyframes fadeInDropdown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text-default, #213650);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+  background: none;
+  border: none;
+}
+
+.dropdownLink:hover,
+.dropdownLink:focus-visible {
+  background-color: var(--color-surface-hover-subtle, rgba(0, 0, 0, 0.05));
+  color: var(--color-primary, #00838f);
+}
+
+.comingSoonTag {
+  color: var(--color-primary, #00838f);
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-left: 0.5em;
+}
+
+.hamburgerButton {
+  /* Initially hide the hamburger button on desktop */
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+  margin-left: auto; /* Pushes the hamburger to the right when visible */
+}
+
+.hamburgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-default, #213650);
+  margin: 5px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.line1Open {
+  transform: translateY(7px) rotate(45deg);
+}
+.line2Open {
+  opacity: 0;
+}
+.line3Open {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Responsive breakpoint for mobile nav */
+@media (max-width: 1024px) {
+  .desktopNavAndAuthContainer { /* Now hide the entire container */
+    display: none;
+  }
+  .header {
+    padding: 0 1rem;
+  }
+  .hamburgerButton {
+    /* Show hamburger button on mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

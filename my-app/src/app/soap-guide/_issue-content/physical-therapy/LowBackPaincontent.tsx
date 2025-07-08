@@ -1,6 +1,6 @@
 // src/app/soap-guide/_issue-content/physical-therapy/LowBackPainContent.tsx
-import React from 'react';
-import styles from '../../SoapPage.module.css'; // <-- CORRECTED PATH
+import React from "react";
+import styles from "../../SoapPage.module.css"; // <-- CORRECTED PATH
 
 export default function LowBackPainContent() {
   return (

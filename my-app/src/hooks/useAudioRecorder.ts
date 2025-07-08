@@ -1,11 +1,11 @@
 // src/hooks/useAudioRecorder.ts
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect } from "react";
 
 export const useAudioRecorder = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [recordingDuration, setRecordingDuration] = useState(0);
   const [audioBlob, setAudioBlob] = useState<Blob|null>(null);
-  const [statusMessage, setStatusMessage] = useState('');
+  const [statusMessage, setStatusMessage] = useState("");
 
   // new:
   const [startTime, setStartTime] = useState<number|null>(null);
@@ -31,10 +31,10 @@ export const useAudioRecorder = () => {
     if (isRecording) return;
     setAudioBlob(null);
     setEndTime(null);
-    setStatusMessage('Requesting mic…');
+    setStatusMessage("Requesting mic…");
     try {
       streamRef.current = await navigator.mediaDevices.getUserMedia({ audio: true });
-      setStatusMessage('Recording…');
+      setStatusMessage("Recording…");
       setStartTime(Date.now());              // ← record absolute start
       setRecordingDuration(0);
 
@@ -49,7 +49,7 @@ export const useAudioRecorder = () => {
         const blob = new Blob(audioChunksRef.current, { type: mr.mimeType });
         setAudioBlob(blob);
         setIsRecording(false);
-        setStatusMessage('Stopped');
+        setStatusMessage("Stopped");
         setEndTime(Date.now());            // ← record absolute end
         cleanup();
       };
@@ -60,13 +60,13 @@ export const useAudioRecorder = () => {
         setRecordingDuration(d => d + 1);
       }, 1000);
     } catch (err: any) {
-      setStatusMessage('Mic error: ' + (err.message || err.name));
+      setStatusMessage("Mic error: " + (err.message || err.name));
       cleanup();
     }
   };
 
   const stopRecording = () => {
-    if (mediaRecorderRef.current?.state === 'recording') {
+    if (mediaRecorderRef.current?.state === "recording") {
       mediaRecorderRef.current.stop();
     }
   };

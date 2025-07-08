@@ -1,53 +1,96 @@
-/* src/components/session/detail/soapNotesTab.module.css */
-.container {
+.soapForm {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
 }
-.status {
-  font-size: 0.875rem;
-  color: var(--color-text-muted, #64748b);
-}
-.error {
-  color: #ef4444;
-}
-.success {
-  color: #059669;
-}
-.section {
+.soapHeaderRow {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.soapHeader {
+  font-size: 1.6rem;
+  font-weight: 600;
+  flex: 1;
+}
+.copyAllBtn {
+  background: #eaf3ff;
+  border: 1px solid #b1ccfa;
+  color: #1761b0;
+  padding: 0.3rem 1.1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+.copyAllBtn:hover {
+  background: #d1e6fd;
+}
+.copyNoteSuccess {
+  color: #308c48;
+  font-weight: 500;
+  margin-left: 8px;
+}
+.soapField {
+  margin-bottom: 1rem;
+}
+.fieldHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.label {
+  font-size: 1.07rem;
+  font-weight: 500;
+}
+.copyBtn {
+  background: #f2f5f9;
+  border: 1px solid #b9c5d8;
+  color: #1c487c;
+  font-size: 0.95rem;
+  border-radius: 7px;
+  padding: 2px 13px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.copyBtn:hover {
+  background: #e7f0fc;
 }
 .textarea {
   width: 100%;
-  min-height: 80px;
-  padding: 0.75rem;
-  background: #fff;
-  border: 1px solid var(--color-border, #e2e8f0);
-  border-radius: 4px;
-  resize: none;
-  transition: border-color 0.2s ease;
-}
-.textarea:focus {
-  outline: none;
-  border-color: var(--color-primary, #00838f);
+  min-height: 64px;
+  font-size: 1rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #dbe4ef;
+  resize: vertical;
+  margin-top: 2px;
+  font-family: inherit;
 }
 .footer {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
 }
 .saveBtn {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  background: #2262c6;
+  color: white;
+  font-weight: 600;
   border: none;
-  border-radius: 4px;
-  background: var(--color-primary, #00838f);
-  color: #fff;
+  border-radius: 8px;
+  padding: 0.55rem 1.6rem;
+  font-size: 1.08rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background .15s;
 }
 .saveBtn:disabled {
-  background: var(--color-border, #e2e8f0);
-  cursor: not-allowed;
+  opacity: 0.7;
+  cursor: wait;
+}
+.saved {
+  color: #239c4b;
+  font-weight: 500;
 }

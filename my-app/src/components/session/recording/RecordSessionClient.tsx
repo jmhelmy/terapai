@@ -1,31 +1,31 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
-import { useAuth } from '@/context/AuthContext';
+import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { useAuth } from "@/context/AuthContext";
 
-import StatusBanner from '@/components/session/recording/StatusBanner';
-import ProgressBar from '@/components/session/recording/ProgressBar';
-import Button from '@/components/Button';
+import StatusBanner from "@/components/session/recording/StatusBanner";
+import ProgressBar from "@/components/session/recording/ProgressBar";
+import Button from "@/components/Button";
 
-import { useAudioRecorder } from '@/hooks/useAudioRecorder';
-import { useAudioProcessor } from '@/hooks/useAudioProcessor';
-import { makeRandomId } from '@/utils/makeRandomId';
+import { useAudioRecorder } from "@/hooks/useAudioRecorder";
+import { useAudioProcessor } from "@/hooks/useAudioProcessor";
+import { makeRandomId } from "@/utils/makeRandomId";
 
-import styles from '@/app/session/record/RecordSessionPage.module.css'; // Adjust path to styles
+import styles from "@/app/session/record/RecordSessionPage.module.css"; // Adjust path to styles
 
 function formatDuration(seconds: number) {
   const m = Math.floor(seconds / 60);
   const s = Math.floor(seconds % 60);
-  return `${m}:${String(s).padStart(2, '0')}`;
+  return `${m}:${String(s).padStart(2, "0")}`;
 }
 
 export default function RecordSessionClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [sessionId] = useState(() => {
-    const param = searchParams.get('sessionId');
+    const param = searchParams.get("sessionId");
     return param && param.length > 0 ? param : makeRandomId(24);
   });
 
@@ -35,6 +35,7 @@ export default function RecordSessionClient() {
   const [startTime, setStartTime] = useState<Date | null>(null);
   const [endTime, setEndTime] = useState<Date | null>(null);
   const [didAutoProcess, setDidAutoProcess] = useState(false);
+  const [clientName, setClientName] = useState("");
 
   const {
     isRecording,
@@ -55,11 +56,15 @@ export default function RecordSessionClient() {
 
   useEffect(() => {
     if (!authLoading && !user) {
-      router.push('/login');
+      router.push("/login");
     }
   }, [user, authLoading, router]);
 
   const handleStart = () => {
+    if (!clientName.trim()) {
+      setRecorderStatus("Client name is required.");
+      return;
+    }
     setHasStarted(true);
     setStartTime(new Date());
     setDidAutoProcess(false);
@@ -71,22 +76,41 @@ export default function RecordSessionClient() {
     setEndTime(new Date());
   };
 
+  // ---- THE CRUCIAL FIX IS HERE: add clientName as 4th argument ----
   useEffect(() => {
     if (!isRecording && audioBlob && user && !didAutoProcess) {
       setDidAutoProcess(true);
       user.getIdToken().then((token) => {
-        processAudio(audioBlob, user.uid, sessionId, async (success, result, noteId, errorMsg) => {
-          if (success && result && noteId) {
-            console.log('✅ Saved therapySessionNote ID:', noteId);
-            router.push('/dashboard');
-          } else {
-            console.error('❌ Audio processing or save failed:', errorMsg);
-            setRecorderStatus('Audio processing failed. Please try again.');
+        processAudio(
+          audioBlob,
+          user.uid,
+          sessionId,
+          clientName, // <-- This must be here!
+          async (success, result, noteId, errorMsg) => {
+            if (success && result && noteId) {
+              console.log("✅ Saved therapySessionNote ID:", noteId);
+              router.push("/dashboard");
+            } else {
+              console.error("❌ Audio processing or save failed:", errorMsg);
+              setRecorderStatus("Audio processing failed. Please try again.");
+            }
           }
-        });
+        );
       });
     }
-  }, [isRecording, audioBlob, user, didAutoProcess, processAudio, router, sessionId, setRecorderStatus]);
+  }, [
+    isRecording,
+    audioBlob,
+    user,
+    didAutoProcess,
+    processAudio,
+    router,
+    sessionId,
+    setRecorderStatus,
+    clientName,
+  ]);
+  
+  // ---------------------------------------------------------------
 
   if (authLoading) {
     return (
@@ -130,9 +154,25 @@ export default function RecordSessionClient() {
         />
 
         {!hasStarted && (
-          <p className={styles.disclaimer}>
-            By proceeding to record, you confirm you've obtained patient consent.
-          </p>
+          <>
+            <label className={styles.label} htmlFor="clientName">
+              Client Name
+              <input
+                id="clientName"
+                type="text"
+                value={clientName}
+                onChange={e => setClientName(e.target.value.replace(/<[^>]*>?/gm, "").trimStart())}
+                required
+                className={styles.input}
+                maxLength={100}
+                placeholder="Enter client name"
+                autoComplete="off"
+              />
+            </label>
+            <p className={styles.disclaimer}>
+              By proceeding to record, you confirm you&apos;ve obtained patient consent.
+            </p>
+          </>
         )}
 
         <div className={styles.controlsWrapper}>
@@ -152,13 +192,13 @@ export default function RecordSessionClient() {
         {hasStarted && endTime && (
           <div className={styles.timeline}>
             {startTime?.toLocaleTimeString([], {
-              hour: '2-digit',
-              minute: '2-digit',
+              hour: "2-digit",
+              minute: "2-digit",
             })}
             &nbsp;–&nbsp;
             {endTime?.toLocaleTimeString([], {
-              hour: '2-digit',
-              minute: '2-digit',
+              hour: "2-digit",
+              minute: "2-digit",
             })}
             &nbsp;(Duration {formatDuration(recordingDuration)})
           </div>
@@ -168,4 +208,4 @@ export default function RecordSessionClient() {
       </div>
     </div>
   );
-} 
+}

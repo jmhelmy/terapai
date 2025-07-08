@@ -1,6 +1,6 @@
 // src/app/soap-guide/_profession-content/PsychotherapyContent.tsx
-import React from 'react';
-import styles from '../SoapPage.module.css'; // Assuming you want to reuse styles
+import React from "react";
+import styles from "../SoapPage.module.css"; // Assuming you want to reuse styles
 
 export default function PsychotherapyContent() {
   return (
@@ -20,7 +20,7 @@ export default function PsychotherapyContent() {
           </li>
           <li className={styles.listItem}>
             <strong>Objective (O):</strong> This section includes the therapist's objective observations of the client during the session. This can encompass:
-            <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '0.5rem' }}>
+            <ul style={{ listStyleType: "circle", marginLeft: "20px", marginTop: "0.5rem" }}>
               <li>Appearance and behavior (e.g., grooming, eye contact, motor activity).</li>
               <li>Affect and mood (e.g., congruent, labile, restricted).</li>
               <li>Speech (e.g., rate, volume, coherence).</li>
@@ -32,7 +32,7 @@ export default function PsychotherapyContent() {
           </li>
           <li className={styles.listItem}>
             <strong>Assessment (A):</strong> The therapist's clinical analysis and interpretation of the subjective and objective information. This includes:
-            <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '0.5rem' }}>
+            <ul style={{ listStyleType: "circle", marginLeft: "20px", marginTop: "0.5rem" }}>
               <li>A summary of the client's current clinical status and functioning.</li>
               <li>Progress (or lack thereof) towards established treatment goals.</li>
               <li>Response to interventions and therapeutic techniques used.</li>
@@ -44,7 +44,7 @@ export default function PsychotherapyContent() {
           </li>
           <li className={styles.listItem}>
             <strong>Plan (P):</strong> Outline for future actions and interventions. This includes:
-            <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '0.5rem' }}>
+            <ul style={{ listStyleType: "circle", marginLeft: "20px", marginTop: "0.5rem" }}>
               <li>Date, time, and type of next scheduled appointment.</li>
               <li>Specific interventions or topics planned for the next session(s).</li>
               <li>Any homework or tasks assigned to the client.</li>

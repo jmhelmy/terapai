@@ -1,0 +1,112 @@
+.wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: #7d8ea7;
+  }
+  .clientHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .avatar {
+    width: 52px;
+    height: 52px;
+    background: #e0f2f1;
+    border-radius: 50%;
+    font-weight: 700;
+    color: #00838f;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 22px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+  }
+  .name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: #1c3145;
+  }
+  .email {
+    color: #5e7381;
+    font-size: 1.08rem;
+    margin-top: 3px;
+  }
+  .recordBtnRow {
+    margin: 1.5rem 0 2.2rem 0;
+  }
+  .recordBtn {
+    display: inline-block;
+    background: #00838f;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 0.58rem 2rem;
+    font-size: 1.12rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.09);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .recordBtn:hover,
+  .recordBtn:focus-visible {
+    background: #006e77;
+    box-shadow: 0 4px 16px 0 rgba(0,131,143,0.10);
+  }
+  .sessionTitle {
+    font-size: 1.19rem;
+    margin: 2.3rem 0 1.2rem;
+    font-weight: 700;
+    color: #213650;
+  }
+  .sessionCount {
+    color: #88abbc;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 6px;
+  }
+  .sessionList {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px 0 rgba(40,40,80,0.06);
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .empty {
+    padding: 2.8rem;
+    color: #99aabb;
+    text-align: center;
+  }
+  .sessionCard {
+    cursor: pointer;
+    padding: 1.2rem 2rem 1rem 2rem;
+    border-bottom: 1px solid #f0f1f4;
+    background: #fff;
+    transition: background 0.13s;
+    outline: none;
+  }
+  .sessionCard:last-child {
+    border-bottom: none;
+  }
+  .sessionCard:hover,
+  .sessionCard:focus-visible {
+    background: #f7fafc;
+  }
+  .sessionDate {
+    font-weight: 600;
+    font-size: 1.13rem;
+    margin-bottom: 4px;
+    color: #213650;
+  }
+  .sessionSummary {
+    font-size: 1.02rem;
+    color: #657c93;
+  }
+  

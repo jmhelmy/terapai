@@ -1,13 +1,13 @@
 //src/components/CaduceusIcon.tsx
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface CaduceusIconProps {
   className?: string;
 }
 
-export default function CaduceusIcon({ className = '' }: CaduceusIconProps) {
+export default function CaduceusIcon({ className = "" }: CaduceusIconProps) {
   return (
     <img
       src="/hipaa.png"

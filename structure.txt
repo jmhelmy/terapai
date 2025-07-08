@@ -1,0 +1,73 @@
+.
+├── firebase.json
+├── firestore.rules
+├── functions
+│   ├── lib
+│   │   ├── common
+│   │   ├── generateNote.js
+│   │   ├── generateNote.js.map
+│   │   ├── index.js
+│   │   ├── index.js.map
+│   │   ├── services
+│   │   ├── transcribeproxy.js
+│   │   ├── transcribeproxy.js.map
+│   │   ├── types.js
+│   │   ├── types.js.map
+│   │   └── utils
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── src
+│   │   ├── common
+│   │   ├── declarations.d.ts
+│   │   ├── generateNote.js
+│   │   ├── generateNote.ts
+│   │   ├── index.js
+│   │   ├── index.ts
+│   │   ├── server-shim.d.ts
+│   │   ├── services
+│   │   ├── transcribeproxy.ts
+│   │   ├── types.d.ts
+│   │   ├── types.js
+│   │   ├── types.ts
+│   │   └── utils
+│   └── tsconfig.json
+├── my-app
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── firebase-admin-creds.json
+│   ├── firebase-debug.log
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   ├── public
+│   │   ├── file.svg
+│   │   ├── globe.svg
+│   │   ├── hipaa.png
+│   │   ├── next.svg
+│   │   ├── terapai-logo.png
+│   │   ├── vercel.svg
+│   │   └── window.svg
+│   ├── src
+│   │   ├── app
+│   │   ├── components
+│   │   ├── context
+│   │   ├── hooks
+│   │   ├── lib
+│   │   ├── styles
+│   │   ├── types
+│   │   └── utils
+│   ├── test-firebase.js
+│   └── tsconfig.json
+├── public
+│   └── index.html
+├── src
+│   ├── app
+│   │   └── api
+│   └── types
+│       └── window.d.ts
+├── structure.txt
+└── tsconfig.json
+
+26 directories, 45 files

@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
 // Remove compat imports
 // import firebase from 'firebase/compat/app';
 // import 'firebase/compat/auth';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import styles from './RegisterPage.module.css';
-import { auth } from '@/lib/firebaseClient';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import styles from "./RegisterPage.module.css";
+import { auth } from "@/lib/firebaseClient";
 // Import modular createUserWithEmailAndPassword function
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 // Remove redundant initialization
 // Initialize once (outside the component)
@@ -26,8 +26,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function RegisterPage() {
   const router = useRouter();
-  const [email, setEmail]       = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail]       = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError]       = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,10 +36,10 @@ export default function RegisterPage() {
     try {
       // Use the imported modular function, passing the auth instance
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push('/legal');
+      router.push("/legal");
     } catch (err: any) {
-      console.error('Registration error:', err);
-      setError(err.message || 'Something went wrong.');
+      console.error("Registration error:", err);
+      setError(err.message || "Something went wrong.");
     }
   };
 
@@ -72,7 +72,7 @@ export default function RegisterPage() {
           <button type="submit" className={styles.submitBtn}>Sign Up</button>
         </form>
         <p className={styles.footer}>
-          Already have an account?{' '}
+          Already have an account?{" "}
           <a href="/login" className={styles.link}>Log in</a>
         </p>
       </main>

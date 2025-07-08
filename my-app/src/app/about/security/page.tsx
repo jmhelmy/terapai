@@ -1,8 +1,8 @@
 // app/about/security/page.tsx
-import React from 'react';
-import { Header } from '@/components/layout/Header/Header'; // Assuming this is the correct path
-import { Footer } from '@/components/layout/Footer'; // Assuming this is the correct path
-import styles from './SecurityPage.module.css';
+import React from "react";
+import { Header } from "@/components/layout/MarketingNav/Header"; // Assuming this is the correct path
+import { Footer } from "@/components/layout/MarketingNav/Footer"; // Assuming this is the correct path
+import styles from "./SecurityPage.module.css";
 
 const SecurityPage = () => {
   return (
@@ -120,7 +120,7 @@ const SecurityPage = () => {
             <h2 className={styles.sectionTitle}>Contact Us</h2>
             <p>
               If you have any questions about our security practices or concerns about
-              your data, please contact us at{' '}
+              your data, please contact us at{" "}
               <a href="mailto:security@terapai.com">security@terapai.com</a>. {/* Updated email */}
             </p>
           </section>
